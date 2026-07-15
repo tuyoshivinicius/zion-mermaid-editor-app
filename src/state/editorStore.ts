@@ -120,3 +120,8 @@ export function _flushEditorTextForTests(): Promise<void> {
   if (debounceTimer) clearTimeout(debounceTimer)
   return applyParsedText(editorText, useEditorStore.setState)
 }
+
+/** Cancels any in-flight debounced parse without touching state (FR-006b, Decisão H). */
+export function cancelPendingParse(): void {
+  if (debounceTimer) clearTimeout(debounceTimer)
+}

@@ -2,6 +2,7 @@ import { CodePanel } from '@/components/CodePanel'
 import { CanvasPanel } from '@/components/CanvasPanel'
 import { StatusRegion } from '@/components/StatusRegion'
 import { Toolbar } from '@/components/Toolbar'
+import { StarterAnnouncer } from '@/components/StarterAnnouncer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         </div>
       </div>
       <StatusRegion />
+      <StarterAnnouncer />
     </div>
   )
 }

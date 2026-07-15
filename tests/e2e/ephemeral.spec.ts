@@ -1,17 +1,18 @@
 import { expect, test } from '@playwright/test'
+import { STARTER_TEXT } from '@/starter/model'
 
 // FR-011/SC-007: the session is ephemeral — nothing persists across a
 // reload, and the UI never implies anything was saved (no save button, no
 // "saved"/"salvo" indicator, no localStorage/sessionStorage/IndexedDB use).
 
-test('reloading the page loses uncopied work — nothing persists', async ({ page }) => {
+test('reloading the page loses uncopied work — the panel returns to the starter, a fresh first contact', async ({ page }) => {
   await page.goto('/')
   await page.getByTestId('code-input').fill('flowchart TD\n  A[Start] --> B[End]')
   await expect(page.getByTestId('code-input')).toHaveValue(/Start/)
 
   await page.reload()
 
-  await expect(page.getByTestId('code-input')).toHaveValue('')
+  await expect(page.getByTestId('code-input')).toHaveValue(STARTER_TEXT)
 })
 
 test('the UI has no save affordance and uses no client-side storage', async ({ page }) => {

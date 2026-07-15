@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useEditorStore } from '@/state/editorStore'
 import { strings } from '@/strings'
+import { ClearAction } from '@/components/ClearAction'
 
 export function Toolbar() {
   const [label, setLabel] = useState('')
@@ -41,6 +42,7 @@ export function Toolbar() {
       >
         {strings.toolbar.connectModeButton}
       </Button>
+      <ClearAction />
     </div>
   )
 }

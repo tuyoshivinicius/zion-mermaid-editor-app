@@ -41,11 +41,15 @@ test.describe('US1 — text to canvas live preview', () => {
     await expect(page.getByRole('status')).toContainText('não interpretável')
   })
 
-  test('invalid text as the very first input falls back to the empty state with the indicator', async ({ page }) => {
+  test('invalid text typed over the starter keeps the starter as the last valid preview and shows the indicator', async ({ page }) => {
     await page.goto('/')
+    const canvas = page.getByTestId('canvas-panel')
+    await expect(canvas.getByText('Início', { exact: true })).toBeVisible()
+
     await page.getByTestId('code-input').fill('not mermaid at all !!')
+
     await expect(page.getByRole('status')).toContainText('não interpretável')
-    await expect(page.getByTestId('canvas-panel')).toBeVisible()
+    await expect(canvas.getByText('Início', { exact: true })).toBeVisible()
   })
 
   test('a non-Flowchart diagram shows a distinct "apenas Flowchart" message and is not rendered', async ({ page }) => {

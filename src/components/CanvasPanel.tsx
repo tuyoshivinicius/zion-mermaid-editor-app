@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ReactFlow, Background, Controls, type Connection, type Edge as RFEdge, type Node as RFNode } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { useEditorStore } from '@/state/editorStore'
@@ -19,6 +19,15 @@ export function CanvasPanel() {
 
   const [editingNodeId, setEditingNodeId] = useState<string | null>(null)
   const [editDraft, setEditDraft] = useState('')
+
+  // Derived, not commanded: exits edit mode when the node being edited is
+  // destroyed (clear, remove-node, ...) — no pointer to content survives
+  // the destruction of the content it references (FR-006c).
+  useEffect(() => {
+    if (editingNodeId && !model.nodes.some((n) => n.id === editingNodeId)) {
+      setEditingNodeId(null)
+    }
+  }, [editingNodeId, model.nodes])
 
   const positions = useMemo(() => layout(model), [model])
 

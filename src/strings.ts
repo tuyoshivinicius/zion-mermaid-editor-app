@@ -21,4 +21,15 @@ export const strings = {
     addNodeButton: 'Adicionar nó',
     connectModeButton: 'Modo conectar',
   },
+  starter: {
+    seeded: 'starter carregado',
+  },
+  clear: {
+    button: 'Limpar',
+    dialogTitle: 'Limpar tudo?',
+    dialogDescription: 'Isso apaga todo o conteúdo do diagrama e do código. Essa ação não pode ser desfeita.',
+    dialogConfirm: 'Limpar',
+    dialogCancel: 'Cancelar',
+    completed: 'diagrama limpo',
+  },
 } as const
