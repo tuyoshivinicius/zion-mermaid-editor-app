@@ -64,7 +64,7 @@ declara o que muda em cada um:
 |---|-----------|------------------|--------------------|
 | I | Prévia ao vivo ≤ 150 ms | S1 **não acrescenta caminho de input**: o starter é semeado como modelo, sem parse (FR-003). O teto de 60/90 de S0 segue governando o conteúdo do usuário | `tests/perf/` de S0 **inalterado**. S1 acrescenta um portão **distinto** (inicialização, SC-012) — ver Decisão J |
 | II | Round-trip por tipo (Flowchart pleno) | Nenhuma mudança no gerador nem na ACL. O starter é um caso concreto **submetido** ao ciclo | `tests/roundtrip/` de S0 inalterado + **FR-015**: teste novo afirma que `STARTER_MODEL → texto → modelo` não perde nada |
-| III | Cobertura de 5 tipos E2E | Escopo segue **só Flowchart** (S0, FR-006); S1 não anuncia tipo novo. FR-012 proíbe qualquer seletor de template | E2E de Flowchart existente + os novos de S1; nenhum tipo novo declarado |
+| III | Cobertura de 5 tipos E2E | Escopo segue **só Flowchart** (S0, FR-006); S1 não anuncia tipo novo. FR-012 proíbe qualquer seletor de template | E2E de Flowchart existente + os novos de S1; nenhum tipo novo declarado. FR-012/SC-011 ganham portão próprio: `tests/contract/no-template-selector.test.ts` (starter singular + nenhuma superfície de escolha) |
 | IV | Determinismo da geração | O gerador não é tocado. FR-003a **eleva ao contrato (G9)** a forma de emissão que o gerador **já implementa** — documentação de comportamento existente, zero mudança de código ou teste | `tests/unit/` determinismo de S0 inalterado; G9 acrescentada a `contracts/generator.contract.md` de S0 (docs) |
 | V | Canvas é grafo editável; layout é da aplicação | O starter é desenhado pelo **React Flow** com o mesmo `FlowNode` de S0 (ADR-001, FR-004/FR-002a); posições vêm do **dagre** (Decisão A de S0), nunca do modelo nem do texto. `STARTER_MODEL` **não carrega coordenada** | `tests/contract/no-coordinates.test.ts` inalterado; o texto do starter é gerado pelo mesmo `generate` |
 | VI | ACL da API interna do Mermaid | S1 **não importa** `mermaid` em lugar nenhum: a semeadura não percorre o parse (FR-003) | `tests/contract/acl-isolation.test.ts` inalterado e continua verde |
@@ -89,14 +89,17 @@ disso é re-decidido aqui.** S1 fixa o que encontra em aberto:
 
 ### Decisão F — Fronteira do "não alterar S0": **imutabilidade comportamental + lista aditiva exaustiva**
 
-**O problema.** FR-014a diz, literalmente, que esta fatia "MUST NOT alterar nenhum arquivo de **código-fonte**
-de S0". Lida ao pé da letra, essa cláusula **torna a fatia impossível**, e o próprio `spec.md` a contradiz
-em três pontos: **FR-006c** MUST fazer o `CanvasPanel` (arquivo de S0) sair do modo de edição quando o nó
-sumir do modelo; **FR-006** MUST oferecer uma ação de limpar alcançável por teclado — que precisa ser
-renderizada por algum componente de S0; e **FR-001a** MUST pôr o starter no primeiro paint — o que exige um
-ponto de entrada no bootstrap de S0. Nenhuma dessas três coisas é alcançável sem tocar um arquivo sob `src/`.
+**O problema (resolvido na spec).** FR-014a dizia, originalmente, que esta fatia "MUST NOT alterar nenhum
+arquivo de **código-fonte** de S0". Lida ao pé da letra, essa cláusula **tornava a fatia impossível**, e o
+próprio `spec.md` a contradizia em três pontos: **FR-006c** MUST fazer o `CanvasPanel` (arquivo de S0) sair
+do modo de edição quando o nó sumir do modelo; **FR-006** MUST oferecer uma ação de limpar alcançável por
+teclado — que precisa ser renderizada por algum componente de S0; e **FR-001a** MUST pôr o starter no
+primeiro paint — o que exige um ponto de entrada no bootstrap de S0. Nenhuma dessas três coisas é alcançável
+sem tocar um arquivo sob `src/`. **FR-014a foi emendada** para a formulação abaixo, de modo que esta decisão
+não diverge mais da spec: ela é a spec. A Clarification que produziu a redação antiga carrega a nota de
+supersedimento.
 
-**A decisão.** FR-014/FR-014a são honradas como **imutabilidade comportamental**: nenhum comportamento
+**A decisão (agora também em FR-014a).** FR-014/FR-014a são honradas como **imutabilidade comportamental**: nenhum comportamento
 entregue em S0 pode ser **redefinido**, e nenhuma correção de S1 pode ser feita mudando **como um caminho
 existente de S0 se comporta**. Mudanças **estritamente aditivas** em arquivos de S0 — que só acrescentam um
 ponto de montagem, um export ou um efeito novo, sem alterar nenhum caminho existente — são o mecanismo
@@ -234,7 +237,12 @@ o painel vazio, a limpeza executa **imediatamente**, sem diálogo — é o fluxo
 ### Decisão I-bis — Anúncio da semeadura: **efeito pós-montagem**
 
 **Escolha:** `<StarterAnnouncer />` (componente S1, montado no `App`) chama `announce(strings.starter.seeded)`
-num `useEffect` de montagem, **apenas** se a sessão semeou.
+num `useEffect` de montagem, **apenas** se `starterWasSeeded()` for verdadeiro (SD7) — o canal pelo qual o
+resultado do bootstrap alcança um componente montado depois dele. `seed.ts` guarda um flag module-private que
+`seedStarter` escreve uma única vez; `main.tsx` roda **antes** do render (SD4) e não tem como passar o retorno
+adiante sem mudar a assinatura do `App` (FR-014). O flag não é marcador de sessão e não participa da decisão
+de semear (SD1/SD5): nesta fatia ele é sempre `true` na execução real, e existe para que o anúncio siga
+correto quando o RN-06 passar a suprimir a semeadura.
 
 **Por que:** o `StatusRegion` de S0 (`role="status" aria-live="polite"`) só é falado quando o leitor de tela
 observa uma **mudança** depois de a região ser registrada. Escrever o anúncio no estado inicial do store
@@ -258,9 +266,13 @@ muda, que é precisamente a falha que esta decisão existe para excluir.
 - **alvo:** `webServer.command: 'npm run build && npm run preview -- --port 4173'`, `baseURL
   http://localhost:4173` — o **build de produção**, não o dev server (FR-018);
 - **projeto único:** `chromium` (SC-012 afere regressão de inicialização, não paridade entre browsers);
-- **amostragem:** ≥ 1 carregamento de **aquecimento**, depois **30** amostras de `page.goto('/')`, p95 pelo
-  **mesmo helper de percentil** de S0 (`tests/perf/preview-latency.test.ts`) — 30 é o menor N em que aquele
-  helper devolve um p95 real em vez do máximo literal;
+- **amostragem:** ≥ 1 carregamento de **aquecimento**, depois **30** amostras de `page.goto('/')`, p95 pela
+  **mesma fórmula de percentil** de S0 (`tests/perf/preview-latency.test.ts:20`), copiada para
+  `tests/helpers/percentile.ts` — o helper de S0 é module-private e vive dentro de um módulo de teste Vitest
+  com `describe` no topo, que um spec Playwright não importa sem executar a suíte; copiá-lo mantém
+  `tests/perf/` intocado e a lista de emendas de FR-014a exaustiva. A cópia é **verbatim** e a fórmula toma um
+  array **já ordenado**. 30 é o menor N em que ela devolve um p95 real em vez do máximo literal:
+  `floor(30 × 0.95) = 28` seleciona a 29ª de 30 amostras;
 - **relógio:** começa antes do `goto` e para quando **os nós do starter estão visíveis no canvas E o texto
   está presente no painel** — começa e termina exatamente onde SC-012 afirma, incluindo bundle, boot e
   render.
@@ -339,6 +351,13 @@ de código**: a paridade canvas ↔ código que S1 afirma cobre **nós, arestas 
 Renderizar o losango seria acrescentar ao canvas uma capacidade que **nenhum requisito de S0 pediu**, numa
 fatia cujo valor é remover o passo zero. Pertence a uma fatia posterior.
 
+**Portão (T011):** a divergência é aferida como **igualdade de renderização** — `Aprovado?` e `Início`
+carregam a **mesma** classe no canvas e nenhum marcador de losango (`clip-path`, `rotate`, `<polygon>`)
+existe —, e não como "é um retângulo". Igualdade é o que FR-002a/FR-004 de fato prometem (o starter não
+recebe tratamento especial) e é o que o `FlowNode` entregue faz: uma única `div rounded-md border …` por nó,
+sem ramo de formato, com `shape` nunca passado de `CanvasPanel`. Sem esse portão, uma mudança futura que
+renderizasse o losango passaria em todos os outros testes enquanto contradiz esta decisão em silêncio.
+
 **FR-013 (≤ 6 nós, ≤ 14 linhas) é portão, não descrição:** o starter ocupa **5 nós e 11 linhas** sob a
 emissão linha-própria que FR-003a eleva ao contrato (G9). Um teste unitário afirma os dois tetos contra
 `STARTER_TEXT`, de modo que o teto **limite crescimento** em vez de fixar por acidente o tamanho de hoje.
@@ -387,24 +406,26 @@ src/
 + │   └── ui/alert-dialog.tsx         # primitivo shadcn/ui novo (Decisão I)
 + ├── starter/                        # TODO o núcleo de S1 — puro, sem React, testável isolado
 + │   ├── model.ts                    # STARTER_MODEL + STARTER_TEXT = generate(STARTER_MODEL) (Decisão L)
-+ │   ├── seed.ts                     # shouldSeedStarter (pura, FR-011a) + seedStarter (Decisão G)
++ │   ├── seed.ts                     # shouldSeedStarter (pura, FR-011a) + seedStarter + starterWasSeeded (SD7)
 + │   └── clear.ts                    # needsClearConfirmation (pura) + clearSession (Decisão H)
 ~ ├── state/editorStore.ts            # + export cancelPendingParse() (FR-006b, Decisão H)
   └── core/                           # model · mermaid-acl · generator · layout · slug — TODOS INALTERADOS
 
 tests/
++ ├── helpers/percentile.ts           # cópia verbatim da fórmula de p95 de S0 (Decisão J)
++ ├── contract/no-template-selector.test.ts  # FR-012/SC-011 — nenhuma superfície de escolha (idioma dos gates de S0)
 + ├── unit/starter-model.test.ts      # FR-002/003/013/015 · ids=slug · tetos · round-trip sem perda
 + ├── unit/starter-seed.test.ts       # SC-008 — precedência do rascunho (função pura)
 + ├── unit/starter-clear.test.ts      # FR-007 predicado · FR-006/006a estado alvo · FR-006b parse em voo
 + ├── unit/clear-dialog.test.tsx      # FR-016 — foco entra, Escape cancela, foco retorna (RTL)
 + ├── unit/starter-announce.test.tsx  # SC-013 — TRANSIÇÃO da live region (RTL, Decisão I-bis)
-+ ├── e2e/starter.spec.ts             # US1 · SC-001/002/003/004/005/009
++ ├── e2e/starter.spec.ts             # US1 · SC-001/002/003/004/005/009/011 · FR-002a (divergência de formato)
 + ├── e2e/clear.spec.ts               # US2 · SC-006 (inclui cenários 8, 9, 10)
 + ├── e2e/paste-over-starter.spec.ts  # US3 · SC-007
 + ├── e2e/starter-boot-latency.perf.ts# SC-012 — p95 ≤ 1s, build de produção (Decisão J)
 ~ ├── e2e/ephemeral.spec.ts           # EMENDA autorizada por FR-014a (1 asserção)
 ~ ├── e2e/us1-preview.spec.ts         # EMENDA autorizada por FR-014a (1 caso, + rename)
-  └── (contract/ · roundtrip/ · perf/ · demais e2e)            INALTERADOS
+  └── (os 5 gates de contract/ de S0 · roundtrip/ · perf/ · demais e2e)   INALTERADOS
 ```
 
 **Structure Decision**: a arquitetura de S0 é preservada integralmente — núcleo puro em `src/core/`,
@@ -419,7 +440,7 @@ mais forte de que os portões II, IV, V e VI continuam verdes por construção.
 
 | Item | Por que | Alternativa mais simples rejeitada porque |
 |------|---------|-------------------------------------------|
-| **FR-014a lido como imutabilidade comportamental**, e não como "zero diff sob `src/`" (Decisão F) | A leitura literal torna a fatia **impossível** e contradiz FR-001a, FR-006 e FR-006c do mesmo spec — FR-006c *manda* mudar o `CanvasPanel`. O contexto de FR-014a é a fronteira **código × fixture**, e as três recusas do spec (FR-006a/b/c) miram redefinição de comportamento, não a existência de um diff | Cumprir a letra exigiria não entregar a fatia. Mitigação: a lista de arquivos de S0 tocados é **exaustiva (6)**, cada mudança é aditiva e comportamentalmente neutra, e o diff fora dessa lista é portão de merge |
+| **FR-014a como imutabilidade comportamental**, e não como "zero diff sob `src/`" (Decisão F) | A leitura literal tornava a fatia **impossível** e contradizia FR-001a, FR-006 e FR-006c do mesmo spec — FR-006c *manda* mudar o `CanvasPanel`. As três recusas do spec (FR-006a/b/c) miram redefinição de comportamento, não a existência de um diff. **FR-014a foi emendada**: isto deixou de ser divergência plano × spec e passou a ser a regra da spec | Cumprir a letra exigiria não entregar a fatia. Mitigação: a lista de arquivos de S0 tocados é **exaustiva (6)**, cada mudança é aditiva e comportamentalmente neutra, e o diff fora dessa lista é portão de merge (T029) |
 | `cancelPendingParse()` exportado de `editorStore.ts` (Decisão H) | O timer do debounce é module-private; nenhum `setState` externo o alcança, e FR-006b **exige** que a limpeza cancele o parse em voo | Re-armar o debounce com `setEditorText('')` agenda um parse de `''` que acende "texto não interpretável" sobre o painel recém-limpo. O guard de staleness em `applyParsedText` é **explicitamente recusado** por FR-006b (redefine o caminho de parse de S0) |
 | Uma dependência nova (`@radix-ui/react-alert-dialog`) | FR-016 exige focus trap + restauração de foco + `Escape` + `role`/nome acessíveis; Radix é a base do shadcn/ui **já fixado pelo ADR-004** | Diálogo com gestão de foco escrita à mão é exatamente onde esse requisito apodrece; `window.confirm` é proibido por FR-016 |
 | Princípio III coberto só para Flowchart | Herdado de S0 (FR-006 de S0): a release tem 1 tipo. FR-012 proíbe até seletor de template | Idem S0: cobrir os 5 tipos contradiz o fatiamento vertical da PRD. S1 **não anuncia** tipo novo, logo não é fidelidade presumida |

@@ -10,6 +10,7 @@ export interface SeedInput { restorableDraft: RestorableDraft | null }
 
 export function shouldSeedStarter(input: SeedInput): boolean   // PURA
 export function seedStarter(input: SeedInput): boolean          // efeito; devolve se semeou
+export function starterWasSeeded(): boolean                     // leitura do resultado do bootstrap
 ```
 
 ## Garantias (verificáveis)
@@ -33,13 +34,23 @@ export function seedStarter(input: SeedInput): boolean          // efeito; devol
   starter** e o estado vazio de S0 **nunca é renderizado** — não é "vazio por um instante", é vazio nunca
   exibido (SC-001).
 - **SD5 — Uma vez por sessão (FR-008):** decorre do **local** da chamada — o bootstrap roda uma vez por
-  carregamento de página. Não há flag `hasSeeded`, nem marcador de sessão, nem re-semeadura por esvaziamento
-  de texto ou qualquer outra transição. Recarregar é sessão nova (Edge Cases). Portão: `tests/e2e/clear.spec.ts`
-  (starter não volta depois de limpo) + `ephemeral.spec.ts` (nenhum storage).
+  carregamento de página. Nenhuma decisão de semeadura consulta estado acumulado: não há marcador de sessão,
+  nem storage, nem re-semeadura por esvaziamento de texto ou qualquer outra transição. `starterWasSeeded()`
+  **não participa dessa decisão** — é apenas a leitura, pós-fato, do resultado do bootstrap, consumida
+  exclusivamente pelo anúncio de FR-017a (SD7). Recarregar é sessão nova (Edge Cases). Portão:
+  `tests/e2e/clear.spec.ts` (starter não volta depois de limpo) + `ephemeral.spec.ts` (nenhum storage).
 - **SD6 — Estado inicial do store intocado (FR-014):** `editorStore.ts` continua nascendo com
   `createEmptyModel()`/`editorText: ''`. A semeadura **empurra** estado de fora; ela não redefine o estado
   inicial de S0 — que é, literalmente, o alvo da limpeza (FR-006). Portão: diff de `editorStore.ts` restrito
   ao export aditivo `cancelPendingParse` (Decisão F).
+- **SD7 — Resultado do bootstrap legível (FR-017a):** `seed.ts` mantém um flag **module-private**, escrito
+  **uma única vez** por `seedStarter`, e o expõe por `starterWasSeeded()`. É o canal pelo qual
+  `<StarterAnnouncer />` sabe se deve anunciar: `main.tsx` chama `seedStarter` **antes** do render (SD4) e
+  não tem como entregar o retorno a um componente montado depois, sem alterar a assinatura do `App`
+  (FR-014). Nesta fatia o flag é sempre `true` na execução real — `restorableDraft` é `null` literal (SD3)
+  —; ele existe para que o anúncio continue **correto** quando a fatia do RN-06 passar a suprimir a
+  semeadura, em vez de anunciar um starter que não foi semeado. Não é marcador de sessão e não é lido por
+  `shouldSeedStarter` (SD1/SD5). Portão: `tests/unit/starter-announce.test.tsx`.
 
 ## Não-garantias (declaradas)
 

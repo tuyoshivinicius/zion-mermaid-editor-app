@@ -55,7 +55,12 @@
   desligar a semeadura por flag de teste) deixaria o caminho de abertura — o único que esta fatia
   entrega — sem cobertura e2e justamente onde ela importa; e suprimir a semeadura no reload por
   marcador de sessão violaria FR-010 e o próprio `ephemeral.spec.ts`, que afirma
-  `sessionStorageLength === 0`. Ver FR-014a.
+  `sessionStorageLength === 0`. Ver FR-014a. *(A cláusula "MUST NOT alterar nenhum arquivo de
+  código-fonte de S0" desta resposta foi depois **superada**: lida ao pé da letra ela torna a fatia
+  impossível e contradiz FR-001a, FR-006 e FR-006c desta mesma spec — FR-006c **manda** mudar o
+  `CanvasPanel`. O valor vigente é **imutabilidade comportamental + lista aditiva exaustiva de seis
+  arquivos** — ver FR-014a e plan.md, Decisão F. O resto desta resposta — a fronteira código ×
+  fixture e as duas emendas autorizadas — permanece vigente.)*
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -369,12 +374,23 @@ e confirmar que nenhum nó, aresta ou linha do starter sobrevive no canvas nem n
 - **FR-014**: Esta fatia MUST NOT redefinir o laço bidirecional texto ↔ canvas provado em S0. Todo
   comportamento de sincronização, tolerância a texto inválido, fidelidade de round-trip,
   determinismo e cópia permanece exatamente como especificado em S0.
-- **FR-014a**: A promessa de FR-014 (e a cláusula equivalente de FR-018) governa o **comportamento**
-  de S0, não os **fixtures de teste** de S0. Esta fatia MUST NOT alterar nenhum arquivo de
-  **código-fonte** de S0. Ela MAY, porém, emendar as asserções e2e de S0 cuja premissa é o **estado
-  vazio de abertura** — a premissa que esta fatia existe para abolir (FR-001a) e que nenhum requisito
-  de S0 jamais afirmou como comportamento desejado. São hoje exatamente duas, e a lista MUST ser
-  tratada como exaustiva:
+- **FR-014a**: A promessa de FR-014 (e a cláusula equivalente de FR-018) é **imutabilidade
+  comportamental**: nenhum comportamento entregue em S0 pode ser **redefinido**, e nenhuma correção
+  desta fatia pode ser feita mudando **como um caminho existente de S0 se comporta**. Ela **não**
+  proíbe a existência de um diff. Mudanças **estritamente aditivas** em arquivos de S0 — que apenas
+  acrescentam um ponto de montagem, um export ou um efeito novo, sem alterar nenhum caminho
+  existente — são o mecanismo legítimo da fatia, e a lista delas MUST ser **exaustiva** (plan.md,
+  Decisão F: `src/main.tsx`, `src/App.tsx`, `src/strings.ts`, `src/components/Toolbar.tsx`,
+  `src/components/CanvasPanel.tsx`, `src/state/editorStore.ts`). Qualquer outro arquivo de S0 no
+  diff é violação de FR-014 e bloqueia o merge. **`src/core/**` MUST NOT ser tocado.** A distinção
+  entre redefinir e acrescentar é a que esta spec já pratica em toda parte: FR-006a recusa
+  **acrescentar validação às mutações** de S0, FR-006b recusa **blindar `applyParsedText`** com um
+  guard de staleness, FR-006c recusa **mover estado** de S0 para o store — as três miram redefinição
+  de comportamento, não a existência de um diff, e FR-006c *manda* acrescentar um efeito ao
+  `CanvasPanel`. A promessa governa igualmente os **fixtures de teste**: esta fatia MAY emendar as
+  asserções e2e de S0 cuja premissa é o **estado vazio de abertura** — a premissa que esta fatia
+  existe para abolir (FR-001a) e que nenhum requisito de S0 jamais afirmou como comportamento
+  desejado. São hoje exatamente duas, e a lista MUST ser tratada como exaustiva:
   - `tests/e2e/ephemeral.spec.ts` (reload): a asserção `toHaveValue('')` MUST passar a afirmar o que
     o teste de fato existe para provar — que **o trabalho do usuário não é preservado** —, isto é,
     que o texto digitado antes do reload não sobrevive a ele e que o painel volta à forma canônica do
@@ -601,6 +617,10 @@ e confirmar que nenhum nó, aresta ou linha do starter sobrevive no canvas nem n
   o propósito do portão.
 - **Fronteira do "não alterar S0"**: FR-014 é invocada em toda esta spec para recusar reescritas de
   S0, e assume-se que ela protege **comportamento entregue**, não a letra dos fixtures que o aferem.
+  A mesma assunção governa o **código-fonte**: FR-014 protege comportamento, não a ausência de diff
+  — do contrário FR-006c, que MUST acrescentar um efeito ao `CanvasPanel`, seria autocontraditória
+  com FR-014a. Daí a fronteira ser **aditivo × redefinição**, com a lista de arquivos aditivos
+  fechada e verificada por portão de merge (FR-014a, Decisão F).
   A distinção é o que torna a fatia coerente: S1 muda o estado de abertura **por definição** (é o seu
   único valor), de modo que ler FR-014 como "nenhum arquivo sob `tests/` muda" tornaria a fatia
   autocontraditória — `tests/e2e/ephemeral.spec.ts` afirma painel vazio após reload, e os Edge Cases
