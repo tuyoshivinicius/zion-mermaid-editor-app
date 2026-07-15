@@ -28,3 +28,15 @@ export function generate(model: GraphModel): string;   // modelo → texto Merma
 - **G8 — Round-trip 100% (Princípio II / FR-007/FR-008):** `generate(importFlowchart(t).model)` preserva 100% do
   conteúdo estrutural; únicas perdas admissíveis e **declaradas**: ordem de declaração e comentários `%%`. Portão:
   `tests/roundtrip/` order-insensitive.
+- **G9 — Forma de emissão: linha própria (S1/FR-003a):** a definição de cada nó sai em **linha própria**, seguida
+  das arestas — `flowchart <DIR>`, depois cada nó de raiz (`  inicio[Início]`), depois cada aresta
+  (`  inicio --> revisar`), depois os blocos de estilo. **Não** há emissão inline (`inicio[Início] --> revisar[Revisar]`).
+  Portão: `tests/unit/` do gerador (asserções já existentes) + `tests/unit/starter-model.test.ts` (teto de linhas de
+  S1, FR-013).
+
+  > **Nota de proveniência.** G9 foi acrescentada no passo de plano da fatia **S1** (`002-flowchart-starter-template`),
+  > que depende de um teto de linhas (FR-013) e portanto não podia deixar a forma de emissão como escolha de
+  > implementação não governada. G1–G8 fixavam determinismo, ordenação e escape, mas **não** a forma de emissão; o
+  > gerador entregue em S0 já resolvera a lacuna na prática, emitindo linha própria. G9 **ratifica o valor já
+  > implementado** — não escolhe outro. Consequência: **zero** mudança de código ou de teste em S0 (S1/FR-014), e
+  > determinismo (G1), fidelidade de round-trip (G8) e perdas admissíveis permanecem exatamente como especificados.
