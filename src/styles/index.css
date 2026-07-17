@@ -29,3 +29,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Selected-edge highlight (FR-002c) — distinct from React Flow's own
+   focus/hover styling and from the connect-source ring on nodes. */
+.edge-selected .react-flow__edge-path {
+  stroke: hsl(199 89% 48%);
+  stroke-width: 2.5;
+}
+
+/* Selected-node highlight (FR-002c) — applied imperatively (see
+   CanvasPanel), not via a React prop, so selecting a node/edge never
+   forces every node to re-render and drop the just-clicked one's focus. */
+.node-selected {
+  border-color: hsl(199 89% 48%) !important;
+  box-shadow:
+    0 0 0 2px hsl(199 89% 48%),
+    0 0 0 4px hsl(var(--background));
+}

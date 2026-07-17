@@ -1,13 +1,11 @@
 import dagre from 'dagre'
 import type { Direction, GraphModel } from '@/core/model/types'
+import { shapeSize } from '@/core/layout/shape-geometry'
 
 export interface Position {
   x: number
   y: number
 }
-
-const NODE_WIDTH = 172
-const NODE_HEIGHT = 40
 
 function toDagreRankdir(direction: Direction): 'TB' | 'BT' | 'LR' | 'RL' {
   if (direction === 'TD') return 'TB'
@@ -27,7 +25,7 @@ export function layout(model: GraphModel): Map<string, Position> {
   graph.setDefaultEdgeLabel(() => ({}))
 
   for (const node of model.nodes) {
-    graph.setNode(node.id, { width: NODE_WIDTH, height: NODE_HEIGHT })
+    graph.setNode(node.id, shapeSize(node.shape))
   }
 
   for (const subgraph of model.subgraphs) {

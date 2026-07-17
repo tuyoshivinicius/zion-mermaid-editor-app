@@ -35,8 +35,8 @@ os testes `tests/unit/properties-panel.test.tsx`, `tests/unit/mutations-label-sh
 
 **Purpose**: dependência nova e strings, ambas aditivas.
 
-- [ ] T001 Adicionar `@radix-ui/react-select` como dependência em `package.json` e rodar `npm install` (Decisão O); nenhum script de teste é removido
-- [ ] T002 [P] Adicionar as strings pt-BR de S2 em `src/strings.ts` — os **14** nomes acessíveis de formato (FR-012) e as strings do painel (rótulo, estado neutro); nenhuma string existente muda
+- [X] T001 Adicionar `@radix-ui/react-select` como dependência em `package.json` e rodar `npm install` (Decisão O); nenhum script de teste é removido
+- [X] T002 [P] Adicionar as strings pt-BR de S2 em `src/strings.ts` — os **14** nomes acessíveis de formato (FR-012) e as strings do painel (rótulo, estado neutro); nenhuma string existente muda
 
 ---
 
@@ -51,16 +51,16 @@ T007/T008, de modo que as edições nesses arquivos MUST ser sequenciadas para e
 
 ### Tests (escrever antes da implementação)
 
-- [ ] T003 [P] Escrever `tests/unit/selection.test.ts` — reconciliação da seleção quando o `id` some do modelo (FR-002a/SE5), `toggleConnectMode` zera `selection` (FR-013), e invariância: seleções diferentes ⇒ texto byte-idêntico (SC-009/SE6)
-- [ ] T004 [P] Escrever `tests/unit/properties-panel.test.tsx` — sem seleção ⇒ estado **neutro**, e o painel **não** é superfície de escolha de template (PP1/FR-003/SC-013)
+- [X] T003 [P] Escrever `tests/unit/selection.test.ts` — reconciliação da seleção quando o `id` some do modelo (FR-002a/SE5), `toggleConnectMode` zera `selection` (FR-013), e invariância: seleções diferentes ⇒ texto byte-idêntico (SC-009/SE6)
+- [X] T004 [P] Escrever `tests/unit/properties-panel.test.tsx` — sem seleção ⇒ estado **neutro**, e o painel **não** é superfície de escolha de template (PP1/FR-003/SC-013)
 
 ### Implementation
 
-- [ ] T005 Adicionar estado e ações de seleção em `src/state/editorStore.ts`: `selection: {kind,id}|null` (inicial `null`), `selectNode`/`selectEdge`/`clearSelection`; `toggleConnectMode` passa a zerar `selection` no mesmo `set` que já zera `connectSourceId` (SE1/FR-013, Decisão M-store) — as ações e mutações existentes ficam intactas
-- [ ] T006 Adicionar o `useEffect` reconciliador em `src/App.tsx`, keyed em `model`, que chama `clearSelection` quando o elemento selecionado deixa de existir (SE5/FR-002a) — depende de T005
-- [ ] T007 Adicionar estabelecimento/limpeza de seleção em `src/components/CanvasPanel.tsx`: `onFocusCapture` lê `[data-id]` e seleciona (FR-002d), `onNodeClick` fora do modo conectar → `selectNode`, `onEdgeClick` → `selectEdge`, `onPaneClick` → `clearSelection`, e ramo `Escape`→`clearSelection` **fora** do bloco de rename (SE2/SE4, Decisão Q) — o modo conectar (FR-013), o rename e o `Delete` de S0 ficam intactos; depende de T005
-- [ ] T008 Adicionar o **destaque** de seleção em `src/components/FlowNode.tsx` (`isSelected` no `data` → `data-selected` + estilo próprio) e o estilo da **aresta** selecionada no mapeamento `model.edges → RFEdge` em `src/components/CanvasPanel.tsx`, **distinto** do anel de foco de DOM e do de connect-source (FR-002c/SE6) — depende de T005
-- [ ] T009 Criar `src/components/PropertiesPanel.tsx` (esqueleto, estado neutro) e montá-lo em `src/App.tsx` ao lado das superfícies existentes (PP1, Decisão O) — depende de T005; toca `App.tsx` (sequenciar após T006)
+- [X] T005 Adicionar estado e ações de seleção em `src/state/editorStore.ts`: `selection: {kind,id}|null` (inicial `null`), `selectNode`/`selectEdge`/`clearSelection`; `toggleConnectMode` passa a zerar `selection` no mesmo `set` que já zera `connectSourceId` (SE1/FR-013, Decisão M-store) — as ações e mutações existentes ficam intactas
+- [X] T006 Adicionar o `useEffect` reconciliador em `src/App.tsx`, keyed em `model`, que chama `clearSelection` quando o elemento selecionado deixa de existir (SE5/FR-002a) — depende de T005
+- [X] T007 Adicionar estabelecimento/limpeza de seleção em `src/components/CanvasPanel.tsx`: `onFocusCapture` lê `[data-id]` e seleciona (FR-002d), `onNodeClick` fora do modo conectar → `selectNode`, `onEdgeClick` → `selectEdge`, `onPaneClick` → `clearSelection`, e ramo `Escape`→`clearSelection` **fora** do bloco de rename (SE2/SE4, Decisão Q) — o modo conectar (FR-013), o rename e o `Delete` de S0 ficam intactos; depende de T005
+- [X] T008 Adicionar o **destaque** de seleção em `src/components/FlowNode.tsx` (`isSelected` no `data` → `data-selected` + estilo próprio) e o estilo da **aresta** selecionada no mapeamento `model.edges → RFEdge` em `src/components/CanvasPanel.tsx`, **distinto** do anel de foco de DOM e do de connect-source (FR-002c/SE6) — depende de T005
+- [X] T009 Criar `src/components/PropertiesPanel.tsx` (esqueleto, estado neutro) e montá-lo em `src/App.tsx` ao lado das superfícies existentes (PP1, Decisão O) — depende de T005; toca `App.tsx` (sequenciar após T006)
 
 **Checkpoint**: seleção estabelecível/desfazível/reconciliada e painel neutro montado — US1 e US3 podem começar.
 
@@ -77,17 +77,17 @@ rótulo. Nenhum formato de nó é exercitado.
 
 ### Tests (escrever antes da implementação)
 
-- [ ] T010 [P] [US1] Escrever `tests/unit/mutations-label-shape.test.ts` — `setEdgeLabel`: `trim()`, vazio/só-espaços → `null` (FR-004a/004b), só a aresta alvo muda, `edgeId` inexistente = no-op, pureza (MU1/MU2)
-- [ ] T011 [P] [US1] Estender `tests/unit/properties-panel.test.tsx` — conexão selecionada expõe o rótulo **atual** (campo vazio se não há), editar/apagar reescreve a linha; normalização mora na mutação (PP3/FR-004)
-- [ ] T012 [P] [US1] Escrever `tests/roundtrip/shapes-labels.test.ts` — round-trip do **rótulo de conexão** (`generate → importFlowchart`) preserva o texto (SC-006, parte de rótulo)
-- [ ] T013 [P] [US1] Escrever `tests/unit/shape-generation.test.ts` — `setEdgeLabel` gera texto **byte-idêntico** em repetições (SC-007, parte de rótulo)
-- [ ] T014 [US1] Escrever `tests/e2e/edge-label.spec.ts` — US1 **keyboard-only**: criar/editar/apagar rótulo, exatamente a linha da aresta muda, sem escrever Mermaid (SC-001/002/003/005/011)
+- [X] T010 [P] [US1] Escrever `tests/unit/mutations-label-shape.test.ts` — `setEdgeLabel`: `trim()`, vazio/só-espaços → `null` (FR-004a/004b), só a aresta alvo muda, `edgeId` inexistente = no-op, pureza (MU1/MU2)
+- [X] T011 [P] [US1] Estender `tests/unit/properties-panel.test.tsx` — conexão selecionada expõe o rótulo **atual** (campo vazio se não há), editar/apagar reescreve a linha; normalização mora na mutação (PP3/FR-004)
+- [X] T012 [P] [US1] Escrever `tests/roundtrip/shapes-labels.test.ts` — round-trip do **rótulo de conexão** (`generate → importFlowchart`) preserva o texto (SC-006, parte de rótulo)
+- [X] T013 [P] [US1] Escrever `tests/unit/shape-generation.test.ts` — `setEdgeLabel` gera texto **byte-idêntico** em repetições (SC-007, parte de rótulo)
+- [X] T014 [US1] Escrever `tests/e2e/edge-label.spec.ts` — US1 **keyboard-only**: criar/editar/apagar rótulo, exatamente a linha da aresta muda, sem escrever Mermaid (SC-001/002/003/005/011)
 
 ### Implementation
 
-- [ ] T015 [US1] Adicionar `setEdgeLabel(model, edgeId, label)` puro em `src/core/model/mutations.ts` — `trim`, vazio→`null` (representação canônica única de "sem rótulo"), só a aresta alvo muda (Decisão N/MU2); as 5 mutações existentes ficam byte-idênticas
-- [ ] T016 [US1] Adicionar a ação de store `setEdgeLabel(edgeId, label)` em `src/state/editorStore.ts` via `applyMutation` (laço mutação→`generate`→reescrita, sem reentrar no parse — FR-007) — depende de T015
-- [ ] T017 [US1] Adicionar o ramo de **input de rótulo** em `src/components/PropertiesPanel.tsx` (conexão selecionada): `labelDraft` local ressemeado do modelo quando a seleção muda, chama `store.setEdgeLabel` a cada mudança (PP3) — depende de T009, T016
+- [X] T015 [US1] Adicionar `setEdgeLabel(model, edgeId, label)` puro em `src/core/model/mutations.ts` — `trim`, vazio→`null` (representação canônica única de "sem rótulo"), só a aresta alvo muda (Decisão N/MU2); as 5 mutações existentes ficam byte-idênticas
+- [X] T016 [US1] Adicionar a ação de store `setEdgeLabel(edgeId, label)` em `src/state/editorStore.ts` via `applyMutation` (laço mutação→`generate`→reescrita, sem reentrar no parse — FR-007) — depende de T015
+- [X] T017 [US1] Adicionar o ramo de **input de rótulo** em `src/components/PropertiesPanel.tsx` (conexão selecionada): `labelDraft` local ressemeado do modelo quando a seleção muda, chama `store.setEdgeLabel` a cada mudança (PP3) — depende de T009, T016
 
 **Checkpoint**: US1 completa e testável isoladamente — MVP entregável.
 
@@ -107,16 +107,16 @@ visualmente distintos. Nenhuma superfície de escolha é exercitada.
 
 ### Tests (escrever antes da implementação)
 
-- [ ] T018 [P] [US2] Escrever `tests/unit/shape-geometry.test.ts` — `shapeSize(shape)` é **pura e determinística**, `rect` = 172×40, formatos com razão (diamond/circle/…) recebem dimensão maior determinística, shape desconhecido cai no default (SH3)
-- [ ] T019 [US2] Escrever `tests/e2e/node-shape.spec.ts` (parte US2) — `Aprovado?` do starter é losango; colar os 14 formatos ⇒ 14 desenhos visualmente distintos, aferido pelo proxy estrutural de SH1 (14 valores de `data-shape` dois-a-dois distintos + geometria computada difere entre famílias) (SC-004/SC-012)
-- [ ] T020 [US2] Emendar `tests/e2e/starter.spec.ts` (emenda autorizada #1, FR-010a) — reapontar/renomear o caso "the decision node… rendered identically" para afirmar que o nó de decisão é desenhado como **losango** e distinguível dos retângulos (SC-012)
+- [X] T018 [P] [US2] Escrever `tests/unit/shape-geometry.test.ts` — `shapeSize(shape)` é **pura e determinística**, `rect` = 172×40, formatos com razão (diamond/circle/…) recebem dimensão maior determinística, shape desconhecido cai no default (SH3)
+- [X] T019 [US2] Escrever `tests/e2e/node-shape.spec.ts` (parte US2) — `Aprovado?` do starter é losango; colar os 14 formatos ⇒ 14 desenhos visualmente distintos, aferido pelo proxy estrutural de SH1 (14 valores de `data-shape` dois-a-dois distintos + geometria computada difere entre famílias) (SC-004/SC-012)
+- [X] T020 [US2] Emendar `tests/e2e/starter.spec.ts` (emenda autorizada #1, FR-010a) — reapontar/renomear o caso "the decision node… rendered identically" para afirmar que o nó de decisão é desenhado como **losango** e distinguível dos retângulos (SC-012)
 
 ### Implementation
 
-- [ ] T021 [P] [US2] Criar `src/core/layout/shape-geometry.ts` — tabela pura/determinística `shapeSize(shape) → {width,height}`, `rect` preserva 172×40 (Decisão P/SH3); **MUST NOT** ser importada por `generator/` nem `mermaid-acl/`
-- [ ] T022 [US2] Consumir `shapeSize` em `src/core/layout/index.ts` para a largura/altura do `graph.setNode` (dagre); a assinatura `layout(model)` **não muda** e as posições seguem efêmeras (SH3/SH5) — depende de T021
-- [ ] T023 [US2] Em `src/components/CanvasPanel.tsx`: passar `shape` no `data` do nó e fixar o tamanho do nó React Flow (`style`) com o **mesmo** `shapeSize` (SH3) — depende de T021; sequenciar após T007/T008
-- [ ] T024 [US2] Em `src/components/FlowNode.tsx`: desenhar os 14 formatos preenchendo a caixa (`w-full h-full`) — clip-path/borda para poligonais, border-radius para round/stadium/circle, SVG/CSS para cilindro/círculo duplo — visualmente distintos; emitir o atributo `data-shape={shape}` no elemento raiz do nó (proxy de distinção testável de SH1); formato fora dos 14 já vem normalizado para retângulo por S0 (SH1/SH2) — depende de T021; sequenciar após T008
+- [X] T021 [P] [US2] Criar `src/core/layout/shape-geometry.ts` — tabela pura/determinística `shapeSize(shape) → {width,height}`, `rect` preserva 172×40 (Decisão P/SH3); **MUST NOT** ser importada por `generator/` nem `mermaid-acl/`
+- [X] T022 [US2] Consumir `shapeSize` em `src/core/layout/index.ts` para a largura/altura do `graph.setNode` (dagre); a assinatura `layout(model)` **não muda** e as posições seguem efêmeras (SH3/SH5) — depende de T021
+- [X] T023 [US2] Em `src/components/CanvasPanel.tsx`: passar `shape` no `data` do nó e fixar o tamanho do nó React Flow (`style`) com o **mesmo** `shapeSize` (SH3) — depende de T021; sequenciar após T007/T008
+- [X] T024 [US2] Em `src/components/FlowNode.tsx`: desenhar os 14 formatos preenchendo a caixa (`w-full h-full`) — clip-path/borda para poligonais, border-radius para round/stadium/circle, SVG/CSS para cilindro/círculo duplo — visualmente distintos; emitir o atributo `data-shape={shape}` no elemento raiz do nó (proxy de distinção testável de SH1); formato fora dos 14 já vem normalizado para retângulo por S0 (SH1/SH2) — depende de T021; sequenciar após T008
 
 **Checkpoint**: US1 e US2 funcionam independentemente; o canvas desenha os 14 formatos.
 
@@ -135,20 +135,20 @@ reescrever nenhuma aresta.
 
 ### Tests (escrever antes da implementação)
 
-- [ ] T025 [P] [US3] Estender `tests/unit/mutations-label-shape.test.ts` — `setNodeShape`: altera só `shape`, `id`/`label` e **todas** as arestas intactos, `nodeId` inexistente = no-op, consequência = exatamente 1 linha muda (MU3/SC-005)
-- [ ] T026 [P] [US3] Estender `tests/roundtrip/shapes-labels.test.ts` — modelo com os **14** formatos (via `setNodeShape`) + conexões rotuladas: `generate → importFlowchart` com igualdade canônica insensível à ordem (14/14), e a exceção de aspas (FR-015) como asserção **explícita e nomeada** — não consertada (SC-006/Decisão R)
-- [ ] T027 [P] [US3] Estender `tests/unit/shape-generation.test.ts` — `setNodeShape` gera texto **byte-idêntico** em repetições (SC-007)
-- [ ] T028 [P] [US3] Estender `tests/unit/properties-panel.test.tsx` — nó selecionado expõe os **14** formatos, indica o **atual**, cada formato tem **nome acessível pt-BR**, formato atual programaticamente determinável (PP4/PP5/FR-012)
-- [ ] T029 [US3] Estender `tests/e2e/node-shape.spec.ts` (parte US3) — escolher cada um dos 14 ⇒ delimitadores corretos (validade sintática do Flowchart gerado como proxy de SC-008), o `data-shape` do nó passa a refletir o formato escolhido (proxy de SH1), exatamente 1 linha muda, fluxo **keyboard-only** (SC-004/005/008/011)
-- [ ] T030 [US3] Emendar `tests/e2e/starter.spec.ts` (emenda autorizada #2, FR-010a) — **estreitar** a asserção de SC-011 de "página inteira sem `role` combobox/listbox/menu" para "sem escolha de **template**"; a verificação do conjunto exato de controles da **toolbar** permanece (o seletor vive no painel)
+- [X] T025 [P] [US3] Estender `tests/unit/mutations-label-shape.test.ts` — `setNodeShape`: altera só `shape`, `id`/`label` e **todas** as arestas intactos, `nodeId` inexistente = no-op, consequência = exatamente 1 linha muda (MU3/SC-005)
+- [X] T026 [P] [US3] Estender `tests/roundtrip/shapes-labels.test.ts` — modelo com os **14** formatos (via `setNodeShape`) + conexões rotuladas: `generate → importFlowchart` com igualdade canônica insensível à ordem (14/14), e a exceção de aspas (FR-015) como asserção **explícita e nomeada** — não consertada (SC-006/Decisão R)
+- [X] T027 [P] [US3] Estender `tests/unit/shape-generation.test.ts` — `setNodeShape` gera texto **byte-idêntico** em repetições (SC-007)
+- [X] T028 [P] [US3] Estender `tests/unit/properties-panel.test.tsx` — nó selecionado expõe os **14** formatos, indica o **atual**, cada formato tem **nome acessível pt-BR**, formato atual programaticamente determinável (PP4/PP5/FR-012)
+- [X] T029 [US3] Estender `tests/e2e/node-shape.spec.ts` (parte US3) — escolher cada um dos 14 ⇒ delimitadores corretos (validade sintática do Flowchart gerado como proxy de SC-008), o `data-shape` do nó passa a refletir o formato escolhido (proxy de SH1), exatamente 1 linha muda, fluxo **keyboard-only** (SC-004/005/008/011)
+- [X] T030 [US3] Emendar `tests/e2e/starter.spec.ts` (emenda autorizada #2, FR-010a) — **estreitar** a asserção de SC-011 de "página inteira sem `role` combobox/listbox/menu" para "sem escolha de **template**"; a verificação do conjunto exato de controles da **toolbar** permanece (o seletor vive no painel)
 
 ### Implementation
 
-- [ ] T031 [P] [US3] Adicionar o primitivo shadcn/ui `src/components/ui/select.tsx` (Radix Select) (Decisão O)
-- [ ] T032 [US3] Adicionar `setNodeShape(model, nodeId, shape)` puro em `src/core/model/mutations.ts` — grava só `node.shape`, preserva `id`/`label` e todas as arestas (Decisão N/MU3) — sequenciar após T015 (mesmo arquivo)
-- [ ] T033 [US3] Adicionar a ação de store `setNodeShape(nodeId, shape)` em `src/state/editorStore.ts` via `applyMutation` (FR-007) — depende de T032; sequenciar após T016 (mesmo arquivo)
-- [ ] T034 [US3] Adicionar o ramo de **seletor de formato** em `src/components/PropertiesPanel.tsx` (nó selecionado): `Select` com os 14 valores e nomes pt-BR, indicando o atual, chama `store.setNodeShape` (PP4/PP5) — depende de T002, T031, T033; sequenciar após T017 (mesmo arquivo)
-- [ ] T035 [US3] Em `src/components/FlowNode.tsx`: expor o **nome acessível pt-BR** do formato do nó (FR-012) — depende de T002; sequenciar após T024 (mesmo arquivo)
+- [X] T031 [P] [US3] Adicionar o primitivo shadcn/ui `src/components/ui/select.tsx` (Radix Select) (Decisão O)
+- [X] T032 [US3] Adicionar `setNodeShape(model, nodeId, shape)` puro em `src/core/model/mutations.ts` — grava só `node.shape`, preserva `id`/`label` e todas as arestas (Decisão N/MU3) — sequenciar após T015 (mesmo arquivo)
+- [X] T033 [US3] Adicionar a ação de store `setNodeShape(nodeId, shape)` em `src/state/editorStore.ts` via `applyMutation` (FR-007) — depende de T032; sequenciar após T016 (mesmo arquivo)
+- [X] T034 [US3] Adicionar o ramo de **seletor de formato** em `src/components/PropertiesPanel.tsx` (nó selecionado): `Select` com os 14 valores e nomes pt-BR, indicando o atual, chama `store.setNodeShape` (PP4/PP5) — depende de T002, T031, T033; sequenciar após T017 (mesmo arquivo)
+- [X] T035 [US3] Em `src/components/FlowNode.tsx`: expor o **nome acessível pt-BR** do formato do nó (FR-012) — depende de T002; sequenciar após T024 (mesmo arquivo)
 
 **Checkpoint**: as três histórias funcionam independentemente.
 
@@ -158,10 +158,10 @@ reescrever nenhuma aresta.
 
 **Purpose**: confirmar os portões herdados verdes **por construção** e validar o quickstart.
 
-- [ ] T036 [P] Confirmar verdes **sem edição** os portões de contrato: `tests/contract/no-coordinates.test.ts` (nenhuma dimensão sensível ao formato alcança o texto — portão-chave, SH4/Princípio V), `acl-isolation.test.ts` (VI), `no-image-export.test.ts` (VII), `no-nextjs.test.ts` (ADR-004), `no-template-selector.test.ts` (não afetado — padrões exigem a palavra *template*)
-- [ ] T037 [P] Confirmar verdes **sem edição** as regressões: `tests/unit/mutations.test.ts` (5 mutações byte-idênticas — MU5), `tests/roundtrip/flowchart.test.ts`, `tests/perf/*` (teto de boot de 1 s de S1 e p95 ≤ 150 ms de S0)
-- [ ] T038 Passo **keyboard-only** de ponta a ponta cobrindo US1 + US3 (selecionar por Tab/setas, editar no painel, seleção persiste ao entrar no painel — SC-011/SC-015)
-- [ ] T039 Rodar a validação do `quickstart.md`: `npm run test`, `npm run test:e2e`, `npm run test:e2e:perf`, `npm run lint` — todos verdes; confirmar que o diff sob `src/` está contido nos arquivos enumerados (portão de merge de FR-010)
+- [X] T036 [P] Confirmar verdes **sem edição** os portões de contrato: `tests/contract/no-coordinates.test.ts` (nenhuma dimensão sensível ao formato alcança o texto — portão-chave, SH4/Princípio V), `acl-isolation.test.ts` (VI), `no-image-export.test.ts` (VII), `no-nextjs.test.ts` (ADR-004), `no-template-selector.test.ts` (não afetado — padrões exigem a palavra *template*)
+- [X] T037 [P] Confirmar verdes **sem edição** as regressões: `tests/unit/mutations.test.ts` (5 mutações byte-idênticas — MU5), `tests/roundtrip/flowchart.test.ts`, `tests/perf/*` (teto de boot de 1 s de S1 e p95 ≤ 150 ms de S0)
+- [X] T038 Passo **keyboard-only** de ponta a ponta cobrindo US1 + US3 (selecionar por Tab/setas, editar no painel, seleção persiste ao entrar no painel — SC-011/SC-015)
+- [X] T039 Rodar a validação do `quickstart.md`: `npm run test`, `npm run test:e2e`, `npm run test:e2e:perf`, `npm run lint` — todos verdes; confirmar que o diff sob `src/` está contido nos arquivos enumerados (portão de merge de FR-010)
 
 ---
 

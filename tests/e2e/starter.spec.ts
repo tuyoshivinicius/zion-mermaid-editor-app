@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test'
 import { STARTER_TEXT } from '@/starter/model'
+import { strings } from '@/strings'
 
 const STARTER_LABELS = ['Início', 'Revisar', 'Aprovado?', 'Publicar', 'Fim']
 
@@ -26,19 +27,23 @@ test.describe('US1 — starter appears on open (SC-001/002/003/004/005/009/011, 
     }
   })
 
-  test('FR-002a — the decision node is a diamond in code but rendered identically to every other node on the canvas', async ({ page }) => {
+  test('SC-012 — the decision node is a diamond in code and is drawn as a diamond, distinguishable from rectangle nodes', async ({
+    page,
+  }) => {
     await page.goto('/')
 
     await expect(page.getByTestId('code-input')).toHaveValue(/aprovado\{Aprovado\?\}/)
 
-    const decisionClass = await page.getByLabel('Aprovado?', { exact: true }).getAttribute('class')
-    const plainClass = await page.getByLabel('Início', { exact: true }).getAttribute('class')
-    expect(decisionClass).toBe(plainClass)
+    const decisionNode = page.getByLabel('Aprovado?', { exact: true })
+    const plainNode = page.getByLabel('Início', { exact: true })
 
-    const html = await page.locator('.react-flow__nodes').innerHTML()
-    expect(html).not.toMatch(/clip-path/)
-    expect(html).not.toMatch(/<polygon/)
-    expect(html).not.toMatch(/rotate\(/)
+    await expect(decisionNode).toHaveAttribute('data-shape', 'diamond')
+    await expect(plainNode).toHaveAttribute('data-shape', 'rect')
+
+    const decisionClipPath = await decisionNode.evaluate((el) => getComputedStyle(el).clipPath)
+    const plainClipPath = await plainNode.evaluate((el) => getComputedStyle(el).clipPath)
+    expect(decisionClipPath).not.toBe('none')
+    expect(decisionClipPath).not.toBe(plainClipPath)
   })
 
   test('SC-011 — no template-choice surface is presented at first contact', async ({ page }) => {
@@ -48,7 +53,17 @@ test.describe('US1 — starter appears on open (SC-001/002/003/004/005/009/011, 
     const testIds = await Promise.all(toolbarControls.map((el) => el.getAttribute('data-testid')))
     expect(new Set(testIds)).toEqual(new Set(['new-node-label', 'add-node-button', 'connect-mode-button', 'clear-button']))
 
-    await expect(page.locator('[role="listbox"], [role="combobox"], [role="menu"]')).toHaveCount(0)
+    // Estreitado (emenda autorizada #2, FR-010a/Decisão M): S2 introduz um
+    // seletor de FORMATO no painel de propriedades (Radix Select, role
+    // combobox/listbox) que aparece ao selecionar um nó — a asserção deixa
+    // de ser "nenhum desses roles existe na página" e passa a ser "nenhuma
+    // escolha de TEMPLATE existe" (FR-012/SC-011 de S1 preservados). No
+    // primeiro contato (zero seleção) o painel é neutro e o seletor nem
+    // monta, então nenhum combobox/listbox/menu existe ainda de qualquer forma.
+    await expect(page.getByText(strings.propertiesPanel.neutral)).toBeVisible()
+    const roleWidgets = await page.locator('[role="listbox"], [role="combobox"], [role="menu"]').all()
+    const accessibleNames = await Promise.all(roleWidgets.map((el) => el.getAttribute('aria-label')))
+    expect(accessibleNames.some((name) => /template/i.test(name ?? ''))).toBe(false)
   })
 })
 

@@ -67,3 +67,17 @@ export function removeNode(model: GraphModel, id: string): GraphModel {
 export function removeEdge(model: GraphModel, edgeId: string): GraphModel {
   return { ...model, edges: model.edges.filter((e) => e.id !== edgeId) }
 }
+
+/** Sets an edge's label, normalizing at the source (FR-004a/FR-004b) so `null` is the model's one canonical representation of "no label" — never `''`. */
+export function setEdgeLabel(model: GraphModel, edgeId: string, label: string): GraphModel {
+  const trimmed = label.trim()
+  const next = trimmed === '' ? null : trimmed
+  const edges = model.edges.map((e) => (e.id === edgeId ? { ...e, label: next } : e))
+  return { ...model, edges }
+}
+
+/** Sets only a node's shape (FR-005a); id/label and every edge stay untouched, so exactly one generated line changes (SC-005). */
+export function setNodeShape(model: GraphModel, nodeId: string, shape: string): GraphModel {
+  const nodes = model.nodes.map((n) => (n.id === nodeId ? { ...n, shape } : n))
+  return { ...model, nodes }
+}

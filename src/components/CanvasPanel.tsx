@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ReactFlow, Background, Controls, type Connection, type Edge as RFEdge, type Node as RFNode } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { useEditorStore } from '@/state/editorStore'
 import { layout } from '@/core/layout'
+import { shapeSize } from '@/core/layout/shape-geometry'
 import { FlowNode } from '@/components/FlowNode'
 
 const NODE_TYPES = { flowNode: FlowNode }
@@ -16,9 +17,14 @@ export function CanvasPanel() {
   const renameNode = useEditorStore((state) => state.renameNode)
   const removeNode = useEditorStore((state) => state.removeNode)
   const removeEdge = useEditorStore((state) => state.removeEdge)
+  const selection = useEditorStore((state) => state.selection)
+  const selectNode = useEditorStore((state) => state.selectNode)
+  const selectEdge = useEditorStore((state) => state.selectEdge)
+  const clearSelection = useEditorStore((state) => state.clearSelection)
 
   const [editingNodeId, setEditingNodeId] = useState<string | null>(null)
   const [editDraft, setEditDraft] = useState('')
+  const containerRef = useRef<HTMLDivElement>(null)
 
   // Derived, not commanded: exits edit mode when the node being edited is
   // destroyed (clear, remove-node, ...) — no pointer to content survives
@@ -31,20 +37,39 @@ export function CanvasPanel() {
 
   const positions = useMemo(() => layout(model), [model])
 
+  // Both this and `edges` below are deliberately independent of `selection`:
+  // React Flow re-asserts DOM focus on a node's own wrapper after most
+  // re-renders (Decisão E), but not reliably for a node/edge whose `data`/
+  // array identity just changed as a *result of* the click that focused it
+  // — recomputing this array on every selection change dropped the
+  // just-clicked element's focus right before a Delete keystroke arrived.
+  // The selected-node/edge highlight is applied imperatively instead (see
+  // the effect below), so neither array's identity depends on selection.
   const nodes: RFNode[] = useMemo(
     () =>
-      model.nodes.map((node) => ({
-        id: node.id,
-        type: 'flowNode',
-        position: positions.get(node.id) ?? { x: 0, y: 0 },
-        data: {
-          label: node.label,
-          isConnectSource: connectSourceId === node.id,
-          isEditing: editingNodeId === node.id,
-          editDraft,
-        },
-        draggable: false,
-      })),
+      model.nodes.map((node) => {
+        const { width, height } = shapeSize(node.shape)
+        return {
+          id: node.id,
+          type: 'flowNode',
+          position: positions.get(node.id) ?? { x: 0, y: 0 },
+          data: {
+            label: node.label,
+            shape: node.shape,
+            isConnectSource: connectSourceId === node.id,
+            isEditing: editingNodeId === node.id,
+            editDraft,
+          },
+          // Both style (actual CSS box) and width/height (told to React
+          // Flow up front) so it never has to measure the DOM before
+          // computing fitView/edge-anchor geometry (avoids a post-mount
+          // reflow that shifted nodes once boxes stopped being uniform).
+          style: { width, height },
+          width,
+          height,
+          draggable: false,
+        }
+      }),
     [model.nodes, positions, connectSourceId, editingNodeId, editDraft],
   )
 
@@ -59,6 +84,26 @@ export function CanvasPanel() {
     [model.edges],
   )
 
+  // Imperative selection highlight (FR-002c) — kept out of the `nodes`/
+  // `edges` arrays on purpose (see above); toggles a class/attribute
+  // directly on the matching DOM node instead of forcing a re-render.
+  useEffect(() => {
+    const root = containerRef.current
+    if (!root) return
+    root.querySelectorAll('[data-testid^="rf__edge-"].edge-selected').forEach((el) => el.classList.remove('edge-selected'))
+    root.querySelectorAll('.node-shape.node-selected').forEach((el) => {
+      el.classList.remove('node-selected')
+      el.removeAttribute('data-selected')
+    })
+    if (selection?.kind === 'edge') {
+      root.querySelector(`[data-testid="rf__edge-${selection.id}"]`)?.classList.add('edge-selected')
+    } else if (selection?.kind === 'node') {
+      const nodeShapeEl = root.querySelector(`[data-testid="rf__node-${selection.id}"] .node-shape`)
+      nodeShapeEl?.classList.add('node-selected')
+      nodeShapeEl?.setAttribute('data-selected', 'true')
+    }
+  }, [selection, nodes, edges])
+
   const onConnect = useCallback(
     (connection: Connection) => {
       if (connection.source && connection.target) connectNodes(connection.source, connection.target)
@@ -69,8 +114,34 @@ export function CanvasPanel() {
   const onNodeClick = useCallback(
     (_event: unknown, node: RFNode) => {
       if (connectMode) handleConnectClick(node.id)
+      else selectNode(node.id)
     },
-    [connectMode, handleConnectClick],
+    [connectMode, handleConnectClick, selectNode],
+  )
+
+  const onEdgeClick = useCallback(
+    (_event: unknown, edge: RFEdge) => {
+      selectEdge(edge.id)
+    },
+    [selectEdge],
+  )
+
+  const onPaneClick = useCallback(() => {
+    clearSelection()
+  }, [clearSelection])
+
+  // Keyboard focus establishes selection (FR-002d) — no second step (Enter/
+  // Space) so it never collides with rename/connect, which stay on
+  // Enter/Space (Decisão Q).
+  const onFocusCapture = useCallback(
+    (event: React.FocusEvent) => {
+      const el = (event.target as HTMLElement).closest('[data-id]') as HTMLElement | null
+      const id = el?.dataset.id
+      if (!id) return
+      if (model.nodes.some((n) => n.id === id)) selectNode(id)
+      else if (model.edges.some((e) => e.id === id)) selectEdge(id)
+    },
+    [model.nodes, model.edges, selectNode, selectEdge],
   )
 
   /**
@@ -113,6 +184,11 @@ export function CanvasPanel() {
         return
       }
 
+      if (event.key === 'Escape') {
+        clearSelection()
+        return
+      }
+
       const target = event.target as HTMLElement
       const el = target.closest('[data-id]') as HTMLElement | null
       const id = el?.dataset.id
@@ -134,11 +210,28 @@ export function CanvasPanel() {
         }
       }
     },
-    [editingNodeId, editDraft, model.nodes, model.edges, removeNode, removeEdge, connectMode, handleConnectClick, renameNode],
+    [
+      editingNodeId,
+      editDraft,
+      model.nodes,
+      model.edges,
+      removeNode,
+      removeEdge,
+      connectMode,
+      handleConnectClick,
+      renameNode,
+      clearSelection,
+    ],
   )
 
   return (
-    <div className="h-full w-full" data-testid="canvas-panel" onKeyDownCapture={onKeyDown}>
+    <div
+      ref={containerRef}
+      className="h-full w-full"
+      data-testid="canvas-panel"
+      onKeyDownCapture={onKeyDown}
+      onFocusCapture={onFocusCapture}
+    >
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -146,6 +239,8 @@ export function CanvasPanel() {
         nodesDraggable={false}
         onConnect={onConnect}
         onNodeClick={onNodeClick}
+        onEdgeClick={onEdgeClick}
+        onPaneClick={onPaneClick}
         fitView
       >
         <Background />

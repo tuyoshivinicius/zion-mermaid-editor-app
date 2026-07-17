@@ -6,6 +6,8 @@ import { generate } from '@/core/generator'
 
 export type EditorStatus = 'ok' | 'invalid' | 'unsupported-type'
 
+export type Selection = { kind: 'node' | 'edge'; id: string } | null
+
 // Decisão C: orçamento de debounce ≤ 80ms dentro do teto de 150ms p95.
 const INPUT_DEBOUNCE_MS = 80
 
@@ -22,6 +24,13 @@ export interface EditorState {
   /** UI-only (never serialized): toolbar "modo conectar" state (FR-014/Decisão E). */
   connectMode: boolean
   connectSourceId: string | null
+  /** UI-only (never serialized): the single selected node/edge, if any (FR-002). */
+  selection: Selection
+  selectNode: (id: string) => void
+  selectEdge: (id: string) => void
+  clearSelection: () => void
+  /** Discards the selection if its id no longer exists in `model` (FR-002a). Called by App's model-keyed effect, never inline in a mutation path (Decisão M-store). */
+  reconcileSelection: () => void
   /**
    * Origin = text: user input → debounce → parse. Rewrites editorText
    * immediately (so typing stays responsive) and applies the parsed model
@@ -35,6 +44,8 @@ export interface EditorState {
   removeNode: (id: string) => void
   removeEdge: (id: string) => void
   connectNodes: (sourceId: string, targetId: string) => void
+  setEdgeLabel: (edgeId: string, label: string) => void
+  setNodeShape: (nodeId: string, shape: string) => void
   toggleConnectMode: () => void
   /** Click handler for connect-mode: 1st call sets the source, 2nd call (different node) connects and exits the mode. */
   handleConnectClick: (nodeId: string) => void
@@ -82,6 +93,19 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   announcement: null,
   connectMode: false,
   connectSourceId: null,
+  selection: null,
+  selectNode: (id) => set({ selection: { kind: 'node', id } }),
+  selectEdge: (id) => set({ selection: { kind: 'edge', id } }),
+  clearSelection: () => set({ selection: null }),
+  reconcileSelection: () => {
+    const { selection, model } = get()
+    if (!selection) return
+    const exists =
+      selection.kind === 'node'
+        ? model.nodes.some((n) => n.id === selection.id)
+        : model.edges.some((e) => e.id === selection.id)
+    if (!exists) set({ selection: null })
+  },
   setEditorText: (text) => {
     set({ editorText: text })
     if (debounceTimer) clearTimeout(debounceTimer)
@@ -99,7 +123,10 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   removeNode: (id) => applyMutation((m) => mutations.removeNode(m, id), set, get),
   removeEdge: (id) => applyMutation((m) => mutations.removeEdge(m, id), set, get),
   connectNodes: (sourceId, targetId) => applyMutation((m) => mutations.connect(m, sourceId, targetId), set, get),
-  toggleConnectMode: () => set((state) => ({ connectMode: !state.connectMode, connectSourceId: null })),
+  setEdgeLabel: (edgeId, label) => applyMutation((m) => mutations.setEdgeLabel(m, edgeId, label), set, get),
+  setNodeShape: (nodeId, shape) => applyMutation((m) => mutations.setNodeShape(m, nodeId, shape), set, get),
+  toggleConnectMode: () =>
+    set((state) => ({ connectMode: !state.connectMode, connectSourceId: null, selection: null })),
   handleConnectClick: (nodeId) => {
     const { connectMode, connectSourceId, connectNodes } = get()
     if (!connectMode) return
