@@ -1,0 +1,27 @@
+.claude/worktrees/
+
+# Node.js / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*
+
+# Testing
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.tsbuildinfo
