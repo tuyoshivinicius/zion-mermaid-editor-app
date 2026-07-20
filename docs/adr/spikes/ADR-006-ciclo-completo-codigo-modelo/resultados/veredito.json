@@ -1,0 +1,973 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "oraculo": {
+    "corpus": [
+      {
+        "nome": "01-minimo.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 4,
+          "arestas": 3
+        },
+        "desenhoMeu": {
+          "nos": 4,
+          "arestas": 3
+        },
+        "saida": "flowchart TD\n  A[\"Início\"]\n  B{\"Decisão\"}\n  C[\"Segue\"]\n  D[\"Para\"]\n  A --> B\n  B -->|\"sim\"| C\n  B -->|\"não\"| D"
+      },
+      {
+        "nome": "02-formas.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 14,
+          "arestas": 13
+        },
+        "desenhoMeu": {
+          "nos": 14,
+          "arestas": 13
+        },
+        "saida": "flowchart LR\n  a[\"Retângulo\"]\n  b(\"Arredondado\")\n  c([\"Estádio\"])\n  d[[\"Subrotina\"]]\n  e[(\"Cilindro\")]\n  f((\"Círculo\"))\n  g>\"Assimétrico\"]\n  h{\"Losango\"}\n  i{{\"Hexágono\"}}\n  j[/\"Paralelogramo\"/]\n  k[\\\"Paralelogramo alt\"\\]\n  l[/\"Trapézio\"\\]\n  m[\\\"Trapézio alt\"/]\n  n(((\"Círculo duplo\")))\n  a --> b\n  b --> c\n  c --> d\n  d --> e\n  e --> f\n  f --> g\n  g --> h\n  h --> i\n  i --> j\n  j --> k\n  k --> l\n  l --> m\n  m --> n"
+      },
+      {
+        "nome": "03-links.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 17,
+          "arestas": 18
+        },
+        "desenhoMeu": {
+          "nos": 17,
+          "arestas": 18
+        },
+        "saida": "flowchart TD\n  A --> B\n  B --- C\n  C -.-> D\n  D ==> E\n  E --x F\n  F --o G\n  G <--> H\n  H ----> I\n  I -.-|\"pontilhada com rótulo\"| J\n  J ==>|\"grossa com rótulo\"| K\n  K -->|\"rótulo embutido\"| L\n  L -.->|\"dotted embutido\"| M\n  M ==>|\"thick embutido\"| N\n  N ~~~ O\n  A --> P\n  A --> Q\n  B --> P\n  B --> Q"
+      },
+      {
+        "nome": "04-subgraphs.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 6,
+          "arestas": 5
+        },
+        "desenhoMeu": {
+          "nos": 6,
+          "arestas": 5
+        },
+        "saida": "flowchart TB\n  subgraph borda[\"Camada de borda\"]\n    direction LR\n    auth[\"Autenticação\"]\n  end\n  subgraph nucleo[\"Núcleo\"]\n    subgraph dados[\"Persistência\"]\n      banco[(\"Banco\")]\n    end\n    servico[\"Serviço de domínio\"]\n  end\n  entrada[\"Requisição\"]\n  api[\"Gateway\"]\n  saida[\"Resposta\"]\n  entrada --> api\n  api --> auth\n  servico --> banco\n  auth --> servico\n  servico --> saida"
+      },
+      {
+        "nome": "05-estilo.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 3,
+          "arestas": 2
+        },
+        "desenhoMeu": {
+          "nos": 3,
+          "arestas": 2
+        },
+        "saida": "flowchart LR\n  a[\"Normal\"]\n  b[\"Destacado\"]\n  c[\"Alerta\"]\n  a --> b\n  b --> c\n  classDef destaque fill:#dff,stroke:#079,stroke-width:2px\n  classDef perigo fill:#fdd,stroke:#c00\n  class b destaque\n  class c perigo\n  style a fill:#eee,stroke:#999\n  linkStyle 0 stroke:#f60,stroke-width:3px"
+      },
+      {
+        "nome": "06-frontmatter.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 4,
+          "arestas": 3
+        },
+        "desenhoMeu": {
+          "nos": 4,
+          "arestas": 3
+        },
+        "saida": "---\ntitle: Fluxo de aprovação\nconfig:\n  theme: forest\n  flowchart:\n    curve: basis\n---\nflowchart TD\n  pedido[\"Pedido recebido\"]\n  revisao{\"Revisar\"}\n  ok[\"Aprovado\"]\n  nok[\"Rejeitado\"]\n  pedido --> revisao\n  revisao -->|\"aprova\"| ok\n  revisao -->|\"rejeita\"| nok"
+      },
+      {
+        "nome": "07-diretiva.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 2,
+          "arestas": 1
+        },
+        "desenhoMeu": {
+          "nos": 2,
+          "arestas": 1
+        },
+        "saida": "%%{init: {'theme':'dark', 'flowchart':{'htmlLabels':true}}}%%\nflowchart LR\n  x[\"Entrada\"]\n  y[\"Saída\"]\n  x --> y"
+      },
+      {
+        "nome": "08-comentarios.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 3,
+          "arestas": 2
+        },
+        "desenhoMeu": {
+          "nos": 3,
+          "arestas": 2
+        },
+        "saida": "flowchart TD\n  %% este diagrama documenta o caminho feliz\n  %% nada relevante acontece entre estes dois passos\n  %% fim do diagrama\n  inicio[\"Início\"]\n  meio[\"Processamento\"]\n  fim[\"Fim\"]\n  inicio --> meio\n  meio --> fim"
+      },
+      {
+        "nome": "09-rotulos-hostis.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 9,
+          "arestas": 8
+        },
+        "desenhoMeu": {
+          "nos": 9,
+          "arestas": 8
+        },
+        "saida": "flowchart TD\n  a[\"Rótulo com espaços\"]\n  b[\"aspas: #quot;citado#quot;\"]\n  c[\"hash #35; e ponto-e-vírgula ;\"]\n  d[\"quebra<br/>de linha\"]\n  e[\"acentuação: ção, ãe, ü, ñ\"]\n  f[\"emoji: 🚀 ✅ ♥\"]\n  g[\"colchete [ e chave {\"]\n  h[\"seta --#62;  literal\"]\n  i[\"cirílico: Привет · grego: Δοκιμή · CJK: 図\"]\n  a --> b\n  b --> c\n  c --> d\n  d --> e\n  e --> f\n  f --> g\n  g --> h\n  h --> i"
+      },
+      {
+        "nome": "10-arquitetura-real.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "desenhoOriginal": {
+          "nos": 12,
+          "arestas": 12
+        },
+        "desenhoMeu": {
+          "nos": 12,
+          "arestas": 12
+        },
+        "saida": "---\ntitle: Ingestão de eventos\n---\n%%{init: {'theme':'neutral'}}%%\nflowchart LR\n  %% caminho principal de ingestão\n  subgraph observabilidade[\"Observabilidade\"]\n    direction TB\n    metricas[\"Métricas\"]\n    painel[\"Painel\"]\n    logs[\"Registros\"]\n  end\n  produtor[\"Produtor de eventos\"]\n  fila[(\"Fila durável\")]\n  consumidor[\"Consumidor\"]\n  valida{\"Evento válido?\"}\n  enriquece[\"Enriquecer com cadastro\"]\n  morto[(\"Fila de descarte\")]\n  grava[\"Gravar no armazenamento\"]\n  notifica[/\"Notificar interessados\"/]\n  fim(((\"Concluído\")))\n  produtor --> fila\n  fila --> consumidor\n  consumidor --> valida\n  valida -->|\"sim\"| enriquece\n  valida -->|\"não\"| morto\n  enriquece --> grava\n  metricas --> painel\n  logs --> painel\n  grava --> metricas\n  consumidor -.-> logs\n  grava --> notifica\n  notifica --> fim\n  classDef infra fill:#eef,stroke:#557\n  class fila,morto infra\n  style produtor fill:#efe,stroke:#575"
+      }
+    ],
+    "recuperacao": [
+      {
+        "nome": "01-minimo.mmd",
+        "total": 82,
+        "mermaidOk": 22,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 0,
+          "piorQueda": 0,
+          "fantasmas": 0
+        },
+        "estrito": {
+          "regressoesReais": 5,
+          "regressoesBrutas": 5,
+          "piorQueda": 1,
+          "fantasmas": 0
+        }
+      },
+      {
+        "nome": "02-formas.mmd",
+        "total": 332,
+        "mermaidOk": 92,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 0,
+          "piorQueda": 0,
+          "fantasmas": 0
+        },
+        "estrito": {
+          "regressoesReais": 15,
+          "regressoesBrutas": 15,
+          "piorQueda": 1,
+          "fantasmas": 0
+        }
+      },
+      {
+        "nome": "03-links.mmd",
+        "total": 272,
+        "mermaidOk": 94,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 2,
+          "piorQueda": 0,
+          "fantasmas": 13
+        },
+        "estrito": {
+          "regressoesReais": 1,
+          "regressoesBrutas": 3,
+          "piorQueda": 1,
+          "fantasmas": 13
+        }
+      },
+      {
+        "nome": "04-subgraphs.mmd",
+        "total": 324,
+        "mermaidOk": 69,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 12,
+          "piorQueda": 0,
+          "fantasmas": 83
+        },
+        "estrito": {
+          "regressoesReais": 7,
+          "regressoesBrutas": 19,
+          "piorQueda": 1,
+          "fantasmas": 83
+        }
+      },
+      {
+        "nome": "05-estilo.mmd",
+        "total": 261,
+        "mermaidOk": 175,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 5,
+          "piorQueda": 0,
+          "fantasmas": 37
+        },
+        "estrito": {
+          "regressoesReais": 5,
+          "regressoesBrutas": 10,
+          "piorQueda": 1,
+          "fantasmas": 37
+        }
+      },
+      {
+        "nome": "06-frontmatter.mmd",
+        "total": 220,
+        "mermaidOk": 51,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 8,
+          "piorQueda": 0,
+          "fantasmas": 97
+        },
+        "estrito": {
+          "regressoesReais": 5,
+          "regressoesBrutas": 13,
+          "piorQueda": 1,
+          "fantasmas": 97
+        }
+      },
+      {
+        "nome": "07-diretiva.mmd",
+        "total": 100,
+        "mermaidOk": 11,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 1,
+          "piorQueda": 0,
+          "fantasmas": 8
+        },
+        "estrito": {
+          "regressoesReais": 3,
+          "regressoesBrutas": 4,
+          "piorQueda": 1,
+          "fantasmas": 8
+        }
+      },
+      {
+        "nome": "08-comentarios.mmd",
+        "total": 192,
+        "mermaidOk": 147,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 4,
+          "piorQueda": 0,
+          "fantasmas": 16
+        },
+        "estrito": {
+          "regressoesReais": 4,
+          "regressoesBrutas": 8,
+          "piorQueda": 1,
+          "fantasmas": 16
+        }
+      },
+      {
+        "nome": "09-rotulos-hostis.mmd",
+        "total": 345,
+        "mermaidOk": 57,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 0,
+          "piorQueda": 0,
+          "fantasmas": 0
+        },
+        "estrito": {
+          "regressoesReais": 10,
+          "regressoesBrutas": 10,
+          "piorQueda": 1,
+          "fantasmas": 0
+        }
+      },
+      {
+        "nome": "10-arquitetura-real.mmd",
+        "total": 757,
+        "mermaidOk": 299,
+        "tolerante": {
+          "regressoesReais": 0,
+          "regressoesBrutas": 23,
+          "piorQueda": 0,
+          "fantasmas": 191
+        },
+        "estrito": {
+          "regressoesReais": 15,
+          "regressoesBrutas": 38,
+          "piorQueda": 1,
+          "fantasmas": 191
+        }
+      }
+    ],
+    "divergencias": [
+      {
+        "nome": "comentário no fim do statement",
+        "texto": "flowchart TD\n  a[A] --> b[B] %% nota",
+        "mermaidAceita": false,
+        "mermaidErro": "Parse error on line 2:",
+        "meuErros": 0,
+        "meuAvisos": 0,
+        "meuNos": 2
+      },
+      {
+        "nome": "shape v11 @{}",
+        "texto": "flowchart TD\n  a@{ shape: rect, label: \"A\" }\n  a --> b[B]",
+        "mermaidAceita": true,
+        "mermaidErro": null,
+        "meuErros": 1,
+        "meuAvisos": 0,
+        "meuNos": 3
+      },
+      {
+        "nome": "rótulo markdown (crase)",
+        "texto": "flowchart TD\n  a[\"`**negrito**`\"] --> b[B]",
+        "mermaidAceita": true,
+        "mermaidErro": null,
+        "meuErros": 0,
+        "meuAvisos": 0,
+        "meuNos": 2
+      },
+      {
+        "nome": "linkStyle default",
+        "texto": "flowchart TD\n  a --> b\n  linkStyle default stroke:#f00",
+        "mermaidAceita": true,
+        "mermaidErro": null,
+        "meuErros": 0,
+        "meuAvisos": 0,
+        "meuNos": 2
+      },
+      {
+        "nome": "nó sem definição",
+        "texto": "flowchart TD\n  a --> b",
+        "mermaidAceita": true,
+        "mermaidErro": null,
+        "meuErros": 0,
+        "meuAvisos": 0,
+        "meuNos": 2
+      },
+      {
+        "nome": "aspas dentro de aspas",
+        "texto": "flowchart TD\n  a[\"diz #quot;oi#quot;\"] --> b[B]",
+        "mermaidAceita": true,
+        "mermaidErro": null,
+        "meuErros": 0,
+        "meuAvisos": 0,
+        "meuNos": 2
+      },
+      {
+        "nome": "subgraph sem end",
+        "texto": "flowchart TD\n  subgraph s\n  a --> b",
+        "mermaidAceita": false,
+        "mermaidErro": "Parse error on line 4:",
+        "meuErros": 1,
+        "meuAvisos": 0,
+        "meuNos": 2
+      },
+      {
+        "nome": "seta sem destino",
+        "texto": "flowchart TD\n  a[A] -->",
+        "mermaidAceita": false,
+        "mermaidErro": "Parse error on line 3:",
+        "meuErros": 0,
+        "meuAvisos": 1,
+        "meuNos": 1
+      }
+    ]
+  },
+  "latencia": {
+    "vazio (3 nós)": {
+      "cenario": "vazio (3 nós)",
+      "query": "n=0",
+      "nos": 3,
+      "conexoes": 2,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 16.5,
+        "p95": 17
+      },
+      "parse": {
+        "mediana": 0.1,
+        "p95": 0.3
+      },
+      "projecao": {
+        "mediana": 0,
+        "p95": 0.1
+      },
+      "errosAoFinal": 0
+    },
+    "médio (100/120)": {
+      "cenario": "médio (100/120)",
+      "query": "n=100&arestas=120",
+      "nos": 101,
+      "conexoes": 120,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 16.6,
+        "p95": 18.7
+      },
+      "parse": {
+        "mediana": 1.3,
+        "p95": 2.2
+      },
+      "projecao": {
+        "mediana": 0.1,
+        "p95": 0.3
+      },
+      "errosAoFinal": 0
+    },
+    "envelope ADR-004 (400/500)": {
+      "cenario": "envelope ADR-004 (400/500)",
+      "query": "n=400&arestas=500",
+      "nos": 401,
+      "conexoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 15.5,
+        "p95": 31.5
+      },
+      "parse": {
+        "mediana": 6,
+        "p95": 14.3
+      },
+      "projecao": {
+        "mediana": 0.6,
+        "p95": 1.2
+      },
+      "errosAoFinal": 0
+    },
+    "envelope · sem reuso (memo=0)": {
+      "cenario": "envelope · sem reuso (memo=0)",
+      "query": "n=400&arestas=500&memo=0",
+      "nos": 401,
+      "conexoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 32.6,
+        "p95": 48.2
+      },
+      "parse": {
+        "mediana": 6.2,
+        "p95": 9.6
+      },
+      "projecao": {
+        "mediana": 0.2,
+        "p95": 0.4
+      },
+      "errosAoFinal": 0
+    },
+    "envelope · só código (canvas=0)": {
+      "cenario": "envelope · só código (canvas=0)",
+      "query": "n=400&arestas=500&canvas=0",
+      "nos": 401,
+      "conexoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 16.3,
+        "p95": 17.8
+      },
+      "parse": {
+        "mediana": 5.6,
+        "p95": 9.4
+      },
+      "projecao": {
+        "mediana": 0,
+        "p95": 0.1
+      },
+      "errosAoFinal": 0
+    },
+    "denso 800/1000": {
+      "cenario": "denso 800/1000",
+      "query": "n=800&arestas=1000",
+      "nos": 801,
+      "conexoes": 1000,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 31.6,
+        "p95": 58.8
+      },
+      "parse": {
+        "mediana": 14.3,
+        "p95": 23.8
+      },
+      "projecao": {
+        "mediana": 1,
+        "p95": 1.7
+      },
+      "errosAoFinal": 0
+    }
+  },
+  "mermaid": "11.16.0",
+  "emDigitacao": {
+    "nos": 2,
+    "avisos": 2,
+    "erros": 0,
+    "mermaid": {
+      "ok": false,
+      "erro": "Parse error on line 4:"
+    }
+  },
+  "placar": {
+    "passaram": 71,
+    "total": 71
+  },
+  "checagens": [
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "4 nós · 3 arestas · 4 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "14 nós · 13 arestas · 0 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "17 nós · 18 arestas · 10 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "6 nós · 5 arestas · 0 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 2 arestas · 0 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "4 nós · 3 arestas · 4 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 1 arestas · 0 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 2 arestas · 0 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "9 nós · 8 arestas · 0 rótulos de aresta"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "12 nós · 12 arestas · 4 rótulos de aresta"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 5 (pior queda 1) · fantasma: 0 prefixos · mermaid aceita 27% dos 82"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 15 (pior queda 1) · fantasma: 0 prefixos · mermaid aceita 28% dos 332"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 1 (pior queda 1) · fantasma: 13 prefixos · mermaid aceita 35% dos 272"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 7 (pior queda 1) · fantasma: 83 prefixos · mermaid aceita 21% dos 324"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 5 (pior queda 1) · fantasma: 37 prefixos · mermaid aceita 67% dos 261"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 5 (pior queda 1) · fantasma: 97 prefixos · mermaid aceita 23% dos 220"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 3 (pior queda 1) · fantasma: 8 prefixos · mermaid aceita 11% dos 100"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 4 (pior queda 1) · fantasma: 16 prefixos · mermaid aceita 77% dos 192"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 10 (pior queda 1) · fantasma: 0 prefixos · mermaid aceita 17% dos 345"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 15 (pior queda 1) · fantasma: 191 prefixos · mermaid aceita 39% dos 757"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "comentário no fim do statement",
+      "passou": true,
+      "detalhe": "mermaid recusa · próprio aceita · DIVERGEM · 2 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "shape v11 @{}",
+      "passou": true,
+      "detalhe": "mermaid aceita · próprio recusa · DIVERGEM · 3 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "rótulo markdown (crase)",
+      "passou": true,
+      "detalhe": "mermaid aceita · próprio aceita · concordam · 2 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "linkStyle default",
+      "passou": true,
+      "detalhe": "mermaid aceita · próprio aceita · concordam · 2 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "nó sem definição",
+      "passou": true,
+      "detalhe": "mermaid aceita · próprio aceita · concordam · 2 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "aspas dentro de aspas",
+      "passou": true,
+      "detalhe": "mermaid aceita · próprio aceita · concordam · 2 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "subgraph sem end",
+      "passou": true,
+      "detalhe": "mermaid recusa · próprio recusa · concordam · 2 nós"
+    },
+    {
+      "id": "B6-divergencia",
+      "alvo": "seta sem destino",
+      "passou": true,
+      "detalhe": "mermaid recusa · próprio aceita (1 aviso) · DIVERGEM · 1 nós"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "4 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "14 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "17 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "6 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "4 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "9 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B7-duas-vistas-um-modelo",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "12 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "alvo": "vazio (3 nós)",
+      "passou": true,
+      "detalhe": "3 nós · 2 conexões · 12 teclas"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "alvo": "vazio (3 nós)",
+      "passou": true,
+      "detalhe": "total 16.5ms (p95 17) · parse 0.1ms · projeção 0ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "alvo": "médio (100/120)",
+      "passou": true,
+      "detalhe": "101 nós · 120 conexões · 12 teclas"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "alvo": "médio (100/120)",
+      "passou": true,
+      "detalhe": "total 16.6ms (p95 18.7) · parse 1.3ms · projeção 0.1ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "alvo": "envelope ADR-004 (400/500)",
+      "passou": true,
+      "detalhe": "401 nós · 500 conexões · 12 teclas"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "alvo": "envelope ADR-004 (400/500)",
+      "passou": true,
+      "detalhe": "total 15.5ms (p95 31.5) · parse 6ms · projeção 0.6ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "alvo": "envelope · sem reuso (memo=0)",
+      "passou": true,
+      "detalhe": "401 nós · 500 conexões · 12 teclas"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "alvo": "envelope · sem reuso (memo=0)",
+      "passou": true,
+      "detalhe": "total 32.6ms (p95 48.2) · parse 6.2ms · projeção 0.2ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "alvo": "envelope · só código (canvas=0)",
+      "passou": true,
+      "detalhe": "401 nós · 500 conexões · 12 teclas"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "alvo": "envelope · só código (canvas=0)",
+      "passou": true,
+      "detalhe": "total 16.3ms (p95 17.8) · parse 5.6ms · projeção 0ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "alvo": "denso 800/1000",
+      "passou": true,
+      "detalhe": "801 nós · 1000 conexões · 12 teclas"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "alvo": "denso 800/1000",
+      "passou": true,
+      "detalhe": "total 31.6ms (p95 58.8) · parse 14.3ms · projeção 1ms"
+    },
+    {
+      "id": "B8-em-digitacao",
+      "alvo": "rótulo aberto + seta sem destino",
+      "passou": true,
+      "detalhe": "2 nós na prévia · 2 aviso · 0 erro · mermaid recusa"
+    }
+  ]
+}

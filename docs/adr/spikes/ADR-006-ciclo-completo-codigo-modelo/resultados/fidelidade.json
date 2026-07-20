@@ -1,0 +1,747 @@
+{
+  "gerado": "verify/fidelidade.mjs",
+  "corpus": [
+    "01-minimo.mmd",
+    "02-formas.mmd",
+    "03-links.mmd",
+    "04-subgraphs.mmd",
+    "05-estilo.mmd",
+    "06-frontmatter.mmd",
+    "07-diretiva.mmd",
+    "08-comentarios.mmd",
+    "09-rotulos-hostis.mmd",
+    "10-arquitetura-real.mmd"
+  ],
+  "placar": {
+    "passaram": 80,
+    "total": 80
+  },
+  "checagens": [
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip-estrutural",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F4-sintaxe-preservada",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "frontmatter"
+    },
+    {
+      "id": "F4-sintaxe-preservada",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "diretiva"
+    },
+    {
+      "id": "F4-sintaxe-preservada",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "comentario"
+    },
+    {
+      "id": "F4-sintaxe-preservada",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "frontmatter+diretiva+comentario"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "ascii simples",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "acentuação",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "aspas duplas",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "aspas simples",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "hash",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "ponto e vírgula",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "colchetes",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "parênteses",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "pipe",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "seta literal",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "tag html",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "e comercial",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "emoji",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "cirílico",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "CJK",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "árabe (RTL)",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "matemático",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "quebra de linha",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "espaços repetidos",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "espaço nas bordas",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "tabulação",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "controle NUL",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "string vazia",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "só espaço",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "barra invertida",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "alvo": "crase",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "82 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "332 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "272 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "324 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "261 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "220 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "100 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "192 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "345 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "757 prefixos"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida-isolada",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "nós preservados: 100% · sinalizou 5/5"
+    }
+  ],
+  "charset": [
+    {
+      "nome": "ascii simples",
+      "texto": "Passo um",
+      "bruto": "\"Passo um\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "acentuação",
+      "texto": "validação de inscrição",
+      "bruto": "\"validação de inscrição\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "aspas duplas",
+      "texto": "ele disse \"vai\" e foi",
+      "bruto": "\"ele disse #quot;vai#quot; e foi\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "aspas simples",
+      "texto": "o 'quase' pronto",
+      "bruto": "\"o 'quase' pronto\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "hash",
+      "texto": "ticket #4021",
+      "bruto": "\"ticket #35;4021\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "ponto e vírgula",
+      "texto": "a; b; c",
+      "bruto": "\"a; b; c\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "colchetes",
+      "texto": "array[0] e obj{k}",
+      "bruto": "\"array[0] e obj{k}\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "parênteses",
+      "texto": "chamar(x, y)",
+      "bruto": "\"chamar(x, y)\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "pipe",
+      "texto": "a | b | c",
+      "bruto": "\"a | b | c\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "seta literal",
+      "texto": "entrada --> saída",
+      "bruto": "\"entrada --#62; saída\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "tag html",
+      "texto": "usar <br/> no texto",
+      "bruto": "\"usar #60;br/#62; no texto\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "e comercial",
+      "texto": "P&D e M&A",
+      "bruto": "\"P#38;D e M#38;A\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "emoji",
+      "texto": "lançar 🚀 com ✅",
+      "bruto": "\"lançar 🚀 com ✅\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "cirílico",
+      "texto": "Привет мир",
+      "bruto": "\"Привет мир\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "CJK",
+      "texto": "図の説明",
+      "bruto": "\"図の説明\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "árabe (RTL)",
+      "texto": "مرحبا بالعالم",
+      "bruto": "\"مرحبا بالعالم\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "matemático",
+      "texto": "x ≤ y ∧ z ≥ 0",
+      "bruto": "\"x ≤ y ∧ z ≥ 0\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "quebra de linha",
+      "texto": "primeira linha\nsegunda linha",
+      "bruto": "\"primeira linha<br/>segunda linha\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "espaços repetidos",
+      "texto": "a  b   c",
+      "bruto": "\"a  b   c\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": true,
+      "alertas": [
+        "espaco-colapsado"
+      ]
+    },
+    {
+      "nome": "espaço nas bordas",
+      "texto": "  centro  ",
+      "bruto": "\"  centro  \"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": true,
+      "alertas": [
+        "espaco-colapsado"
+      ]
+    },
+    {
+      "nome": "tabulação",
+      "texto": "col1\tcol2",
+      "bruto": "\"col1#9;col2\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": true,
+      "alertas": [
+        "tabulacao"
+      ]
+    },
+    {
+      "nome": "controle NUL",
+      "texto": "antes\u0000depois",
+      "bruto": "\"antes#0;depois\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": true,
+      "alertas": [
+        "caractere-de-controle"
+      ]
+    },
+    {
+      "nome": "string vazia",
+      "texto": "",
+      "bruto": "\"\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "só espaço",
+      "texto": " ",
+      "bruto": "\" \"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": true,
+      "alertas": [
+        "espaco-colapsado"
+      ]
+    },
+    {
+      "nome": "barra invertida",
+      "texto": "caminho\\para\\arquivo",
+      "bruto": "\"caminho\\para\\arquivo\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    },
+    {
+      "nome": "crase",
+      "texto": "use `código` aqui",
+      "bruto": "\"use `código` aqui\"",
+      "identico": true,
+      "identicoDoc": true,
+      "marcado": false,
+      "alertas": []
+    }
+  ]
+}

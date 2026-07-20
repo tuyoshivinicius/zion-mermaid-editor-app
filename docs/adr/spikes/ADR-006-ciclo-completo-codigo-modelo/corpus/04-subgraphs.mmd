@@ -1,0 +1,14 @@
+flowchart TB
+  entrada[Requisição] --> api
+  subgraph borda[Camada de borda]
+    direction LR
+    api[Gateway] --> auth[Autenticação]
+  end
+  subgraph nucleo[Núcleo]
+    subgraph dados[Persistência]
+      banco[(Banco)]
+    end
+    servico[Serviço de domínio] --> banco
+  end
+  auth --> servico
+  servico --> saida[Resposta]
