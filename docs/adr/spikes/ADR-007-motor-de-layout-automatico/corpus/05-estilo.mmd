@@ -1,0 +1,8 @@
+flowchart LR
+  a[Normal] --> b[Destacado]
+  b --> c[Alerta]:::perigo
+  classDef destaque fill:#dff,stroke:#079,stroke-width:2px
+  classDef perigo fill:#fdd,stroke:#c00
+  class b destaque
+  style a fill:#eee,stroke:#999
+  linkStyle 0 stroke:#f60,stroke-width:3px

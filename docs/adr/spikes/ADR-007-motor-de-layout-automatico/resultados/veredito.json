@@ -1,0 +1,425 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "concordancia": [
+    {
+      "documento": "01-minimo.mmd",
+      "comuns": 4,
+      "pares": 6,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "02-formas.mmd",
+      "comuns": 14,
+      "pares": 91,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "03-links.mmd",
+      "comuns": 17,
+      "pares": 136,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "04-subgraphs.mmd",
+      "comuns": 6,
+      "pares": 15,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "05-estilo.mmd",
+      "comuns": 3,
+      "pares": 3,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "06-frontmatter.mmd",
+      "comuns": 4,
+      "pares": 6,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "07-diretiva.mmd",
+      "comuns": 2,
+      "pares": 1,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "08-comentarios.mmd",
+      "comuns": 3,
+      "pares": 3,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "09-rotulos-hostis.mmd",
+      "comuns": 9,
+      "pares": 36,
+      "discordantes": 0,
+      "taxa": 0
+    },
+    {
+      "documento": "10-arquitetura-real.mmd",
+      "comuns": 12,
+      "pares": 66,
+      "discordantes": 23,
+      "taxa": 0.35
+    }
+  ],
+  "orientacoes": [
+    {
+      "orientacao": "TB",
+      "comuns": 12,
+      "taxa": 0
+    },
+    {
+      "orientacao": "BT",
+      "comuns": 12,
+      "taxa": 0
+    },
+    {
+      "orientacao": "LR",
+      "comuns": 12,
+      "taxa": 0
+    },
+    {
+      "orientacao": "RL",
+      "comuns": 12,
+      "taxa": 0
+    }
+  ],
+  "latencia": {
+    "pequeno · layout global": {
+      "cenario": "pequeno · layout global",
+      "query": "n=0&motor=dagre",
+      "nos": 5,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 4.6,
+        "p95": 12.9
+      },
+      "layout": {
+        "mediana": 0.9,
+        "p95": 2.1
+      },
+      "parse": {
+        "mediana": 0.1
+      },
+      "projecao": {
+        "mediana": 0
+      }
+    },
+    "100/120 · layout global": {
+      "cenario": "100/120 · layout global",
+      "query": "n=100&arestas=120&motor=dagre",
+      "nos": 101,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 30.5,
+        "p95": 71.9
+      },
+      "layout": {
+        "mediana": 23.6,
+        "p95": 38.6
+      },
+      "parse": {
+        "mediana": 1.1
+      },
+      "projecao": {
+        "mediana": 0.2
+      }
+    },
+    "envelope 400/500 · layout global": {
+      "cenario": "envelope 400/500 · layout global",
+      "query": "n=400&arestas=500&motor=dagre",
+      "nos": 401,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 131.2,
+        "p95": 246.4
+      },
+      "layout": {
+        "mediana": 108.4,
+        "p95": 127.9
+      },
+      "parse": {
+        "mediana": 7.3
+      },
+      "projecao": {
+        "mediana": 0.4
+      }
+    },
+    "envelope 400/500 · colocação local": {
+      "cenario": "envelope 400/500 · colocação local",
+      "query": "n=400&arestas=500&motor=local",
+      "nos": 401,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 21.5,
+        "p95": 35.7
+      },
+      "layout": {
+        "mediana": 1.1,
+        "p95": 2.3
+      },
+      "parse": {
+        "mediana": 5.8
+      },
+      "projecao": {
+        "mediana": 0.4
+      }
+    },
+    "denso 800/1000 · layout global": {
+      "cenario": "denso 800/1000 · layout global",
+      "query": "n=800&arestas=1000&motor=dagre",
+      "nos": 801,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 335.5,
+        "p95": 533.9
+      },
+      "layout": {
+        "mediana": 281.6,
+        "p95": 336
+      },
+      "parse": {
+        "mediana": 16
+      },
+      "projecao": {
+        "mediana": 0.9
+      }
+    }
+  },
+  "ciclo": [
+    {
+      "motor": "layout global",
+      "nosCriados": 10,
+      "total": {
+        "mediana": 153.1,
+        "p95": 238.6
+      },
+      "layout": {
+        "mediana": 110.3
+      }
+    },
+    {
+      "motor": "colocação local",
+      "nosCriados": 10,
+      "total": {
+        "mediana": 41,
+        "p95": 74.8
+      },
+      "layout": {
+        "mediana": 1
+      }
+    }
+  ],
+  "mermaid": "11.16.0",
+  "sondaAgrupamento": [
+    {
+      "documento": "04-subgraphs.mmd",
+      "comAgrupamento": 0,
+      "semAgrupamento": 0
+    },
+    {
+      "documento": "10-arquitetura-real.mmd",
+      "comAgrupamento": 0.35,
+      "semAgrupamento": 0
+    }
+  ],
+  "hibrido": {
+    "antes": 0,
+    "depois": 9
+  },
+  "checagens": [
+    {
+      "id": "B1-concordancia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "TD · 4 nós · 0/6 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "LR · 14 nós · 0/91 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "TD · 17 nós · 0/136 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "TB · 6 nós · 0/15 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "LR · 3 nós · 0/3 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "TD · 4 nós · 0/6 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "LR · 2 nós · 0/1 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "TD · 3 nós · 0/3 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-concordancia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "TD · 9 nós · 0/36 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B1-divergencia-por-agrupamento",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "LR · 12 nós · 23/66 pares fora de ordem (35%)"
+    },
+    {
+      "id": "B1b-sonda-agrupamento",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "com agrupamento 0% fora de ordem · sem agrupamento 0%"
+    },
+    {
+      "id": "B1b-sonda-agrupamento",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "com agrupamento 35% fora de ordem · sem agrupamento 0%"
+    },
+    {
+      "id": "B2-orientacao",
+      "alvo": "TB",
+      "passou": true,
+      "detalhe": "0/66 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B2-orientacao",
+      "alvo": "BT",
+      "passou": true,
+      "detalhe": "0/66 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B2-orientacao",
+      "alvo": "LR",
+      "passou": true,
+      "detalhe": "0/66 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B2-orientacao",
+      "alvo": "RL",
+      "passou": true,
+      "detalhe": "0/66 pares fora de ordem (0%)"
+    },
+    {
+      "id": "B3-edicao-chegou",
+      "alvo": "pequeno · layout global",
+      "passou": true,
+      "detalhe": "5 nós · 12 teclas"
+    },
+    {
+      "id": "B3-tecla-na-barra-50ms",
+      "alvo": "pequeno · layout global",
+      "passou": true,
+      "detalhe": "total 4.6ms (p95 12.9) · layout 0.9ms · parse 0.1ms · projeção 0ms"
+    },
+    {
+      "id": "B3-edicao-chegou",
+      "alvo": "100/120 · layout global",
+      "passou": true,
+      "detalhe": "101 nós · 12 teclas"
+    },
+    {
+      "id": "B3-tecla-na-barra-50ms",
+      "alvo": "100/120 · layout global",
+      "passou": true,
+      "detalhe": "total 30.5ms (p95 71.9) · layout 23.6ms · parse 1.1ms · projeção 0.2ms"
+    },
+    {
+      "id": "B3-edicao-chegou",
+      "alvo": "envelope 400/500 · layout global",
+      "passou": true,
+      "detalhe": "401 nós · 12 teclas"
+    },
+    {
+      "id": "B3-global-estoura-a-barra",
+      "alvo": "envelope 400/500 · layout global",
+      "passou": true,
+      "detalhe": "total 131.2ms (p95 246.4) · layout 108.4ms · parse 7.3ms · projeção 0.4ms"
+    },
+    {
+      "id": "B3-edicao-chegou",
+      "alvo": "envelope 400/500 · colocação local",
+      "passou": true,
+      "detalhe": "401 nós · 12 teclas"
+    },
+    {
+      "id": "B3-tecla-na-barra-50ms",
+      "alvo": "envelope 400/500 · colocação local",
+      "passou": true,
+      "detalhe": "total 21.5ms (p95 35.7) · layout 1.1ms · parse 5.8ms · projeção 0.4ms"
+    },
+    {
+      "id": "B3-edicao-chegou",
+      "alvo": "denso 800/1000 · layout global",
+      "passou": true,
+      "detalhe": "801 nós · 12 teclas"
+    },
+    {
+      "id": "B3-global-estoura-a-barra",
+      "alvo": "denso 800/1000 · layout global",
+      "passou": true,
+      "detalhe": "total 335.5ms (p95 533.9) · layout 281.6ms · parse 16ms · projeção 0.9ms"
+    },
+    {
+      "id": "B4-global-estoura-a-barra",
+      "alvo": "layout global",
+      "passou": true,
+      "detalhe": "criar 1 nó: 153.1ms (p95 238.6) · layout 110.3ms"
+    },
+    {
+      "id": "B4-no-por-teclado-50ms",
+      "alvo": "colocação local",
+      "passou": true,
+      "detalhe": "criar 1 nó: 41ms (p95 74.8) · layout 1ms"
+    },
+    {
+      "id": "B5-hibrido-colide",
+      "alvo": "híbrido @ 100 nós",
+      "passou": true,
+      "detalhe": "0 → 9 pares de caixas sobrepostas"
+    }
+  ],
+  "placar": {
+    "total": 29,
+    "passaram": 29
+  }
+}

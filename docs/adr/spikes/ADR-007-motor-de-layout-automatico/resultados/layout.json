@@ -1,0 +1,506 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "motores": {
+    "@dagrejs/dagre": "1.1.8",
+    "elkjs": "0.9.3",
+    "mermaid": "11.16.0",
+    "@xyflow/react": "12.11.2"
+  },
+  "custo": [
+    {
+      "cenario": "realista (corpus 10)",
+      "nos": 12,
+      "conexoes": 12,
+      "dagre": {
+        "mediana": 4.5,
+        "p95": 11.7
+      },
+      "elk": {
+        "mediana": 13.5,
+        "p95": 21.3
+      }
+    },
+    {
+      "cenario": "50 nós / 60 conexões",
+      "nos": 50,
+      "conexoes": 60,
+      "dagre": {
+        "mediana": 22,
+        "p95": 41.2
+      },
+      "elk": {
+        "mediana": 38.3,
+        "p95": 55.3
+      }
+    },
+    {
+      "cenario": "100 nós / 120 conexões",
+      "nos": 100,
+      "conexoes": 120,
+      "dagre": {
+        "mediana": 26.9,
+        "p95": 37.2
+      },
+      "elk": {
+        "mediana": 43.9,
+        "p95": 65.8
+      }
+    },
+    {
+      "cenario": "envelope ADR-004 (400/500)",
+      "nos": 400,
+      "conexoes": 500,
+      "dagre": {
+        "mediana": 140.3,
+        "p95": 179.1
+      },
+      "elk": {
+        "mediana": 142.4,
+        "p95": 164.6
+      }
+    },
+    {
+      "cenario": "denso (800/1000)",
+      "nos": 800,
+      "conexoes": 1000,
+      "dagre": {
+        "mediana": 351.1,
+        "p95": 405.9
+      },
+      "elk": {
+        "mediana": 266.7,
+        "p95": 287.9
+      }
+    }
+  ],
+  "churn": [
+    {
+      "cenario": "realista (corpus 10)",
+      "nos": 12,
+      "dagre": {
+        "comuns": 12,
+        "movidos": 6,
+        "movidosNormalizado": 6,
+        "taxaNormalizada": 0.5,
+        "distMediaNormalizado": 27.5,
+        "distMaxNormalizado": 60,
+        "desordem": 0
+      },
+      "elk": {
+        "comuns": 12,
+        "movidos": 11,
+        "movidosNormalizado": 11,
+        "taxaNormalizada": 0.92,
+        "distMediaNormalizado": 167.4,
+        "distMaxNormalizado": 191.7,
+        "desordem": 0.02
+      },
+      "elk-interativo": {
+        "comuns": 12,
+        "movidos": 12,
+        "movidosNormalizado": 12,
+        "taxaNormalizada": 1,
+        "distMediaNormalizado": 12,
+        "distMaxNormalizado": 12,
+        "desordem": 0.02
+      },
+      "local": {
+        "comuns": 12,
+        "movidos": 0,
+        "movidosNormalizado": 0,
+        "taxaNormalizada": 0,
+        "distMediaNormalizado": 0,
+        "distMaxNormalizado": 0,
+        "desordem": 0
+      }
+    },
+    {
+      "cenario": "50 nós / 60 conexões",
+      "nos": 50,
+      "dagre": {
+        "comuns": 50,
+        "movidos": 12,
+        "movidosNormalizado": 12,
+        "taxaNormalizada": 0.24,
+        "distMediaNormalizado": 106.6,
+        "distMaxNormalizado": 480,
+        "desordem": 0.01
+      },
+      "elk": {
+        "comuns": 50,
+        "movidos": 1,
+        "movidosNormalizado": 1,
+        "taxaNormalizada": 0.02,
+        "distMediaNormalizado": 0.3,
+        "distMaxNormalizado": 14.2,
+        "desordem": 0.4
+      },
+      "elk-interativo": {
+        "comuns": 50,
+        "movidos": 48,
+        "movidosNormalizado": 48,
+        "taxaNormalizada": 0.96,
+        "distMediaNormalizado": 617.7,
+        "distMaxNormalizado": 1213.3,
+        "desordem": 0.44
+      },
+      "local": {
+        "comuns": 50,
+        "movidos": 0,
+        "movidosNormalizado": 0,
+        "taxaNormalizada": 0,
+        "distMediaNormalizado": 0,
+        "distMaxNormalizado": 0,
+        "desordem": 0
+      }
+    },
+    {
+      "cenario": "100 nós / 120 conexões",
+      "nos": 100,
+      "dagre": {
+        "comuns": 100,
+        "movidos": 82,
+        "movidosNormalizado": 82,
+        "taxaNormalizada": 0.82,
+        "distMediaNormalizado": 196.3,
+        "distMaxNormalizado": 660,
+        "desordem": 0
+      },
+      "elk": {
+        "comuns": 100,
+        "movidos": 86,
+        "movidosNormalizado": 86,
+        "taxaNormalizada": 0.86,
+        "distMediaNormalizado": 693.2,
+        "distMaxNormalizado": 2247.1,
+        "desordem": 0.34
+      },
+      "elk-interativo": {
+        "comuns": 100,
+        "movidos": 96,
+        "movidosNormalizado": 96,
+        "taxaNormalizada": 0.96,
+        "distMediaNormalizado": 948,
+        "distMaxNormalizado": 1767.7,
+        "desordem": 0.39
+      },
+      "local": {
+        "comuns": 100,
+        "movidos": 0,
+        "movidosNormalizado": 0,
+        "taxaNormalizada": 0,
+        "distMediaNormalizado": 0,
+        "distMaxNormalizado": 0,
+        "desordem": 0
+      }
+    },
+    {
+      "cenario": "envelope ADR-004 (400/500)",
+      "nos": 400,
+      "dagre": {
+        "comuns": 400,
+        "movidos": 112,
+        "movidosNormalizado": 112,
+        "taxaNormalizada": 0.28,
+        "distMediaNormalizado": 140.1,
+        "distMaxNormalizado": 4080,
+        "desordem": 0
+      },
+      "elk": {
+        "comuns": 400,
+        "movidos": 316,
+        "movidosNormalizado": 316,
+        "taxaNormalizada": 0.79,
+        "distMediaNormalizado": 697.3,
+        "distMaxNormalizado": 4431,
+        "desordem": 0.39
+      },
+      "elk-interativo": {
+        "comuns": 400,
+        "movidos": 400,
+        "movidosNormalizado": 400,
+        "taxaNormalizada": 1,
+        "distMediaNormalizado": 1834.4,
+        "distMaxNormalizado": 4170.7,
+        "desordem": 0.45
+      },
+      "local": {
+        "comuns": 400,
+        "movidos": 0,
+        "movidosNormalizado": 0,
+        "taxaNormalizada": 0,
+        "distMediaNormalizado": 0,
+        "distMaxNormalizado": 0,
+        "desordem": 0
+      }
+    }
+  ],
+  "manual": [
+    {
+      "cenario": "realista (corpus 10)",
+      "movidosPelaPessoa": 2,
+      "colisoesManual": 1,
+      "dagre": {
+        "sobreviveram": 0,
+        "de": 2,
+        "desvioMedio": 195.5,
+        "colisoes": 0,
+        "discordanciaDeOrdem": 0.02
+      },
+      "elk-interativo": {
+        "sobreviveram": 0,
+        "de": 2,
+        "desvioMedio": 149.5,
+        "colisoes": 0,
+        "discordanciaDeOrdem": 0.02
+      },
+      "hibrido": {
+        "sobreviveram": 2,
+        "de": 2,
+        "desvioMedio": 0,
+        "colisoes": 1,
+        "discordanciaDeOrdem": 0
+      }
+    },
+    {
+      "cenario": "50 nós / 60 conexões",
+      "movidosPelaPessoa": 9,
+      "colisoesManual": 3,
+      "dagre": {
+        "sobreviveram": 0,
+        "de": 9,
+        "desvioMedio": 217.1,
+        "colisoes": 0,
+        "discordanciaDeOrdem": 0.03
+      },
+      "elk-interativo": {
+        "sobreviveram": 0,
+        "de": 9,
+        "desvioMedio": 1396.8,
+        "colisoes": 0,
+        "discordanciaDeOrdem": 0.29
+      },
+      "hibrido": {
+        "sobreviveram": 9,
+        "de": 9,
+        "desvioMedio": 0,
+        "colisoes": 3,
+        "discordanciaDeOrdem": 0
+      }
+    },
+    {
+      "cenario": "100 nós / 120 conexões",
+      "movidosPelaPessoa": 13,
+      "colisoesManual": 9,
+      "dagre": {
+        "sobreviveram": 0,
+        "de": 13,
+        "desvioMedio": 243.6,
+        "colisoes": 0,
+        "discordanciaDeOrdem": 0.04
+      },
+      "elk-interativo": {
+        "sobreviveram": 0,
+        "de": 13,
+        "desvioMedio": 2228,
+        "colisoes": 0,
+        "discordanciaDeOrdem": 0.33
+      },
+      "hibrido": {
+        "sobreviveram": 13,
+        "de": 13,
+        "desvioMedio": 0,
+        "colisoes": 9,
+        "discordanciaDeOrdem": 0
+      }
+    }
+  ],
+  "ciclo": [
+    {
+      "cenario": "realista (corpus 10)",
+      "globalMediana": 6.6,
+      "globalP95": 9.7,
+      "globalTotal": 132.4,
+      "localMediana": 0.01,
+      "localP95": 0.02,
+      "localTotal": 0.15
+    },
+    {
+      "cenario": "50 nós / 60 conexões",
+      "globalMediana": 19.6,
+      "globalP95": 23.6,
+      "globalTotal": 403,
+      "localMediana": 0.01,
+      "localP95": 0.03,
+      "localTotal": 0.28
+    },
+    {
+      "cenario": "100 nós / 120 conexões",
+      "globalMediana": 31.9,
+      "globalP95": 35.9,
+      "globalTotal": 640.6,
+      "localMediana": 0.02,
+      "localP95": 0.06,
+      "localTotal": 0.44
+    },
+    {
+      "cenario": "envelope ADR-004 (400/500)",
+      "globalMediana": 148.7,
+      "globalP95": 176.5,
+      "globalTotal": 3010,
+      "localMediana": 0.06,
+      "localP95": 0.07,
+      "localTotal": 1.5
+    }
+  ],
+  "checagens": [
+    {
+      "id": "N1-global-estoura-a-tecla",
+      "alvo": "dagre @ 400/500",
+      "passou": true,
+      "detalhe": "140.3ms = 2.8× a barra de 50ms do ADR-004"
+    },
+    {
+      "id": "N1-global-estoura-a-tecla",
+      "alvo": "elk @ 400/500",
+      "passou": true,
+      "detalhe": "142.4ms = 2.8× a barra de 50ms do ADR-004"
+    },
+    {
+      "id": "N1-global-cabe-no-pequeno",
+      "alvo": "dagre @ realista (13 nós)",
+      "passou": true,
+      "detalhe": "4.5ms — o custo é do tamanho, não do motor"
+    },
+    {
+      "id": "N2-dagre-deterministico",
+      "alvo": "realista (corpus 10)",
+      "passou": true,
+      "detalhe": "posições idênticas"
+    },
+    {
+      "id": "N2-elk-deterministico",
+      "alvo": "realista (corpus 10)",
+      "passou": true,
+      "detalhe": "posições idênticas"
+    },
+    {
+      "id": "N2-dagre-deterministico",
+      "alvo": "50 nós / 60 conexões",
+      "passou": true,
+      "detalhe": "posições idênticas"
+    },
+    {
+      "id": "N2-elk-deterministico",
+      "alvo": "50 nós / 60 conexões",
+      "passou": true,
+      "detalhe": "posições idênticas"
+    },
+    {
+      "id": "N2-dagre-deterministico",
+      "alvo": "100 nós / 120 conexões",
+      "passou": true,
+      "detalhe": "posições idênticas"
+    },
+    {
+      "id": "N2-elk-deterministico",
+      "alvo": "100 nós / 120 conexões",
+      "passou": true,
+      "detalhe": "posições idênticas"
+    },
+    {
+      "id": "N3-orientacao-dagre",
+      "alvo": "TB",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-elk",
+      "alvo": "TB",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-dagre",
+      "alvo": "BT",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-elk",
+      "alvo": "BT",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-dagre",
+      "alvo": "LR",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-elk",
+      "alvo": "LR",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-dagre",
+      "alvo": "RL",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N3-orientacao-elk",
+      "alvo": "RL",
+      "passou": true,
+      "detalhe": "12/12 arestas na direção (100%)"
+    },
+    {
+      "id": "N4-local-zero-churn",
+      "alvo": "colocação local @ 400/500",
+      "passou": true,
+      "detalhe": "0 nós existentes movidos"
+    },
+    {
+      "id": "N4-global-tem-churn",
+      "alvo": "layout global @ 400/500",
+      "passou": true,
+      "detalhe": "dagre move 112/400 · elk move 316/400"
+    },
+    {
+      "id": "N5-global-descarta-o-manual",
+      "alvo": "dagre @ 100 nós",
+      "passou": true,
+      "detalhe": "0/13 nós ficaram onde a pessoa largou (desvio médio 243.6px)"
+    },
+    {
+      "id": "N5-interativo-tambem-descarta",
+      "alvo": "elk-interativo @ 100 nós",
+      "passou": true,
+      "detalhe": "0/13 sobreviveram — o modo interativo preserva ordem, não coordenada"
+    },
+    {
+      "id": "N5-hibrido-preserva-com-colisao",
+      "alvo": "híbrido @ 100 nós",
+      "passou": true,
+      "detalhe": "13/13 preservados, ao preço de 9 pares de caixas sobrepostas"
+    },
+    {
+      "id": "N6-local-cabe-na-tecla",
+      "alvo": "colocação local @ 400/500",
+      "passou": true,
+      "detalhe": "p95 0.07ms por nó criado"
+    },
+    {
+      "id": "N6-global-por-no",
+      "alvo": "layout global @ 400/500",
+      "passou": true,
+      "detalhe": "148.7ms por nó criado — 9.6× a tecla inteira que o ADR-006 mediu (15,5ms)"
+    }
+  ],
+  "placar": {
+    "total": 24,
+    "passaram": 24
+  }
+}
