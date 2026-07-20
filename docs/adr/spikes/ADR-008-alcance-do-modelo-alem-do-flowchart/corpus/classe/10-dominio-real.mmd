@@ -1,0 +1,51 @@
+classDiagram
+  direction LR
+  class Cliente {
+    +String cpf
+    +String nome
+    +cadastrar() bool
+  }
+  class Pedido {
+    +String numero
+    -Date criadoEm
+    +StatusPedido status
+    +confirmar() bool
+    +cancelar() bool
+    +total() float
+  }
+  class ItemPedido {
+    +int quantidade
+    +float precoUnitario
+    +subtotal() float
+  }
+  class Produto {
+    +String sku
+    +String descricao
+    +float preco
+  }
+  class Pagamento {
+    <<abstract>>
+    +float valor
+    +processar()*
+  }
+  class Cartao {
+    +String bandeira
+    +processar() bool
+  }
+  class Boleto {
+    +String linhaDigitavel
+    +processar() bool
+  }
+  class StatusPedido {
+    <<enumeration>>
+    RASCUNHO
+    CONFIRMADO
+    CANCELADO
+  }
+  Cliente "1" --> "*" Pedido : faz
+  Pedido "1" *-- "1..*" ItemPedido : contem
+  ItemPedido "*" --> "1" Produto : referencia
+  Pedido "1" --> "0..1" Pagamento : quitado por
+  Pagamento <|-- Cartao
+  Pagamento <|-- Boleto
+  Pedido ..> StatusPedido : usa

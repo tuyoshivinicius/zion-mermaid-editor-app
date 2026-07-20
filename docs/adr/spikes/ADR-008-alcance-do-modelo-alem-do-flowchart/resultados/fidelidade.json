@@ -1,0 +1,2288 @@
+{
+  "gerado": "verify/fidelidade.mjs",
+  "corpora": {
+    "flowchart": [
+      "01-minimo.mmd",
+      "02-formas.mmd",
+      "03-links.mmd",
+      "04-subgraphs.mmd",
+      "05-estilo.mmd",
+      "06-frontmatter.mmd",
+      "07-diretiva.mmd",
+      "08-comentarios.mmd",
+      "09-rotulos-hostis.mmd",
+      "10-arquitetura-real.mmd"
+    ],
+    "classe": [
+      "01-minimo.mmd",
+      "02-membros.mmd",
+      "03-relacoes.mmd",
+      "04-cardinalidade.mmd",
+      "05-anotacoes.mmd",
+      "06-namespace.mmd",
+      "07-generico.mmd",
+      "08-preservado.mmd",
+      "09-rotulos-hostis.mmd",
+      "10-dominio-real.mmd"
+    ],
+    "sequencia": [
+      "01-minimo.mmd",
+      "02-setas.mmd",
+      "03-ativacao.mmd",
+      "04-blocos.mmd",
+      "05-par-critical.mmd",
+      "06-notas.mmd",
+      "07-alias-autonumber.mmd",
+      "08-preservado.mmd",
+      "09-rotulos-hostis.mmd",
+      "10-fluxo-real.mmd"
+    ]
+  },
+  "placar": {
+    "passaram": 237,
+    "total": 237
+  },
+  "calibragem": {
+    "nucleo": {
+      "total": 460,
+      "porArquivo": {
+        "nucleo/modelo.js": 142,
+        "nucleo/rotulo.js": 173,
+        "registro.js": 145
+      }
+    },
+    "flowchart": {
+      "total": 726,
+      "porArquivo": {
+        "tipos/flowchart/modelo.js": 126,
+        "tipos/flowchart/parser.js": 485,
+        "tipos/flowchart/serializar.js": 115
+      }
+    },
+    "classe": {
+      "total": 631,
+      "porArquivo": {
+        "tipos/classe/modelo.js": 118,
+        "tipos/classe/parser.js": 401,
+        "tipos/classe/serializar.js": 112
+      }
+    },
+    "sequencia": {
+      "total": 482,
+      "porArquivo": {
+        "tipos/sequencia/modelo.js": 144,
+        "tipos/sequencia/parser.js": 270,
+        "tipos/sequencia/serializar.js": 68
+      }
+    }
+  },
+  "checagens": [
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F1-parser-aceita",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F2-roundtrip",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F3-ponto-fixo",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "F4-preservado",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "frontmatter"
+    },
+    {
+      "id": "F4-preservado",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "diretiva"
+    },
+    {
+      "id": "F4-preservado",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "comentario"
+    },
+    {
+      "id": "F4-preservado",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "frontmatter+diretiva+comentario"
+    },
+    {
+      "id": "F4-preservado",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "frontmatter+diretiva+comentario"
+    },
+    {
+      "id": "F4-preservado",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "frontmatter+diretiva+comentario"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "ascii simples",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "acentuação",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "aspas duplas",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "hash",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "ponto e vírgula",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "colchetes",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "parênteses",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "pipe",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "seta literal",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "tag html",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "e comercial",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "dois pontos",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "emoji",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "cirílico",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "CJK",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "árabe (RTL)",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "matemático",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "quebra de linha",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "espaços repetidos",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "espaço nas bordas",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "tabulação",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "controle NUL",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "string vazia",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "só espaço",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "barra invertida",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "flowchart",
+      "alvo": "crase",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "ascii simples",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "acentuação",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "aspas duplas",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "hash",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "ponto e vírgula",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "colchetes",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "parênteses",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "pipe",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "seta literal",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "tag html",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "e comercial",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "dois pontos",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "emoji",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "cirílico",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "CJK",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "árabe (RTL)",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "matemático",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "quebra de linha",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "espaços repetidos",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "espaço nas bordas",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "tabulação",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "controle NUL",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "string vazia",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "só espaço",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "barra invertida",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "classe",
+      "alvo": "crase",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "ascii simples",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "acentuação",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "aspas duplas",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "hash",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "ponto e vírgula",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "colchetes",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "parênteses",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "pipe",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "seta literal",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "tag html",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "e comercial",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "dois pontos",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "emoji",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "cirílico",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "CJK",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "árabe (RTL)",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "matemático",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "quebra de linha",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "espaços repetidos",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "espaço nas bordas",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "tabulação",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "controle NUL",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "string vazia",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "só espaço",
+      "passou": true,
+      "detalhe": "idêntico + MARCADO"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "barra invertida",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F5-charset",
+      "familia": "sequencia",
+      "alvo": "crase",
+      "passou": true,
+      "detalhe": "idêntico"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "82 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "332 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "272 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "324 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "261 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "220 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "100 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "192 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "345 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "757 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "64 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "210 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "172 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "172 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "207 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "138 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "142 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "196 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "167 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "971 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "102 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "263 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "221 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "238 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "285 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "201 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "212 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "213 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "152 prefixos"
+    },
+    {
+      "id": "F6a-prefixo-nao-quebra",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "636 prefixos"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F6b-linha-invalida",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "nós preservados 100% · sinalizou 5/5"
+    },
+    {
+      "id": "F7-ordem-do-agregado",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "permutar NÃO muda o modelo — a ordem é ruído, o núcleo pode ordenar (12 itens)"
+    },
+    {
+      "id": "F7-ordem-do-agregado",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "permutar NÃO muda o modelo — a ordem é ruído, o núcleo pode ordenar (7 itens)"
+    },
+    {
+      "id": "F7-ordem-do-agregado",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "permutar MUDA o modelo — a ordem é semântica, o núcleo não pode ordenar (8 itens)"
+    }
+  ],
+  "charset": [
+    {
+      "familia": "flowchart",
+      "nome": "ascii simples",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "acentuação",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "aspas duplas",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "hash",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "ponto e vírgula",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "colchetes",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "parênteses",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "pipe",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "seta literal",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "tag html",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "e comercial",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "dois pontos",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "emoji",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "cirílico",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "CJK",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "árabe (RTL)",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "matemático",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "quebra de linha",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "espaços repetidos",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "flowchart",
+      "nome": "espaço nas bordas",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "flowchart",
+      "nome": "tabulação",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "flowchart",
+      "nome": "controle NUL",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "flowchart",
+      "nome": "string vazia",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "só espaço",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "flowchart",
+      "nome": "barra invertida",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "flowchart",
+      "nome": "crase",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "ascii simples",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "acentuação",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "aspas duplas",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "hash",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "ponto e vírgula",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "colchetes",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "parênteses",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "pipe",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "seta literal",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "tag html",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "e comercial",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "dois pontos",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "emoji",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "cirílico",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "CJK",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "árabe (RTL)",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "matemático",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "quebra de linha",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "espaços repetidos",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "classe",
+      "nome": "espaço nas bordas",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "classe",
+      "nome": "tabulação",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "classe",
+      "nome": "controle NUL",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "classe",
+      "nome": "string vazia",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "só espaço",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "classe",
+      "nome": "barra invertida",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "classe",
+      "nome": "crase",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "ascii simples",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "acentuação",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "aspas duplas",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "hash",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "ponto e vírgula",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "colchetes",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "parênteses",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "pipe",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "seta literal",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "tag html",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "e comercial",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "dois pontos",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "emoji",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "cirílico",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "CJK",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "árabe (RTL)",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "matemático",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "quebra de linha",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "espaços repetidos",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "sequencia",
+      "nome": "espaço nas bordas",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "sequencia",
+      "nome": "tabulação",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "sequencia",
+      "nome": "controle NUL",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "sequencia",
+      "nome": "string vazia",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "só espaço",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": true
+    },
+    {
+      "familia": "sequencia",
+      "nome": "barra invertida",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    },
+    {
+      "familia": "sequencia",
+      "nome": "crase",
+      "identicoDireto": true,
+      "identicoDoc": true,
+      "marcado": false
+    }
+  ]
+}

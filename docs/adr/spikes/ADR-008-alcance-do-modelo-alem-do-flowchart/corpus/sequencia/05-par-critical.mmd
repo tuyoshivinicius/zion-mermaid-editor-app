@@ -1,0 +1,17 @@
+sequenceDiagram
+  participant A
+  participant B
+  participant C
+  par para B
+    A->>B: mensagem b
+  and para C
+    A->>C: mensagem c
+  end
+  critical estabelecer conexao
+    A->>B: conectar
+  option timeout
+    A->>B: repetir
+  end
+  break quando falha
+    A->>C: registrar erro
+  end

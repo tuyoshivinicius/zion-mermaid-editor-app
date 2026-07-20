@@ -1,0 +1,1888 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "amostraDigitacao": [
+    "01",
+    "05",
+    "09",
+    "10"
+  ],
+  "oraculo": {
+    "corpus": [
+      {
+        "familia": "classe",
+        "nome": "01-minimo.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class Pedido\n  class Cliente\n  Cliente --> Pedido"
+      },
+      {
+        "familia": "classe",
+        "nome": "02-membros.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class Pedido {\n    +String identificador\n    -Date criadoEm\n    #int tentativas\n    ~String rascunho\n    +confirmar() bool\n    +total() float\n    +calcular()*\n    +contador$ int\n  }\n  class Vazia"
+      },
+      {
+        "familia": "classe",
+        "nome": "03-relacoes.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class A\n  class B\n  class C\n  class D\n  class E\n  class F\n  class G\n  class H\n  A <|-- B\n  A *-- C\n  A o-- D\n  A --> E\n  A -- F\n  A ..> G\n  A ..|> H\n  B .. C"
+      },
+      {
+        "familia": "classe",
+        "nome": "04-cardinalidade.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class Cliente\n  class Pedido\n  class Item\n  Cliente \"1\" --> \"*\" Pedido : faz\n  Pedido \"1\" *-- \"1..*\" Item : contem\n  Item \"0..1\" --> \"1\" Cliente : pertence a"
+      },
+      {
+        "familia": "classe",
+        "nome": "05-anotacoes.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class Pagavel {\n    <<interface>>\n    +pagar() bool\n  }\n  class Status {\n    <<enumeration>>\n    ABERTO\n    FECHADO\n  }\n  class Base {\n    <<abstract>>\n    +executar()*\n  }\n  Pagavel <|.. Base"
+      },
+      {
+        "familia": "classe",
+        "nome": "06-namespace.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  namespace Vendas {\n    class Pedido {\n      +String id\n    }\n    class Cupom\n  }\n  class Cliente\n  Cliente --> Pedido : faz"
+      },
+      {
+        "familia": "classe",
+        "nome": "07-generico.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class Lista~T~ {\n    +add(T item) bool\n    +size() int\n  }\n  class Repositorio~Pedido~\n  Repositorio --> Lista : usa"
+      },
+      {
+        "familia": "classe",
+        "nome": "08-preservado.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "---\ntitle: Modelo de vendas\n---\n%%{init: {\"theme\": \"neutral\"}}%%\nclassDiagram\n  %% o núcleo do domínio\n  direction LR\n  class Pedido {\n    +String id\n  }\n  class Cliente\n  Cliente --> Pedido : faz"
+      },
+      {
+        "familia": "classe",
+        "nome": "09-rotulos-hostis.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  class Nota\n  class Alvo\n  class Simples\n  Nota --> Alvo : ticket #35;4021\n  Simples --> Alvo : a \"b\" c\n  note for Nota \"texto de nota simples\""
+      },
+      {
+        "familia": "classe",
+        "nome": "10-dominio-real.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "classDiagram\n  direction LR\n  class Cliente {\n    +String cpf\n    +String nome\n    +cadastrar() bool\n  }\n  class Pedido {\n    +String numero\n    -Date criadoEm\n    +StatusPedido status\n    +confirmar() bool\n    +cancelar() bool\n    +total() float\n  }\n  class ItemPedido {\n    +int quantidade\n    +float precoUnitario\n    +subtotal() float\n  }\n  class Produto {\n    +String sku\n    +String descricao\n    +float preco\n  }\n  class Pagamento {\n    <<abstract>>\n    +float valor\n    +processar()*\n  }\n  class Cartao {\n    +String bandeira\n    +processar() bool\n  }\n  class Boleto {\n    +String linhaDigitavel\n    +processar() bool\n  }\n  class StatusPedido {\n    <<enumeration>>\n    RASCUNHO\n    CONFIRMADO\n    CANCELADO\n  }\n  Cliente \"1\" --> \"*\" Pedido : faz\n  Pedido \"1\" *-- \"1..*\" ItemPedido : contem\n  ItemPedido \"*\" --> \"1\" Produto : referencia\n  Pedido \"1\" --> \"0..1\" Pagamento : quitado por\n  Pagamento <|-- Cartao\n  Pagamento <|-- Boleto\n  Pedido ..> StatusPedido : usa"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "01-minimo.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart TD\n  A[\"Início\"]\n  B{\"Decisão\"}\n  C[\"Segue\"]\n  D[\"Para\"]\n  A --> B\n  B -->|\"sim\"| C\n  B -->|\"não\"| D"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "02-formas.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart LR\n  a[\"Retângulo\"]\n  b(\"Arredondado\")\n  c([\"Estádio\"])\n  d[[\"Subrotina\"]]\n  e[(\"Cilindro\")]\n  f((\"Círculo\"))\n  g>\"Assimétrico\"]\n  h{\"Losango\"}\n  i{{\"Hexágono\"}}\n  j[/\"Paralelogramo\"/]\n  k[\\\"Paralelogramo alt\"\\]\n  l[/\"Trapézio\"\\]\n  m[\\\"Trapézio alt\"/]\n  n(((\"Círculo duplo\")))\n  a --> b\n  b --> c\n  c --> d\n  d --> e\n  e --> f\n  f --> g\n  g --> h\n  h --> i\n  i --> j\n  j --> k\n  k --> l\n  l --> m\n  m --> n"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "03-links.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart TD\n  A --> B\n  B --- C\n  C -.-> D\n  D ==> E\n  E --x F\n  F --o G\n  G <--> H\n  H ----> I\n  I -.-|\"pontilhada com rótulo\"| J\n  J ==>|\"grossa com rótulo\"| K\n  K -->|\"rótulo embutido\"| L\n  L -.->|\"dotted embutido\"| M\n  M ==>|\"thick embutido\"| N\n  N ~~~ O\n  A --> P\n  A --> Q\n  B --> P\n  B --> Q"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "04-subgraphs.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart TB\n  subgraph borda[\"Camada de borda\"]\n    direction LR\n    auth[\"Autenticação\"]\n  end\n  subgraph nucleo[\"Núcleo\"]\n    subgraph dados[\"Persistência\"]\n      banco[(\"Banco\")]\n    end\n    servico[\"Serviço de domínio\"]\n  end\n  entrada[\"Requisição\"]\n  api[\"Gateway\"]\n  saida[\"Resposta\"]\n  entrada --> api\n  api --> auth\n  servico --> banco\n  auth --> servico\n  servico --> saida"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "05-estilo.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart LR\n  a[\"Normal\"]\n  b[\"Destacado\"]\n  c[\"Alerta\"]\n  a --> b\n  b --> c\n  classDef destaque fill:#dff,stroke:#079,stroke-width:2px\n  classDef perigo fill:#fdd,stroke:#c00\n  class b destaque\n  class c perigo\n  style a fill:#eee,stroke:#999\n  linkStyle 0 stroke:#f60,stroke-width:3px"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "06-frontmatter.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "---\ntitle: Fluxo de aprovação\nconfig:\n  theme: forest\n  flowchart:\n    curve: basis\n---\nflowchart TD\n  pedido[\"Pedido recebido\"]\n  revisao{\"Revisar\"}\n  ok[\"Aprovado\"]\n  nok[\"Rejeitado\"]\n  pedido --> revisao\n  revisao -->|\"aprova\"| ok\n  revisao -->|\"rejeita\"| nok"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "07-diretiva.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "%%{init: {'theme':'dark', 'flowchart':{'htmlLabels':true}}}%%\nflowchart LR\n  x[\"Entrada\"]\n  y[\"Saída\"]\n  x --> y"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "08-comentarios.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart TD\n  %% este diagrama documenta o caminho feliz\n  %% nada relevante acontece entre estes dois passos\n  %% fim do diagrama\n  inicio[\"Início\"]\n  meio[\"Processamento\"]\n  fim[\"Fim\"]\n  inicio --> meio\n  meio --> fim"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "09-rotulos-hostis.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "flowchart TD\n  a[\"Rótulo com espaços\"]\n  b[\"aspas: #quot;citado#quot;\"]\n  c[\"hash #35; e ponto-e-vírgula ;\"]\n  d[\"quebra<br/>de linha\"]\n  e[\"acentuação: ção, ãe, ü, ñ\"]\n  f[\"emoji: 🚀 ✅ ♥\"]\n  g[\"colchete [ e chave {\"]\n  h[\"seta --#62;  literal\"]\n  i[\"cirílico: Привет · grego: Δοκιμή · CJK: 図\"]\n  a --> b\n  b --> c\n  c --> d\n  d --> e\n  e --> f\n  f --> g\n  g --> h\n  h --> i"
+      },
+      {
+        "familia": "flowchart",
+        "nome": "10-arquitetura-real.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "---\ntitle: Ingestão de eventos\n---\n%%{init: {'theme':'neutral'}}%%\nflowchart LR\n  %% caminho principal de ingestão\n  subgraph observabilidade[\"Observabilidade\"]\n    direction TB\n    metricas[\"Métricas\"]\n    painel[\"Painel\"]\n    logs[\"Registros\"]\n  end\n  produtor[\"Produtor de eventos\"]\n  fila[(\"Fila durável\")]\n  consumidor[\"Consumidor\"]\n  valida{\"Evento válido?\"}\n  enriquece[\"Enriquecer com cadastro\"]\n  morto[(\"Fila de descarte\")]\n  grava[\"Gravar no armazenamento\"]\n  notifica[/\"Notificar interessados\"/]\n  fim(((\"Concluído\")))\n  produtor --> fila\n  fila --> consumidor\n  consumidor --> valida\n  valida -->|\"sim\"| enriquece\n  valida -->|\"não\"| morto\n  enriquece --> grava\n  metricas --> painel\n  logs --> painel\n  grava --> metricas\n  consumidor -.-> logs\n  grava --> notifica\n  notifica --> fim\n  classDef infra fill:#eef,stroke:#557\n  class fila,morto infra\n  style produtor fill:#efe,stroke:#575"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "01-minimo.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant Alice\n  participant Bob\n  Alice->>Bob: Ola Bob\n  Bob-->>Alice: Ola Alice"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "02-setas.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant A\n  participant B\n  A->B: solida sem ponta\n  A-->B: tracejada sem ponta\n  A->>B: solida com seta\n  A-->>B: tracejada com seta\n  A-xB: solida com cruz\n  A--xB: tracejada com cruz\n  A-)B: solida assincrona\n  A--)B: tracejada assincrona"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "03-ativacao.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant Cliente\n  participant Servico\n  Cliente->>+Servico: requisitar\n  Servico-->>-Cliente: responder\n  Cliente->>Servico: outra\n  activate Servico\n  Servico-->>Cliente: pronto\n  deactivate Servico"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "04-blocos.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant A\n  participant B\n  loop a cada minuto\n    A->>B: ping\n    B-->>A: pong\n  end\n  alt sucesso\n    A->>B: confirmar\n  else falha\n    A->>B: cancelar\n  end\n  opt quando houver cupom\n    A->>B: aplicar cupom\n  end"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "05-par-critical.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant A\n  participant B\n  participant C\n  par para B\n    A->>B: mensagem b\n  and para C\n    A->>C: mensagem c\n  end\n  critical estabelecer conexao\n    A->>B: conectar\n  option timeout\n    A->>B: repetir\n  end\n  break quando falha\n    A->>C: registrar erro\n  end"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "06-notas.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant Alice\n  participant Bob\n  Note right of Alice: uma nota a direita\n  Note left of Bob: uma nota a esquerda\n  Alice->>Bob: mensagem\n  Note over Alice,Bob: nota sobre os dois"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "07-alias-autonumber.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  autonumber\n  actor U as Usuaria\n  participant API as Servico de API\n  participant DB as Banco\n  U->>API: enviar formulario\n  API->>DB: gravar registro\n  DB-->>API: confirmacao\n  API-->>U: recibo"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "08-preservado.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "---\ntitle: Fluxo de checkout\n---\n%%{init: {\"theme\": \"neutral\"}}%%\nsequenceDiagram\n  %% caminho feliz\n  participant Cliente\n  participant Loja\n  Cliente->>Loja: finalizar compra\n  Loja-->>Cliente: pedido confirmado"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "09-rotulos-hostis.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  participant A\n  participant B\n  A->>B: ticket #35;4021\n  A->>B: chamar(x, y)\n  A->>B: a | b | c\n  Note over A,B: nota com (parenteses)"
+      },
+      {
+        "familia": "sequencia",
+        "nome": "10-fluxo-real.mmd",
+        "originalValido": true,
+        "saidaValida": true,
+        "erroSaida": null,
+        "saida": "sequenceDiagram\n  autonumber\n  actor Marina\n  participant App as Editor\n  participant Motor as Motor de layout\n  participant Codigo as Painel de codigo\n  Marina->>+App: criar caixa\n  App->>Motor: pedir posicao\n  Motor-->>App: coordenada\n  App->>Codigo: projetar modelo\n  App-->>-Marina: codigo atualizado\n  loop para cada elemento\n    Marina->>+App: rotular\n    App->>Codigo: reprojetar\n    App-->>-Marina: prévia\n  end\n  alt sintaxe valida\n    App->>Codigo: manter previa\n  else sintaxe invalida\n    App->>Codigo: sinalizar erro\n    Note over App,Codigo: a previa nao se perde\n  end\n  opt exportar\n    Marina->>App: copiar codigo\n  end"
+      }
+    ],
+    "permutacao": [
+      {
+        "familia": "flowchart",
+        "nome": "10-arquitetura-real.mmd",
+        "originalDesenha": true,
+        "permutadoDesenha": true,
+        "mesmoSignificado": true,
+        "mesmaGeometria": false
+      },
+      {
+        "familia": "classe",
+        "nome": "10-dominio-real.mmd",
+        "originalDesenha": true,
+        "permutadoDesenha": true,
+        "mesmoSignificado": true,
+        "mesmaGeometria": false
+      },
+      {
+        "familia": "sequencia",
+        "nome": "02-setas.mmd",
+        "originalDesenha": true,
+        "permutadoDesenha": true,
+        "mesmoSignificado": false,
+        "mesmaGeometria": false
+      },
+      {
+        "familia": "sequencia",
+        "nome": "10-fluxo-real.mmd",
+        "originalDesenha": true,
+        "permutadoDesenha": false,
+        "mesmoSignificado": null,
+        "mesmaGeometria": null,
+        "erro": "Trying to inactivate an inactive participant (App)"
+      }
+    ],
+    "recuperacao": [
+      {
+        "familia": "classe",
+        "nome": "01-minimo.mmd",
+        "total": 52,
+        "mermaidOk": 42,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 34,
+          "ant": 2
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 16,
+          "ant": 2
+        }
+      },
+      {
+        "familia": "classe",
+        "nome": "05-anotacoes.mmd",
+        "total": 195,
+        "mermaidOk": 56,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 41,
+          "ant": 3
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 17,
+          "ant": 3
+        }
+      },
+      {
+        "familia": "classe",
+        "nome": "09-rotulos-hostis.mmd",
+        "total": 155,
+        "mermaidOk": 105,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 50,
+          "ant": 3
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 18,
+          "ant": 3
+        }
+      },
+      {
+        "familia": "classe",
+        "nome": "10-dominio-real.mmd",
+        "total": 959,
+        "mermaidOk": 327,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 208,
+          "ant": 8
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 104,
+          "ant": 8
+        }
+      },
+      {
+        "familia": "flowchart",
+        "nome": "01-minimo.mmd",
+        "total": 70,
+        "mermaidOk": 22,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 0,
+          "ant": 4
+        },
+        "estrito": {
+          "regressoesReais": 5,
+          "piorQueda": 1,
+          "fantasmas": 0,
+          "ant": 4
+        }
+      },
+      {
+        "familia": "flowchart",
+        "nome": "05-estilo.mmd",
+        "total": 249,
+        "mermaidOk": 175,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 37,
+          "ant": 3
+        },
+        "estrito": {
+          "regressoesReais": 5,
+          "piorQueda": 1,
+          "fantasmas": 37,
+          "ant": 3
+        }
+      },
+      {
+        "familia": "flowchart",
+        "nome": "09-rotulos-hostis.mmd",
+        "total": 333,
+        "mermaidOk": 57,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 0,
+          "ant": 9
+        },
+        "estrito": {
+          "regressoesReais": 10,
+          "piorQueda": 1,
+          "fantasmas": 0,
+          "ant": 9
+        }
+      },
+      {
+        "familia": "flowchart",
+        "nome": "10-arquitetura-real.mmd",
+        "total": 754,
+        "mermaidOk": 299,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 191,
+          "ant": 12
+        },
+        "estrito": {
+          "regressoesReais": 15,
+          "piorQueda": 1,
+          "fantasmas": 191,
+          "ant": 12
+        }
+      },
+      {
+        "familia": "sequencia",
+        "nome": "01-minimo.mmd",
+        "total": 87,
+        "mermaidOk": 40,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 40,
+          "ant": 2
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 6,
+          "ant": 2
+        }
+      },
+      {
+        "familia": "sequencia",
+        "nome": "05-par-critical.mmd",
+        "total": 270,
+        "mermaidOk": 24,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 58,
+          "ant": 3
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 0,
+          "ant": 3
+        }
+      },
+      {
+        "familia": "sequencia",
+        "nome": "09-rotulos-hostis.mmd",
+        "total": 137,
+        "mermaidOk": 85,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 27,
+          "ant": 2
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 0,
+          "ant": 2
+        }
+      },
+      {
+        "familia": "sequencia",
+        "nome": "10-fluxo-real.mmd",
+        "total": 621,
+        "mermaidOk": 188,
+        "tolerante": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 167,
+          "ant": 4
+        },
+        "estrito": {
+          "regressoesReais": 0,
+          "piorQueda": 0,
+          "fantasmas": 16,
+          "ant": 4
+        }
+      }
+    ],
+    "semDeclaracao": [
+      {
+        "familia": "flowchart",
+        "nos": 3,
+        "tolerante": {
+          "perda": 0,
+          "pior": 0,
+          "ant": 3
+        },
+        "estrito": {
+          "perda": 4,
+          "pior": 1,
+          "ant": 3
+        }
+      },
+      {
+        "familia": "classe",
+        "nos": 3,
+        "tolerante": {
+          "perda": 0,
+          "pior": 0,
+          "ant": 3
+        },
+        "estrito": {
+          "perda": 0,
+          "pior": 0,
+          "ant": 3
+        }
+      },
+      {
+        "familia": "sequencia",
+        "nos": 3,
+        "tolerante": {
+          "perda": 0,
+          "pior": 0,
+          "ant": 3
+        },
+        "estrito": {
+          "perda": 0,
+          "pior": 0,
+          "ant": 3
+        }
+      }
+    ],
+    "alias": {
+      "nos": 2,
+      "corrigido": {
+        "perda": 0,
+        "pior": 0
+      },
+      "ingenuo": {
+        "perda": 2,
+        "pior": 1
+      }
+    }
+  },
+  "latencia": {
+    "flowchart · semente": {
+      "cenario": "flowchart · semente",
+      "familia": "flowchart",
+      "query": "tipo=flowchart",
+      "nos": 3,
+      "ligacoes": 2,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 2.9,
+        "p95": 9.7
+      },
+      "parse": {
+        "mediana": 0.1
+      },
+      "projecao": {
+        "mediana": 0
+      },
+      "errosAoFinal": 0
+    },
+    "flowchart · envelope 400/500": {
+      "cenario": "flowchart · envelope 400/500",
+      "familia": "flowchart",
+      "query": "tipo=flowchart&n=400&ligacoes=500",
+      "nos": 401,
+      "ligacoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 21.7,
+        "p95": 32.1
+      },
+      "parse": {
+        "mediana": 6
+      },
+      "projecao": {
+        "mediana": 0.6
+      },
+      "errosAoFinal": 0
+    },
+    "flowchart · envelope sem reuso": {
+      "cenario": "flowchart · envelope sem reuso",
+      "familia": "flowchart",
+      "query": "tipo=flowchart&n=400&ligacoes=500&memo=0",
+      "nos": 401,
+      "ligacoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 65.9,
+        "p95": 93
+      },
+      "parse": {
+        "mediana": 5.8
+      },
+      "projecao": {
+        "mediana": 0.2
+      },
+      "errosAoFinal": 0
+    },
+    "classe · semente": {
+      "cenario": "classe · semente",
+      "familia": "classe",
+      "query": "tipo=classe",
+      "nos": 2,
+      "ligacoes": 1,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 2.7,
+        "p95": 6.5
+      },
+      "parse": {
+        "mediana": 0.1
+      },
+      "projecao": {
+        "mediana": 0
+      },
+      "errosAoFinal": 0
+    },
+    "classe · envelope 400/500": {
+      "cenario": "classe · envelope 400/500",
+      "familia": "classe",
+      "query": "tipo=classe&n=400&ligacoes=500",
+      "nos": 400,
+      "ligacoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 27.4,
+        "p95": 31.3
+      },
+      "parse": {
+        "mediana": 4.3
+      },
+      "projecao": {
+        "mediana": 0.8
+      },
+      "errosAoFinal": 0
+    },
+    "classe · envelope sem reuso": {
+      "cenario": "classe · envelope sem reuso",
+      "familia": "classe",
+      "query": "tipo=classe&n=400&ligacoes=500&memo=0",
+      "nos": 400,
+      "ligacoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 118.3,
+        "p95": 124.5
+      },
+      "parse": {
+        "mediana": 4.3
+      },
+      "projecao": {
+        "mediana": 0.4
+      },
+      "errosAoFinal": 0
+    },
+    "sequencia · semente": {
+      "cenario": "sequencia · semente",
+      "familia": "sequencia",
+      "query": "tipo=sequencia",
+      "nos": 3,
+      "ligacoes": 2,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 16.4,
+        "p95": 17.3
+      },
+      "parse": {
+        "mediana": 0.1
+      },
+      "projecao": {
+        "mediana": 0
+      },
+      "errosAoFinal": 0
+    },
+    "sequencia · envelope 400/500": {
+      "cenario": "sequencia · envelope 400/500",
+      "familia": "sequencia",
+      "query": "tipo=sequencia&n=400&ligacoes=500",
+      "nos": 400,
+      "ligacoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 14.3,
+        "p95": 18.9
+      },
+      "parse": {
+        "mediana": 2.7
+      },
+      "projecao": {
+        "mediana": 0.7
+      },
+      "errosAoFinal": 0
+    },
+    "sequencia · envelope sem reuso": {
+      "cenario": "sequencia · envelope sem reuso",
+      "familia": "sequencia",
+      "query": "tipo=sequencia&n=400&ligacoes=500&memo=0",
+      "nos": 400,
+      "ligacoes": 500,
+      "teclas": 12,
+      "edicaoChegou": true,
+      "total": {
+        "mediana": 109.7,
+        "p95": 132.5
+      },
+      "parse": {
+        "mediana": 2.8
+      },
+      "projecao": {
+        "mediana": 0.3
+      },
+      "errosAoFinal": 0
+    }
+  },
+  "mermaid": "11.16.0",
+  "emDigitacao_classe": {
+    "nos": 1,
+    "avisos": 1,
+    "erros": 0,
+    "mermaid": {
+      "ok": false,
+      "erro": "Parse error on line 3:"
+    }
+  },
+  "emDigitacao_sequencia": {
+    "nos": 2,
+    "avisos": 1,
+    "erros": 0,
+    "mermaid": {
+      "ok": false,
+      "erro": "Parse error on line 4:"
+    }
+  },
+  "placar": {
+    "passaram": 160,
+    "total": 160
+  },
+  "checagens": [
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B1-corpus-valido",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": ""
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B2-saida-valida",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "mermaid.parse aceitou"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 1 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 0 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "8 nós · 8 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 3 ligações · 6 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 1 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 1 ligações · 2 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 1 ligações · 2 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 1 ligações · 2 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 3 ligações · 4 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "8 nós · 7 ligações · 10 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "4 nós · 3 ligações · 4 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "14 nós · 13 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "17 nós · 18 ligações · 10 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "6 nós · 5 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 2 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "4 nós · 3 ligações · 4 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 1 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 2 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "9 nós · 8 ligações · 0 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "12 nós · 12 ligações · 4 rótulos"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 2 ligações · 2 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 8 ligações · 8 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 4 ligações · 4 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 5 ligações · 5 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 5 ligações · 5 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 1 ligações · 1 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "3 nós · 4 ligações · 4 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 2 ligações · 2 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "2 nós · 3 ligações · 3 rótulos (em ordem)"
+    },
+    {
+      "id": "B3-mesmo-diagrama",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "4 nós · 11 ligações · 11 rótulos (em ordem)"
+    },
+    {
+      "id": "B7-ordem-do-agregado",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "significado IGUAL — a ordem é ruído · layout muda"
+    },
+    {
+      "id": "B7-ordem-do-agregado",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "significado IGUAL — a ordem é ruído · layout muda"
+    },
+    {
+      "id": "B7-ordem-do-agregado",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "significado DIFERENTE — a ordem é semântica · layout muda"
+    },
+    {
+      "id": "B7-ordem-do-agregado",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "permutar produz documento que o mermaid RECUSA (Trying to inactivate an inactive participant (App)) — a ordem é condição de validade"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 34 · mermaid aceita 81% dos 52"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 41 · mermaid aceita 29% dos 195"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 50 · mermaid aceita 68% dos 155"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 208 · mermaid aceita 34% dos 959"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 5 (pior queda 1) · fantasma 0 · mermaid aceita 31% dos 70"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 5 (pior queda 1) · fantasma 37 · mermaid aceita 70% dos 249"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 10 (pior queda 1) · fantasma 0 · mermaid aceita 17% dos 333"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 15 (pior queda 1) · fantasma 191 · mermaid aceita 40% dos 754"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 40 · mermaid aceita 46% dos 87"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 58 · mermaid aceita 9% dos 270"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 27 · mermaid aceita 62% dos 137"
+    },
+    {
+      "id": "B4-sem-perda-real",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · fantasma 167 · mermaid aceita 30% dos 621"
+    },
+    {
+      "id": "B4b-no-nasce-na-ligacao",
+      "familia": "flowchart",
+      "alvo": "sem declaração prévia",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 4 (pior queda 1) · 3 nós finais"
+    },
+    {
+      "id": "B4b-no-nasce-na-ligacao",
+      "familia": "classe",
+      "alvo": "sem declaração prévia",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · 3 nós finais"
+    },
+    {
+      "id": "B4b-no-nasce-na-ligacao",
+      "familia": "sequencia",
+      "alvo": "sem declaração prévia",
+      "passou": true,
+      "detalhe": "perda real: tolerante 0 · estrito 0 (pior queda 0) · 3 nós finais"
+    },
+    {
+      "id": "B4c-alias-do-participante",
+      "familia": "sequencia",
+      "alvo": "participant X as Y",
+      "passou": true,
+      "detalhe": "perda real: id = primeiro token 0 · id = resto da linha 2 (pior queda 1) · 2 participantes"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "4 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "14 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "17 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "6 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "4 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "9 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "12 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "8 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "8 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "3 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "2 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B6-duas-vistas",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "4 nós no modelo, no canvas e no código"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "flowchart",
+      "alvo": "flowchart · semente",
+      "passou": true,
+      "detalhe": "3 nós · 2 ligações"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "familia": "flowchart",
+      "alvo": "flowchart · semente",
+      "passou": true,
+      "detalhe": "total 2.9ms (p95 9.7) · parse 0.1ms · projeção 0ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "flowchart",
+      "alvo": "flowchart · envelope 400/500",
+      "passou": true,
+      "detalhe": "401 nós · 500 ligações"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "familia": "flowchart",
+      "alvo": "flowchart · envelope 400/500",
+      "passou": true,
+      "detalhe": "total 21.7ms (p95 32.1) · parse 6ms · projeção 0.6ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "flowchart",
+      "alvo": "flowchart · envelope sem reuso",
+      "passou": true,
+      "detalhe": "401 nós · 500 ligações"
+    },
+    {
+      "id": "B5c-controle-sem-reuso",
+      "familia": "flowchart",
+      "alvo": "flowchart · envelope sem reuso",
+      "passou": true,
+      "detalhe": "FORA da barra de 50ms · total 65.9ms (p95 93) · parse 5.8ms · projeção 0.2ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "classe",
+      "alvo": "classe · semente",
+      "passou": true,
+      "detalhe": "2 nós · 1 ligações"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "familia": "classe",
+      "alvo": "classe · semente",
+      "passou": true,
+      "detalhe": "total 2.7ms (p95 6.5) · parse 0.1ms · projeção 0ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "classe",
+      "alvo": "classe · envelope 400/500",
+      "passou": true,
+      "detalhe": "400 nós · 500 ligações"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "familia": "classe",
+      "alvo": "classe · envelope 400/500",
+      "passou": true,
+      "detalhe": "total 27.4ms (p95 31.3) · parse 4.3ms · projeção 0.8ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "classe",
+      "alvo": "classe · envelope sem reuso",
+      "passou": true,
+      "detalhe": "400 nós · 500 ligações"
+    },
+    {
+      "id": "B5c-controle-sem-reuso",
+      "familia": "classe",
+      "alvo": "classe · envelope sem reuso",
+      "passou": true,
+      "detalhe": "FORA da barra de 50ms · total 118.3ms (p95 124.5) · parse 4.3ms · projeção 0.4ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "sequencia",
+      "alvo": "sequencia · semente",
+      "passou": true,
+      "detalhe": "3 nós · 2 ligações"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "familia": "sequencia",
+      "alvo": "sequencia · semente",
+      "passou": true,
+      "detalhe": "total 16.4ms (p95 17.3) · parse 0.1ms · projeção 0ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "sequencia",
+      "alvo": "sequencia · envelope 400/500",
+      "passou": true,
+      "detalhe": "400 nós · 500 ligações"
+    },
+    {
+      "id": "B5-tecla-na-barra-50ms",
+      "familia": "sequencia",
+      "alvo": "sequencia · envelope 400/500",
+      "passou": true,
+      "detalhe": "total 14.3ms (p95 18.9) · parse 2.7ms · projeção 0.7ms"
+    },
+    {
+      "id": "B5-edicao-chegou",
+      "familia": "sequencia",
+      "alvo": "sequencia · envelope sem reuso",
+      "passou": true,
+      "detalhe": "400 nós · 500 ligações"
+    },
+    {
+      "id": "B5c-controle-sem-reuso",
+      "familia": "sequencia",
+      "alvo": "sequencia · envelope sem reuso",
+      "passou": true,
+      "detalhe": "FORA da barra de 50ms · total 109.7ms (p95 132.5) · parse 2.8ms · projeção 0.3ms"
+    },
+    {
+      "id": "B8-em-digitacao",
+      "familia": "classe",
+      "alvo": "estado intermediário",
+      "passou": true,
+      "detalhe": "1 nós na prévia (esperado 1) · 1 aviso · 0 erro · mermaid recusa"
+    },
+    {
+      "id": "B8-em-digitacao",
+      "familia": "sequencia",
+      "alvo": "estado intermediário",
+      "passou": true,
+      "detalhe": "2 nós na prévia (esperado 2) · 1 aviso · 0 erro · mermaid recusa"
+    }
+  ]
+}
