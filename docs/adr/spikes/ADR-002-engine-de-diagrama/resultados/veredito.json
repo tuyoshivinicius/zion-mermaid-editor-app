@@ -1,0 +1,69 @@
+{
+  "pergunta": "O tipo Sequence cabe no vocabulário nó/aresta do React Flow — renderizando (participante com lifeline, mensagem ordenada, ativação, fragmento alt/loop) e editando (criar mensagem, reordenar no tempo, reconectar destino)?",
+  "lib": "@xyflow/react 12.11.2",
+  "executadoEm": "chromium headless (playwright 1.61.1), 1440x900",
+  "gestos": [
+    {
+      "gesto": "renderizar — participante+lifeline, mensagem ordenada, ativação, fragmento alt/loop",
+      "ok": true,
+      "detalhe": "{\"participantes\":4,\"lifelines\":4,\"mensagens\":6,\"ativacoes\":3,\"fragmentos\":2,\"arestas\":6}",
+      "callbacksDaLib": null,
+      "atritos": [
+        "ponta de seta desenhada à mão: markerEnd da lib não acompanha caminho customizado",
+        "auto-mensagem (from==to) exige caminho próprio: a lib degenera source==target no mesmo handle",
+        "fragmento alt/loop não é primitiva: virou nó decorativo com zIndex negativo e pointer-events none"
+      ]
+    },
+    {
+      "gesto": "criar mensagem — arrastar da âncora de instante para outro participante",
+      "ok": true,
+      "detalhe": "6 -> 7 mensagens; instante 3 = p1->p4",
+      "callbacksDaLib": "onConnectStart(p1[linha-2]) · onConnect(p1[linha-2] -> p4[linha-2]) · onConnectEnd()",
+      "atritos": [
+        "a lib entrega o gesto (onConnect) e a validação; o instante teve que ser codificado no id do handle (linha-N)",
+        "um handle por instante por participante: N participantes x M mensagens de handles no DOM"
+      ]
+    },
+    {
+      "gesto": "reordenar no tempo — arrastar o rótulo da mensagem na vertical",
+      "ok": true,
+      "detalhe": "m5 -> instante 4; ponteiro no centro do rótulo atinge DIV.rotulo; ordem: p1>p2:digita mermaid | p2>p3:parse(texto) | p1>p4:nova mensagem | p2>p4:render(modelo) | p3>p3:valida sintaxe | p3>p2:modelo | p4>p1:prévia",
+      "callbacksDaLib": "rotulo:arrastar(m5 -> instante 3)",
+      "atritos": [
+        "GESTO NÃO NATIVO: no vocabulário da lib aresta não tem posição, então não há drag de aresta",
+        "implementado à mão sobre EdgeLabelRenderer: pointer capture, delta de tela / zoom, snap ao passo de linha",
+        "reordenar mensagem obriga a remapear índices de ativação e fragmento — a engine não sabe da existência deles"
+      ]
+    },
+    {
+      "gesto": "reconectar destino — arrastar a ponta da seta para outro participante",
+      "ok": true,
+      "detalhe": "m1.to: p2 -> p3",
+      "callbacksDaLib": "onReconnectStart(m1) · onConnectStart(p1[linha-0]) · onReconnect(m1: p1->p2 vira p1->p3) · onConnectEnd() · onReconnectEnd(m1)",
+      "atritos": [
+        "gesto nativo da lib (onReconnect + reconnectable); só o mapeamento para o modelo é código próprio"
+      ]
+    },
+    {
+      "gesto": "trocar coluna do participante — arrastar a caixa na horizontal",
+      "ok": true,
+      "detalhe": "p1,p2,p3,p4 -> p1,p4,p2,p3",
+      "callbacksDaLib": "onNodeDragStop(p4 x=235)",
+      "atritos": [
+        "drag de nó é nativo, mas em 2D: travar o eixo Y exigiu filtrar os changes na mão",
+        "a lib move o nó livremente; virar índice de coluna é snap próprio no onNodeDragStop"
+      ]
+    },
+    {
+      "gesto": "modelo interno sem coordenada — a verdade continua sendo ordem, não posição",
+      "ok": true,
+      "detalhe": "nenhum campo x/y vazou para o modelo depois de 4 gestos",
+      "callbacksDaLib": null,
+      "atritos": [
+        "a coordenada vive só na derivação; a engine nunca é fonte da verdade"
+      ]
+    }
+  ],
+  "aprovados": 6,
+  "total": 6
+}
