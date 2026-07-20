@@ -1,0 +1,108 @@
+* { box-sizing: border-box; }
+
+html, body, #raiz { height: 100%; margin: 0; }
+
+body {
+  font: 13px/1.4 ui-sans-serif, system-ui, sans-serif;
+  color: #1b1b1f;
+  background: #fff;
+}
+
+.tela { display: flex; height: 100%; }
+
+.painel {
+  width: 46%;
+  min-width: 380px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #d8d8de;
+}
+
+#codigo {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 10px 12px;
+  resize: none;
+  font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 12px;
+  border-top: 1px solid #d8d8de;
+  background: #f6f6f8;
+  font-size: 11px;
+}
+
+.rodape .ok { color: #196b3a; }
+.rodape .aviso { color: #8a5a00; }
+.rodape .erro { color: #b02020; }
+
+.canvas { flex: 1; }
+
+.caixa {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  padding: 6px 10px;
+  position: relative;
+  border: 1px solid #6b7280;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.caixa.marcada { border-color: #c47f00; background: #fff8e6; }
+
+.rotulo {
+  font-weight: 600;
+  text-align: center;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.marca {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #c47f00;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 16px;
+}
+
+/* O corpo do nó — só Class o preenche. É a diferença visível entre "nó com
+   rótulo" (Flowchart, Sequence) e "nó estruturado" (Class). */
+.caixa .corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+.caixa .membro {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  line-height: 1.35;
+  text-align: left;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

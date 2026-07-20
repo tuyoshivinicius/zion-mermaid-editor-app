@@ -1,0 +1,7 @@
+classDiagram
+  class Cliente
+  class Pedido
+  class Item
+  Cliente "1" --> "*" Pedido : faz
+  Pedido "1" *-- "1..*" Item : contem
+  Item "0..1" --> "1" Cliente : pertence a

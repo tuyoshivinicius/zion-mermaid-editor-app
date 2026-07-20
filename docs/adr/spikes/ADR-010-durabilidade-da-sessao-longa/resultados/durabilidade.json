@@ -1,0 +1,576 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "versaoDoRascunho": 1,
+  "tamanhoDoRascunho": {
+    "corpusTextoMedio": 277,
+    "corpusModeloMedio": 1556
+  },
+  "envelope": {
+    "comoTextoBytes": 15439,
+    "comoModeloBytes": 112215,
+    "razao": 7.3
+  },
+  "sessao": {
+    "ilimitado": {
+      "atos": 15000,
+      "medianaInicioMs": 0.011,
+      "medianaFimMs": 0.008,
+      "razao": 0.72,
+      "entradas": 15000,
+      "bytesLogicos": 689678
+    },
+    "limite200": {
+      "atos": 15000,
+      "medianaInicioMs": 0.008,
+      "medianaFimMs": 0.008,
+      "razao": 0.96,
+      "entradas": 200,
+      "bytesLogicos": 9292
+    }
+  },
+  "placar": {
+    "passaram": 77,
+    "total": 77
+  },
+  "checagens": [
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 110 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1005 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 416 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 3188 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 299 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 4000 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 383 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1773 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 287 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1005 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 262 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1172 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 112 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 626 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 220 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1014 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 374 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 2295 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 901 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 3460 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 64 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 640 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 210 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 1385 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 172 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 2324 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 172 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1095 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 207 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1208 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 138 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 930 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 131 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 870 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 196 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 857 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 157 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 987 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 971 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 5044 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 102 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 630 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 263 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 1527 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 221 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 1036 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 238 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 1288 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 285 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1414 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 201 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 744 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 212 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 1013 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 213 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 768 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/2 · 152 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 2/2 · 836 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-texto",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 0/3 · 636 bytes"
+    },
+    {
+      "id": "D1-rascunho-como-modelo",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "estrutura igual · código byte a byte · posições de volta: 3/3 · 2534 bytes"
+    },
+    {
+      "id": "D3-peso-do-rascunho",
+      "familia": "flowchart",
+      "alvo": "envelope 400/500",
+      "passou": true,
+      "detalhe": "texto 15.1 KiB · modelo+posições 109.6 KiB (7.3×) · teto prático do armazém síncrono: ~5 MiB"
+    },
+    {
+      "id": "D4-degradacao-do-ato",
+      "familia": "flowchart",
+      "alvo": "15000 atos · limite ∞",
+      "passou": true,
+      "detalhe": "mediana dos 500 primeiros 0.011ms · dos 500 últimos 0.008ms · razão 0.72× · 15000 entradas · 0.7 MiB lógicos de histórico"
+    },
+    {
+      "id": "D5-controle-com-teto",
+      "familia": "flowchart",
+      "alvo": "15000 atos · limite 200",
+      "passou": true,
+      "detalhe": "mediana dos 500 primeiros 0.008ms · dos 500 últimos 0.008ms · razão 0.96× · 200 entradas · 0.0 MiB lógicos de histórico"
+    },
+    {
+      "id": "D2-ponto-fixo-na-sessao",
+      "familia": "flowchart",
+      "alvo": "5.000 atos · 5 marcos",
+      "passou": true,
+      "detalhe": "ponto fixo textual e estrutural em todos os marcos (1.000 … 5.000)"
+    },
+    {
+      "id": "D2-ponto-fixo-na-sessao",
+      "familia": "classe",
+      "alvo": "5.000 atos · 5 marcos",
+      "passou": true,
+      "detalhe": "ponto fixo textual e estrutural em todos os marcos (1.000 … 5.000)"
+    },
+    {
+      "id": "D2-ponto-fixo-na-sessao",
+      "familia": "sequencia",
+      "alvo": "5.000 atos · 5 marcos",
+      "passou": true,
+      "detalhe": "ponto fixo textual e estrutural em todos os marcos (1.000 … 5.000)"
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "vazio",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"sem rascunho\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "nulo",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"sem rascunho\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "lixo binário",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"rascunho ilegível: Unexpected token '\u0000', \"\u0000\u0001�þÿ\" is not valid JSON\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "JSON truncado",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"rascunho ilegível: Expected ',' or '}' after property value in JSON at position 38\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "JSON sem modelo",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"rascunho sem modelo\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "versão futura",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"versão 99 desconhecida (atual 1)\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "modelo não é objeto",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"rascunho sem modelo\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "array no lugar do objeto",
+      "passou": true,
+      "detalhe": "devolveu null com aviso: \"versão undefined desconhecida (atual 1)\""
+    },
+    {
+      "id": "D6-rascunho-ilegivel",
+      "familia": "flowchart",
+      "alvo": "texto que não é mermaid",
+      "passou": true,
+      "detalhe": "o parser tolerante do ADR-006 entrega 0 nó(s) em vez de recusar"
+    },
+    {
+      "id": "D7-ponto-fixo-do-rascunho",
+      "familia": "todas",
+      "alvo": "formato texto",
+      "passou": true,
+      "detalhe": "30/30 documentos gravam igual na segunda volta"
+    },
+    {
+      "id": "D7-ponto-fixo-do-rascunho",
+      "familia": "todas",
+      "alvo": "formato modelo",
+      "passou": true,
+      "detalhe": "30/30 documentos gravam igual na segunda volta"
+    }
+  ]
+}

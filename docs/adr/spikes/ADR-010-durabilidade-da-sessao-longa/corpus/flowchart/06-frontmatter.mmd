@@ -1,0 +1,11 @@
+---
+title: Fluxo de aprovação
+config:
+  theme: forest
+  flowchart:
+    curve: basis
+---
+flowchart TD
+  pedido[Pedido recebido] --> revisao{Revisar}
+  revisao -->|aprova| ok[Aprovado]
+  revisao -->|rejeita| nok[Rejeitado]

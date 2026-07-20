@@ -1,0 +1,25 @@
+sequenceDiagram
+  autonumber
+  actor Marina
+  participant App as Editor
+  participant Motor as Motor de layout
+  participant Codigo as Painel de codigo
+  Marina->>+App: criar caixa
+  App->>Motor: pedir posicao
+  Motor-->>App: coordenada
+  App->>Codigo: projetar modelo
+  App-->>-Marina: codigo atualizado
+  loop para cada elemento
+    Marina->>+App: rotular
+    App->>Codigo: reprojetar
+    App-->>-Marina: prévia
+  end
+  alt sintaxe valida
+    App->>Codigo: manter previa
+  else sintaxe invalida
+    App->>Codigo: sinalizar erro
+    Note over App,Codigo: a previa nao se perde
+  end
+  opt exportar
+    Marina->>App: copiar codigo
+  end

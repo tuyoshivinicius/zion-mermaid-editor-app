@@ -1,0 +1,9 @@
+sequenceDiagram
+  participant Cliente
+  participant Servico
+  Cliente->>+Servico: requisitar
+  Servico-->>-Cliente: responder
+  Cliente->>Servico: outra
+  activate Servico
+  Servico-->>Cliente: pronto
+  deactivate Servico

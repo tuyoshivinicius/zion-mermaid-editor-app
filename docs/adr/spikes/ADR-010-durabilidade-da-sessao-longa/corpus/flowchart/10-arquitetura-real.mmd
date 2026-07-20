@@ -1,0 +1,24 @@
+---
+title: Ingestão de eventos
+---
+%%{init: {'theme':'neutral'}}%%
+flowchart LR
+  %% caminho principal de ingestão
+  produtor[Produtor de eventos] --> fila[(Fila durável)]
+  fila --> consumidor[Consumidor]
+  consumidor --> valida{Evento válido?}
+  valida -->|sim| enriquece[Enriquecer com cadastro]
+  valida -->|não| morto[(Fila de descarte)]
+  enriquece --> grava[Gravar no armazenamento]
+  subgraph observabilidade[Observabilidade]
+    direction TB
+    metricas[Métricas] --> painel[Painel]
+    logs[Registros] --> painel
+  end
+  grava --> metricas
+  consumidor -.-> logs
+  grava --> notifica[/Notificar interessados/]
+  notifica --> fim(((Concluído)))
+  classDef infra fill:#eef,stroke:#557
+  class fila,morto infra
+  style produtor fill:#efe,stroke:#575
