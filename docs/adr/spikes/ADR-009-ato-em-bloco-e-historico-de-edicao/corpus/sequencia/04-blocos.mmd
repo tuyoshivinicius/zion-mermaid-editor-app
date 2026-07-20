@@ -1,0 +1,15 @@
+sequenceDiagram
+  participant A
+  participant B
+  loop a cada minuto
+    A->>B: ping
+    B-->>A: pong
+  end
+  alt sucesso
+    A->>B: confirmar
+  else falha
+    A->>B: cancelar
+  end
+  opt quando houver cupom
+    A->>B: aplicar cupom
+  end

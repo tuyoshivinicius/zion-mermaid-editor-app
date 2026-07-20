@@ -1,0 +1,748 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "barras": {
+    "edicaoMs": 100,
+    "colarMs": 1000
+  },
+  "latencia": {
+    "ato em bloco · 1 alvos · lote=1": {
+      "cenario": "ato em bloco · 1 alvos · lote=1",
+      "alvos": 1,
+      "lote": true,
+      "chegou": true,
+      "entradasNoHistorico": 5,
+      "total": {
+        "mediana": 23.7,
+        "p95": 29
+      },
+      "comando": 0,
+      "projecao": 0.5,
+      "serializacao": 0.7
+    },
+    "ato em bloco · 10 alvos · lote=1": {
+      "cenario": "ato em bloco · 10 alvos · lote=1",
+      "alvos": 10,
+      "lote": true,
+      "chegou": true,
+      "entradasNoHistorico": 5,
+      "total": {
+        "mediana": 24.3,
+        "p95": 38.2
+      },
+      "comando": 0,
+      "projecao": 0.3,
+      "serializacao": 0.5
+    },
+    "ato em bloco · 50 alvos · lote=1": {
+      "cenario": "ato em bloco · 50 alvos · lote=1",
+      "alvos": 50,
+      "lote": true,
+      "chegou": true,
+      "entradasNoHistorico": 5,
+      "total": {
+        "mediana": 34.1,
+        "p95": 51.1
+      },
+      "comando": 0.2,
+      "projecao": 0.6,
+      "serializacao": 0.7
+    },
+    "ato em bloco · 100 alvos · lote=1": {
+      "cenario": "ato em bloco · 100 alvos · lote=1",
+      "alvos": 100,
+      "lote": true,
+      "chegou": true,
+      "entradasNoHistorico": 5,
+      "total": {
+        "mediana": 44.1,
+        "p95": 48.3
+      },
+      "comando": 0.1,
+      "projecao": 0.3,
+      "serializacao": 0.5
+    },
+    "ato em bloco · 400 alvos · lote=1": {
+      "cenario": "ato em bloco · 400 alvos · lote=1",
+      "alvos": 400,
+      "lote": true,
+      "chegou": true,
+      "entradasNoHistorico": 5,
+      "total": {
+        "mediana": 73.7,
+        "p95": 93.5
+      },
+      "comando": 0.3,
+      "projecao": 0.5,
+      "serializacao": 0.5
+    },
+    "ato em bloco · 1 alvos · lote=0": {
+      "cenario": "ato em bloco · 1 alvos · lote=0",
+      "alvos": 1,
+      "lote": false,
+      "chegou": true,
+      "entradasNoHistorico": 5,
+      "total": {
+        "mediana": 20.3,
+        "p95": 46.8
+      },
+      "comando": 0.1,
+      "projecao": 0.4,
+      "serializacao": 0.5
+    },
+    "ato em bloco · 10 alvos · lote=0": {
+      "cenario": "ato em bloco · 10 alvos · lote=0",
+      "alvos": 10,
+      "lote": false,
+      "chegou": true,
+      "entradasNoHistorico": 50,
+      "total": {
+        "mediana": 25,
+        "p95": 26.1
+      },
+      "comando": 0.1,
+      "projecao": 0.3,
+      "serializacao": 0.5
+    },
+    "ato em bloco · 50 alvos · lote=0": {
+      "cenario": "ato em bloco · 50 alvos · lote=0",
+      "alvos": 50,
+      "lote": false,
+      "chegou": true,
+      "entradasNoHistorico": 250,
+      "total": {
+        "mediana": 30.7,
+        "p95": 44.6
+      },
+      "comando": 0.7,
+      "projecao": 0.3,
+      "serializacao": 0.5
+    },
+    "ato em bloco · 100 alvos · lote=0": {
+      "cenario": "ato em bloco · 100 alvos · lote=0",
+      "alvos": 100,
+      "lote": false,
+      "chegou": true,
+      "entradasNoHistorico": 500,
+      "total": {
+        "mediana": 35.7,
+        "p95": 48.1
+      },
+      "comando": 0.9,
+      "projecao": 0.3,
+      "serializacao": 0.4
+    },
+    "ato em bloco · 400 alvos · lote=0": {
+      "cenario": "ato em bloco · 400 alvos · lote=0",
+      "alvos": 400,
+      "lote": false,
+      "chegou": true,
+      "entradasNoHistorico": 2000,
+      "total": {
+        "mediana": 71.5,
+        "p95": 80.7
+      },
+      "comando": 3.8,
+      "projecao": 0.5,
+      "serializacao": 0.5
+    },
+    "desfazer · seleção de 10": {
+      "cenario": "desfazer · seleção de 10",
+      "total": {
+        "mediana": 46.5,
+        "p95": 54.1
+      },
+      "comando": 0.1,
+      "projecao": 0.3
+    },
+    "refazer · seleção de 10": {
+      "cenario": "refazer · seleção de 10",
+      "total": {
+        "mediana": 43.6,
+        "p95": 46.4
+      },
+      "comando": 0,
+      "projecao": 0.4
+    },
+    "desfazer · seleção de 100": {
+      "cenario": "desfazer · seleção de 100",
+      "total": {
+        "mediana": 65.8,
+        "p95": 78.1
+      },
+      "comando": 0.1,
+      "projecao": 0.4
+    },
+    "refazer · seleção de 100": {
+      "cenario": "refazer · seleção de 100",
+      "total": {
+        "mediana": 65.7,
+        "p95": 67.6
+      },
+      "comando": 0,
+      "projecao": 0.4
+    },
+    "desfazer · seleção de 400": {
+      "cenario": "desfazer · seleção de 400",
+      "total": {
+        "mediana": 96.2,
+        "p95": 107.7
+      },
+      "comando": 0.1,
+      "projecao": 0.4
+    },
+    "refazer · seleção de 400": {
+      "cenario": "refazer · seleção de 400",
+      "total": {
+        "mediana": 94.9,
+        "p95": 105.9
+      },
+      "comando": 0,
+      "projecao": 0.4
+    },
+    "colar 100 nós": {
+      "cenario": "colar 100 nós",
+      "total": {
+        "mediana": 14.1,
+        "p95": 40.9
+      },
+      "parse": 1.7,
+      "projecao": 0.1
+    },
+    "colar 400 nós": {
+      "cenario": "colar 400 nós",
+      "total": {
+        "mediana": 29.9,
+        "p95": 109.3
+      },
+      "parse": 9.6,
+      "projecao": 0.9
+    },
+    "ato de 10 · memo=1": {
+      "cenario": "ato de 10 · memo=1",
+      "total": {
+        "mediana": 20.2,
+        "p95": 27
+      },
+      "projecao": 0.4
+    },
+    "ato de 10 · memo=0": {
+      "cenario": "ato de 10 · memo=0",
+      "total": {
+        "mediana": 58.4,
+        "p95": 73.9
+      },
+      "projecao": 0.4
+    },
+    "flowchart · ato de 50 no envelope": {
+      "cenario": "flowchart · ato de 50 no envelope",
+      "total": {
+        "mediana": 31.8,
+        "p95": 41.2
+      }
+    },
+    "classe · ato de 50 no envelope": {
+      "cenario": "classe · ato de 50 no envelope",
+      "total": {
+        "mediana": 64.3,
+        "p95": 77.1
+      }
+    },
+    "sequencia · ato de 50 no envelope": {
+      "cenario": "sequencia · ato de 50 no envelope",
+      "total": {
+        "mediana": 44,
+        "p95": 57.6
+      }
+    }
+  },
+  "mermaid": "11.16.0",
+  "memoria": {
+    "inverso": {
+      "retidoKiB": 450,
+      "msMil": 9,
+      "entradas": 1000,
+      "confere": true
+    },
+    "referencia": {
+      "retidoKiB": 1567,
+      "msMil": 9,
+      "entradas": 1000,
+      "confere": true
+    },
+    "clone": {
+      "retidoKiB": 59874,
+      "msMil": 577,
+      "entradas": 1000,
+      "confere": true
+    },
+    "documentoKiB": 100
+  },
+  "placar": {
+    "passaram": 66,
+    "total": 66
+  },
+  "checagens": [
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "1 alvos · lote=1",
+      "passou": true,
+      "detalhe": "1/1 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1-ato-na-barra-100ms",
+      "familia": "flowchart",
+      "alvo": "1 alvos",
+      "passou": true,
+      "detalhe": "total 23.7ms (p95 29) · comando 0ms · projeção 0.5ms · serializar 0.7ms · 5 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "10 alvos · lote=1",
+      "passou": true,
+      "detalhe": "10/10 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1-ato-na-barra-100ms",
+      "familia": "flowchart",
+      "alvo": "10 alvos",
+      "passou": true,
+      "detalhe": "total 24.3ms (p95 38.2) · comando 0ms · projeção 0.3ms · serializar 0.5ms · 5 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "50 alvos · lote=1",
+      "passou": true,
+      "detalhe": "50/50 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1-ato-na-barra-100ms",
+      "familia": "flowchart",
+      "alvo": "50 alvos",
+      "passou": true,
+      "detalhe": "total 34.1ms (p95 51.1) · comando 0.2ms · projeção 0.6ms · serializar 0.7ms · 5 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "100 alvos · lote=1",
+      "passou": true,
+      "detalhe": "100/100 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1-ato-na-barra-100ms",
+      "familia": "flowchart",
+      "alvo": "100 alvos",
+      "passou": true,
+      "detalhe": "total 44.1ms (p95 48.3) · comando 0.1ms · projeção 0.3ms · serializar 0.5ms · 5 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "400 alvos · lote=1",
+      "passou": true,
+      "detalhe": "400/400 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1-ato-na-barra-100ms",
+      "familia": "flowchart",
+      "alvo": "400 alvos",
+      "passou": true,
+      "detalhe": "total 73.7ms (p95 93.5) · comando 0.3ms · projeção 0.5ms · serializar 0.5ms · 5 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "1 alvos · lote=0",
+      "passou": true,
+      "detalhe": "1/1 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "1 alvos",
+      "passou": true,
+      "detalhe": "dentro da barra · total 20.3ms (p95 46.8) · comando 0.1ms · projeção 0.4ms · serializar 0.5ms · 5 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "10 alvos · lote=0",
+      "passou": true,
+      "detalhe": "10/10 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "10 alvos",
+      "passou": true,
+      "detalhe": "dentro da barra · total 25ms (p95 26.1) · comando 0.1ms · projeção 0.3ms · serializar 0.5ms · 50 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "50 alvos · lote=0",
+      "passou": true,
+      "detalhe": "50/50 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "50 alvos",
+      "passou": true,
+      "detalhe": "dentro da barra · total 30.7ms (p95 44.6) · comando 0.7ms · projeção 0.3ms · serializar 0.5ms · 250 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "100 alvos · lote=0",
+      "passou": true,
+      "detalhe": "100/100 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "100 alvos",
+      "passou": true,
+      "detalhe": "dentro da barra · total 35.7ms (p95 48.1) · comando 0.9ms · projeção 0.3ms · serializar 0.4ms · 500 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B0-ato-chegou",
+      "familia": "flowchart",
+      "alvo": "400 alvos · lote=0",
+      "passou": true,
+      "detalhe": "400/400 nós com o rótulo novo · 400 nós no canvas"
+    },
+    {
+      "id": "B1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "400 alvos",
+      "passou": true,
+      "detalhe": "dentro da barra · total 71.5ms (p95 80.7) · comando 3.8ms · projeção 0.5ms · serializar 0.5ms · 2000 entradas no histórico depois de 5 atos"
+    },
+    {
+      "id": "B2-desfazer-refazer",
+      "familia": "flowchart",
+      "alvo": "desfazer de 10 alvos",
+      "passou": true,
+      "detalhe": "total 46.5ms (p95 54.1) · comando 0.1ms · projeção 0.3ms"
+    },
+    {
+      "id": "B2-desfazer-refazer",
+      "familia": "flowchart",
+      "alvo": "refazer de 10 alvos",
+      "passou": true,
+      "detalhe": "total 43.6ms (p95 46.4) · comando 0ms · projeção 0.4ms"
+    },
+    {
+      "id": "B2-desfazer-refazer",
+      "familia": "flowchart",
+      "alvo": "desfazer de 100 alvos",
+      "passou": true,
+      "detalhe": "total 65.8ms (p95 78.1) · comando 0.1ms · projeção 0.4ms"
+    },
+    {
+      "id": "B2-desfazer-refazer",
+      "familia": "flowchart",
+      "alvo": "refazer de 100 alvos",
+      "passou": true,
+      "detalhe": "total 65.7ms (p95 67.6) · comando 0ms · projeção 0.4ms"
+    },
+    {
+      "id": "B2-desfazer-refazer",
+      "familia": "flowchart",
+      "alvo": "desfazer de 400 alvos",
+      "passou": true,
+      "detalhe": "total 96.2ms (p95 107.7) · comando 0.1ms · projeção 0.4ms"
+    },
+    {
+      "id": "B2-desfazer-refazer",
+      "familia": "flowchart",
+      "alvo": "refazer de 400 alvos",
+      "passou": true,
+      "detalhe": "total 94.9ms (p95 105.9) · comando 0ms · projeção 0.4ms"
+    },
+    {
+      "id": "B3-colar-diagrama-grande",
+      "familia": "flowchart",
+      "alvo": "100 nós de uma vez",
+      "passou": true,
+      "detalhe": "total 14.1ms (p95 40.9) · parse 1.7ms · projeção 0.1ms · 101 nós · 1 entrada(s)"
+    },
+    {
+      "id": "B3-colar-diagrama-grande",
+      "familia": "flowchart",
+      "alvo": "400 nós de uma vez",
+      "passou": true,
+      "detalhe": "total 29.9ms (p95 109.3) · parse 9.6ms · projeção 0.9ms · 401 nós · 1 entrada(s)"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 4 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 14 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 17 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 6 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 4 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 9 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 12 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 8 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 8 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 3 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 2 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B4-desfazer-pelo-oraculo",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "código idêntico · mermaid.parse aceita · mesmo desenho · 4 nós no modelo, canvas e código"
+    },
+    {
+      "id": "B5-com-reuso",
+      "familia": "flowchart",
+      "alvo": "ato de 10 · memo=1",
+      "passou": true,
+      "detalhe": "dentro da barra de 100ms · total 20.2ms (p95 27) · projeção 0.4ms"
+    },
+    {
+      "id": "B5c-controle-sem-reuso",
+      "familia": "flowchart",
+      "alvo": "ato de 10 · memo=0",
+      "passou": true,
+      "detalhe": "dentro da barra de 100ms · total 58.4ms (p95 73.9) · projeção 0.4ms"
+    },
+    {
+      "id": "B6-heap-do-historico",
+      "familia": "flowchart",
+      "alvo": "1.000 atos · inverso",
+      "passou": true,
+      "detalhe": "450 KiB retidos no heap · 461 bytes por ato · 9ms para os 1.000 (documento: 100 KiB)"
+    },
+    {
+      "id": "B6-heap-do-historico",
+      "familia": "flowchart",
+      "alvo": "1.000 atos · referencia",
+      "passou": true,
+      "detalhe": "1567 KiB retidos no heap · 1605 bytes por ato · 9ms para os 1.000 (documento: 100 KiB)"
+    },
+    {
+      "id": "B6c-controle-clone",
+      "familia": "flowchart",
+      "alvo": "1.000 atos · clone",
+      "passou": true,
+      "detalhe": "59874 KiB retidos no heap · 61311 bytes por ato · 577ms para os 1.000 (documento: 100 KiB)"
+    },
+    {
+      "id": "B7-tres-familias",
+      "familia": "flowchart",
+      "alvo": "ato de 50 no envelope",
+      "passou": true,
+      "detalhe": "50/50 alvos · 5 entradas para 5 atos · total 31.8ms (p95 41.2)"
+    },
+    {
+      "id": "B7-tres-familias",
+      "familia": "classe",
+      "alvo": "ato de 50 no envelope",
+      "passou": true,
+      "detalhe": "50/50 alvos · 5 entradas para 5 atos · total 64.3ms (p95 77.1)"
+    },
+    {
+      "id": "B7-tres-familias",
+      "familia": "sequencia",
+      "alvo": "ato de 50 no envelope",
+      "passou": true,
+      "detalhe": "50/50 alvos · 5 entradas para 5 atos · total 44ms (p95 57.6)"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+classDiagram
+  class Pagavel {
+    <<interface>>
+    +pagar() bool
+  }
+  class Status {
+    <<enumeration>>
+    ABERTO
+    FECHADO
+  }
+  class Base {
+    <<abstract>>
+    +executar()*
+  }
+  Pagavel <|.. Base

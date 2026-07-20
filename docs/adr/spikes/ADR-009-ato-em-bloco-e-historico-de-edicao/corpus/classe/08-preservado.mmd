@@ -1,0 +1,12 @@
+---
+title: Modelo de vendas
+---
+%%{init: {"theme": "neutral"}}%%
+classDiagram
+  %% o núcleo do domínio
+  direction LR
+  class Pedido {
+    +String id
+  }
+  class Cliente
+  Cliente --> Pedido : faz

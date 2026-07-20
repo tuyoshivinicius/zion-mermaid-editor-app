@@ -1,0 +1,9 @@
+sequenceDiagram
+  autonumber
+  actor U as Usuaria
+  participant API as Servico de API
+  participant DB as Banco
+  U->>API: enviar formulario
+  API->>DB: gravar registro
+  DB-->>API: confirmacao
+  API-->>U: recibo

@@ -1,0 +1,10 @@
+---
+title: Fluxo de checkout
+---
+%%{init: {"theme": "neutral"}}%%
+sequenceDiagram
+  %% caminho feliz
+  participant Cliente
+  participant Loja
+  Cliente->>Loja: finalizar compra
+  Loja-->>Cliente: pedido confirmado

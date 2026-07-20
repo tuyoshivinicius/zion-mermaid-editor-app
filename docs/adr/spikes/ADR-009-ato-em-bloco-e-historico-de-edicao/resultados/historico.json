@@ -1,0 +1,782 @@
+{
+  "maquina": "Linux WSL2 · AMD Ryzen 7 5800H · 8 vCPU · sem GPU",
+  "corpus": 30,
+  "custo": {
+    "inverso": {
+      "atos": 1000,
+      "bytesTotais": 45258,
+      "bytesPorAto": 45,
+      "msTotais": 16
+    },
+    "clone": {
+      "atos": 1000,
+      "bytesTotais": 101927405,
+      "bytesPorAto": 101927,
+      "msTotais": 1119
+    },
+    "documentoBytes": 102508,
+    "razao": 2265
+  },
+  "placar": {
+    "passaram": 108,
+    "total": 108
+  },
+  "checagens": [
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "110 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "5 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "416 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "02-formas.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "10 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "299 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "03-links.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "383 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "04-subgraphs.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "3 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "287 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "05-estilo.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "4 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "262 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "06-frontmatter.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "112 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "07-diretiva.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "3 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "220 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "08-comentarios.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "9 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "374 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "901 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "flowchart",
+      "alvo": "10-arquitetura-real.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "64 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "210 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "02-membros.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "172 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "03-relacoes.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "3 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "172 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "04-cardinalidade.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "3 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "207 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "05-anotacoes.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "138 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "06-namespace.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "131 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "07-generico.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "196 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "157 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "5 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "971 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "classe",
+      "alvo": "10-dominio-real.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "102 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "01-minimo.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "263 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "02-setas.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "221 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "03-ativacao.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "238 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "04-blocos.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "285 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "05-par-critical.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "201 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "06-notas.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "3 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "212 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "07-alias-autonumber.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "1 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "213 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "08-preservado.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "2 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "152 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "09-rotulos-hostis.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1-um-ato-um-desfazer",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "4 alvo(s) · 1 entrada(s) no histórico · 1 desfazer restaurou tudo"
+    },
+    {
+      "id": "H3-ponto-fixo-do-desfazer",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "636 bytes idênticos"
+    },
+    {
+      "id": "H2-refazer-devolve",
+      "familia": "sequencia",
+      "alvo": "10-fluxo-real.mmd",
+      "passou": true,
+      "detalhe": "pilha 1 · pode desfazer true"
+    },
+    {
+      "id": "H1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "seleção de 10",
+      "passou": true,
+      "detalhe": "em lote: 1 entrada / 1 desfazer · **controle** um-por-um: 10 entradas / 10 desfazeres"
+    },
+    {
+      "id": "H1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "seleção de 50",
+      "passou": true,
+      "detalhe": "em lote: 1 entrada / 1 desfazer · **controle** um-por-um: 50 entradas / 50 desfazeres"
+    },
+    {
+      "id": "H1c-controle-sem-lote",
+      "familia": "flowchart",
+      "alvo": "seleção de 100",
+      "passou": true,
+      "detalhe": "em lote: 1 entrada / 1 desfazer · **controle** um-por-um: 100 entradas / 100 desfazeres"
+    },
+    {
+      "id": "H9-reuso-de-objeto",
+      "familia": "flowchart",
+      "alvo": "ato sobre 1 de 400",
+      "passou": true,
+      "detalhe": "399 de 400 objetos reusados por identidade (esperado 399) · a lista é nova, os nós intocados não"
+    },
+    {
+      "id": "H9-reuso-de-objeto",
+      "familia": "flowchart",
+      "alvo": "ato sobre 10 de 400",
+      "passou": true,
+      "detalhe": "390 de 400 objetos reusados por identidade (esperado 390) · a lista é nova, os nós intocados não"
+    },
+    {
+      "id": "H9-reuso-de-objeto",
+      "familia": "flowchart",
+      "alvo": "ato sobre 100 de 400",
+      "passou": true,
+      "detalhe": "300 de 400 objetos reusados por identidade (esperado 300) · a lista é nova, os nós intocados não"
+    },
+    {
+      "id": "H4-repetir-ultima",
+      "familia": "flowchart",
+      "alvo": "forma em A, repetir em B e C",
+      "passou": true,
+      "detalhe": "repetiu `forma` em 2 alvos sem repassar pelo controle · 2 entradas · 1 desfazer tirou só o repetido"
+    },
+    {
+      "id": "H5-rajada-e-um-ato",
+      "familia": "flowchart",
+      "alvo": "12 teclas",
+      "passou": true,
+      "detalhe": "1 entrada(s) · 1 desfazer(es) para voltar ao início da palavra"
+    },
+    {
+      "id": "H5c-controle-sem-coalescer",
+      "familia": "flowchart",
+      "alvo": "12 teclas",
+      "passou": true,
+      "detalhe": "12 entrada(s) · 12 desfazer(es) para voltar ao início da palavra"
+    },
+    {
+      "id": "H5b-coalescer-nao-engole",
+      "familia": "flowchart",
+      "alvo": "ato + rajada de 5 teclas",
+      "passou": true,
+      "detalhe": "2 entradas · 1 desfazer volta ao fim do ato anterior (\"Antes\")"
+    },
+    {
+      "id": "H6-dois-agregados-um-ato",
+      "familia": "flowchart",
+      "alvo": "remover produtor",
+      "passou": true,
+      "detalhe": "nó + 1 ligação(ões) num ato · 1 desfazer devolveu os dois na ordem"
+    },
+    {
+      "id": "H6-dois-agregados-um-ato",
+      "familia": "classe",
+      "alvo": "remover Cliente",
+      "passou": true,
+      "detalhe": "nó + 1 ligação(ões) num ato · 1 desfazer devolveu os dois na ordem"
+    },
+    {
+      "id": "H7-posicao-no-historico",
+      "familia": "flowchart",
+      "alvo": "histórico único",
+      "passou": true,
+      "detalhe": "3 entradas para 3 atos · Ctrl+Z depois de arrastar: arrasto DESFEITO · rótulo de B intacto"
+    },
+    {
+      "id": "H7-posicao-no-historico",
+      "familia": "flowchart",
+      "alvo": "controle: só o modelo",
+      "passou": true,
+      "detalhe": "2 entradas para 3 atos · Ctrl+Z depois de arrastar: arrasto continua onde a pessoa soltou · rótulo de B VOLTOU (a pessoa perdeu uma alteração que não pediu para desfazer)"
+    },
+    {
+      "id": "H8-custo-do-historico",
+      "familia": "flowchart",
+      "alvo": "1000 atos · modo inverso",
+      "passou": true,
+      "detalhe": "44.2 KiB lógicos · 45 bytes por ato · 16ms para aplicar os 1000"
+    },
+    {
+      "id": "H8-custo-do-historico",
+      "familia": "flowchart",
+      "alvo": "1000 atos · modo clone",
+      "passou": true,
+      "detalhe": "99538.5 KiB lógicos · 101927 bytes por ato · 1119ms para aplicar os 1000"
+    },
+    {
+      "id": "H8-razao-entre-modos",
+      "familia": "flowchart",
+      "alvo": "clone / inverso",
+      "passou": true,
+      "detalhe": "documento: 100.1 KiB · clone custa 2265× o inverso por ato"
+    },
+    {
+      "id": "H10-teto-do-historico",
+      "familia": "flowchart",
+      "alvo": "limite 100 · 200 atos",
+      "passou": true,
+      "detalhe": "pilha parou em 100 · 100 desfazeres até o fim · os 100 atos mais antigos ficaram **fora do alcance** do desfazer"
+    }
+  ]
+}
