@@ -34,7 +34,10 @@ declarada — o bloco cresce por exceção, não por padrão.
 **Criar e editar elementos**
 
 - Criar nós, conexões e agrupamentos diretamente na área visual.
-- Adicionar e editar o rótulo dos nós e o texto contido nas conexões.
+- Adicionar e editar o rótulo dos nós e o texto contido nas conexões — inclusive trazendo texto de
+  fora para dentro do rótulo em edição. O que entra é texto puro, sem a formatação da origem,
+  preservado como ela trouxe. Caractere que o tipo de diagrama não expressa em código deixa o rótulo
+  marcado — o texto nunca é alterado em silêncio para caber.
 - Oferecer os shapes compatíveis com cada tipo de diagrama.
 - Trocar o tipo, shape ou estilo de um elemento já criado — ou de uma seleção inteira de uma vez —
   sem precisar recriá-lo.
@@ -84,8 +87,10 @@ Recusas conscientes, não omissões:
   mermaid, o controle não existe ali. Nada de estilo decorativo que some na entrega.
 - **Não exporta imagem** (PNG, SVG ou qualquer formato de imagem) — o produto final é o código;
   quem quiser imagem renderiza o código em outro lugar.
-- **Não gera diagrama por IA** — o diagrama nasce das mãos da pessoa, não de um prompt em linguagem
-  natural.
+- **Não transforma texto em estrutura** — fora o próprio mermaid, que é a outra vista do mesmo
+  diagrama, nenhum texto vira estrutura por conta própria: nem um prompt em linguagem natural, nem
+  uma lista indentada, nem uma tabela. Texto de fora entra pelo rótulo e para aí. Quem decide o que
+  é caixa e o que é seta é a pessoa; a máquina transporta o texto, não o interpreta.
 - **Não presume a próxima escolha** — o elemento novo nasce neutro, sem herdar tipo ou estilo do
   anterior. Os elementos de um diagrama alternam por natureza, e escolher o tipo de cada um é
   decisão dela, não repetição a automatizar.
@@ -127,6 +132,12 @@ que **pensa mais do que opera**. O caminho entre ter uma caixa em mente e ter a 
 rotulada e conectada, é curto o bastante para não interromper o raciocínio — ela não sente a troca
 entre teclado e mouse no ciclo principal, não procura onde clicar para mudar o tipo de um elemento,
 e não refaz à mão, elemento por elemento, um ajuste que já decidiu uma vez na mesma sessão.
+
+Boa parte do que ela rotula já existe escrito em algum lugar — num documento, num chamado, numa
+planilha. Trazer esse texto para dentro de um rótulo é colar e seguir: chega como ela escreveu, sem
+a formatação de onde veio, e ela o reconhece intacto no diagrama e no código. O que a ferramenta não
+faz é ler esse texto por ela — decidir o que ali é caixa e o que é seta continua sendo o pensar que
+ela veio fazer.
 
 A ferramenta responde no tempo do pensamento: a mudança aparece no diagrama e no código sem espera
 perceptível, e a densidade do diagrama não muda essa sensação — diagrama grande continua fluido. Ao
