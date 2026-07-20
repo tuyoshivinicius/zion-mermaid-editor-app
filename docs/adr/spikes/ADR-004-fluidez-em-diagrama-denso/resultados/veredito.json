@@ -1,0 +1,1676 @@
+{
+  "pergunta": "O desenho modelo-como-fonte sobre React Flow sustenta a promessa do discovery — \"a mudança aparece no diagrama e no código sem espera perceptível\" e \"diagrama grande continua fluido\" — na densidade de uma sessão da Marina? Onde fica o teto?",
+  "lib": "@xyflow/react 12.11.2",
+  "limiares": {
+    "edicaoMedianaMs": 100,
+    "edicaoP95Ms": 200,
+    "teclaMedianaMs": 50,
+    "fpsMinimo": 50
+  },
+  "ambiente": {
+    "navegador": "149.0.7827.55",
+    "plataforma": "Linux 6.6.87.2-microsoft-standard-WSL2",
+    "cpus": 8,
+    "modeloCpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "memoriaGb": 23.5,
+    "viewport": "1440x900",
+    "observacao": "Chromium headless em WSL2, sem aceleração de GPU. Números absolutos são desta máquina; o que o spike lê é a CURVA contra a densidade e a ordem de grandeza."
+  },
+  "tetoQuePassa": 800,
+  "cenarios": [
+    {
+      "rotulo": "flowchart n=25",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 25,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 25,
+        "arestas": 31,
+        "handles": 50,
+        "elementos": 293,
+        "linhasDeCodigo": 57
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.7,
+        "p95": 17.1,
+        "pior": 17.1
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 0.5,
+          "p95": 1.1,
+          "pior": 1.1
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0.4,
+          "p95": 0.5,
+          "pior": 0.5
+        },
+        "total": {
+          "n": 12,
+          "mediana": 0.9,
+          "p95": 1.6,
+          "pior": 1.6
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.8,
+        "p95": 16.9,
+        "pior": 16.9
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.7,
+        "p95": 17.3,
+        "pior": 17.3
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 3,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5189",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=50",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 50,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 50,
+        "arestas": 63,
+        "handles": 100,
+        "elementos": 561,
+        "linhasDeCodigo": 114
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.5,
+        "p95": 17.7,
+        "pior": 17.7
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 1,
+          "p95": 1.8,
+          "pior": 1.8
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0.5,
+          "p95": 0.9,
+          "pior": 0.9
+        },
+        "total": {
+          "n": 12,
+          "mediana": 1.5,
+          "p95": 2.6,
+          "pior": 2.6
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.6,
+        "p95": 17.6,
+        "pior": 17.6
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.7,
+        "p95": 17.9,
+        "pior": 17.9
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.2,
+        "pior": 0.2
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 3.8,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5157",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=100",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 100,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 100,
+        "arestas": 129,
+        "handles": 200,
+        "elementos": 1105,
+        "linhasDeCodigo": 230
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.5,
+        "p95": 17.4,
+        "pior": 17.4
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 1.4,
+          "p95": 1.8,
+          "pior": 1.8
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 1.1,
+          "p95": 1.2,
+          "pior": 1.2
+        },
+        "total": {
+          "n": 12,
+          "mediana": 2.4,
+          "p95": 3,
+          "pior": 3
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.4,
+        "p95": 16.9,
+        "pior": 16.9
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.6,
+        "p95": 17.7,
+        "pior": 17.7
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.2,
+        "pior": 0.2
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 7.7,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5146",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=200",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 200,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 200,
+        "arestas": 261,
+        "handles": 400,
+        "elementos": 2193,
+        "linhasDeCodigo": 462
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.8,
+        "p95": 17.3,
+        "pior": 17.3
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 3.4,
+          "p95": 6.8,
+          "pior": 6.8
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 2.3,
+          "p95": 3.3,
+          "pior": 3.3
+        },
+        "total": {
+          "n": 12,
+          "mediana": 5.6,
+          "p95": 9.1,
+          "pior": 9.1
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.7,
+        "p95": 17.4,
+        "pior": 17.4
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.8,
+        "p95": 18.2,
+        "pior": 18.2
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.1,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 91,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 12,
+      "tarefasLongasMs": [
+        68
+      ],
+      "sanidade": {
+        "marca": "sonda-5223",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=400",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 400,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 400,
+        "arestas": 526,
+        "handles": 800,
+        "elementos": 4373,
+        "linhasDeCodigo": 927
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.8,
+        "p95": 26.8,
+        "pior": 26.8
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 3.6,
+          "p95": 5.3,
+          "pior": 5.3
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 3.8,
+          "p95": 4.3,
+          "pior": 4.3
+        },
+        "total": {
+          "n": 12,
+          "mediana": 7.6,
+          "p95": 9,
+          "pior": 9
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.3,
+        "p95": 18.7,
+        "pior": 18.7
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.6,
+        "p95": 18.7,
+        "pior": 18.7
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.1,
+        "p95": 0.2,
+        "pior": 0.2
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 21.2,
+      "tarefasLongasMs": [
+        65,
+        90
+      ],
+      "sanidade": {
+        "marca": "sonda-5317",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=800",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 800,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 800,
+        "arestas": 1056,
+        "handles": 1600,
+        "elementos": 8733,
+        "linhasDeCodigo": 1857
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 33.3,
+        "p95": 43.5,
+        "pior": 43.5
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 9.4,
+          "p95": 10.9,
+          "pior": 10.9
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 7.8,
+          "p95": 8.2,
+          "pior": 8.2
+        },
+        "total": {
+          "n": 12,
+          "mediana": 17.5,
+          "p95": 18.8,
+          "pior": 18.8
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 33.3,
+        "p95": 39.9,
+        "pior": 39.9
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 32.4,
+        "p95": 38.8,
+        "pior": 38.8
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.2,
+        "p95": 0.3,
+        "pior": 0.3
+      },
+      "fpsArrasto": {
+        "frames": 94,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 44.5,
+      "tarefasLongasMs": [
+        116,
+        209
+      ],
+      "sanidade": {
+        "marca": "sonda-6336",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=1600",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 1600,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 1600,
+        "arestas": 2119,
+        "handles": 3200,
+        "elementos": 17465,
+        "linhasDeCodigo": 3720
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 65.6,
+        "p95": 69.4,
+        "pior": 69.4
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 20.2,
+          "p95": 24,
+          "pior": 24
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 15.3,
+          "p95": 16.1,
+          "pior": 16.1
+        },
+        "total": {
+          "n": 12,
+          "mediana": 36,
+          "p95": 38.7,
+          "pior": 38.7
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 74.6,
+        "p95": 79.7,
+        "pior": 79.7
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 72.9,
+        "p95": 89.2,
+        "pior": 89.2
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.4,
+        "p95": 0.8,
+        "pior": 0.8
+      },
+      "fpsArrasto": {
+        "frames": 161,
+        "fps": 48,
+        "frameMediano": 16.7,
+        "piorFrame": 50
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 58.7,
+        "frameMediano": 16.7,
+        "piorFrame": 33.4
+      },
+      "ajustarATelaMs": 108.2,
+      "tarefasLongasMs": [
+        84,
+        62,
+        285,
+        51,
+        58,
+        431,
+        51,
+        50,
+        50,
+        62,
+        50,
+        51,
+        50,
+        50,
+        52,
+        51,
+        51,
+        62,
+        97,
+        52
+      ],
+      "sanidade": {
+        "marca": "sonda-10378",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": false,
+      "motivos": [
+        "tecla mediana 72.9ms > 50ms",
+        "arrasto 48fps < 50fps"
+      ]
+    },
+    {
+      "rotulo": "flowchart n=3200",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 3200,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 3200,
+        "arestas": 4247,
+        "handles": 6400,
+        "elementos": 34937,
+        "linhasDeCodigo": 7448
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 129.9,
+        "p95": 138.1,
+        "pior": 138.1
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 40.7,
+          "p95": 46.9,
+          "pior": 46.9
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 33.3,
+          "p95": 34,
+          "pior": 34
+        },
+        "total": {
+          "n": 12,
+          "mediana": 74.4,
+          "p95": 80.2,
+          "pior": 80.2
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 155.6,
+        "p95": 210.4,
+        "pior": 210.4
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 143.9,
+        "p95": 178.3,
+        "pior": 178.3
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 1.1,
+        "p95": 5.5,
+        "pior": 5.5
+      },
+      "fpsArrasto": {
+        "frames": 151,
+        "fps": 27.1,
+        "frameMediano": 16.7,
+        "piorFrame": 116.7
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 34.5,
+        "frameMediano": 33.3,
+        "piorFrame": 100.1
+      },
+      "ajustarATelaMs": 205.9,
+      "tarefasLongasMs": [
+        163,
+        165,
+        131,
+        737,
+        61,
+        63,
+        58,
+        117,
+        58,
+        95,
+        89,
+        88,
+        95,
+        90,
+        92,
+        83,
+        64,
+        91,
+        99,
+        881,
+        85,
+        55,
+        91,
+        53,
+        96,
+        51,
+        105,
+        53,
+        100,
+        55,
+        93,
+        57,
+        95,
+        54,
+        120,
+        58,
+        96,
+        103,
+        101,
+        100,
+        100,
+        99,
+        124,
+        101,
+        99,
+        101,
+        67,
+        102,
+        101,
+        132,
+        99,
+        100,
+        103,
+        68,
+        101,
+        74,
+        73,
+        76,
+        73,
+        51,
+        53,
+        78,
+        71,
+        71,
+        73,
+        68,
+        67,
+        69,
+        189,
+        69,
+        114
+      ],
+      "sanidade": {
+        "marca": "sonda-17937",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": false,
+      "motivos": [
+        "edição mediana 129.9ms > 100ms",
+        "tecla mediana 143.9ms > 50ms",
+        "arrasto 27.1fps < 50fps"
+      ]
+    },
+    {
+      "rotulo": "flowchart n=100 SEM memo da projeção",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 100,
+        "p": 8,
+        "m": 25,
+        "memo": false,
+        "virt": false
+      },
+      "dom": {
+        "nos": 100,
+        "arestas": 129,
+        "handles": 200,
+        "elementos": 1105,
+        "linhasDeCodigo": 230
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 20.7,
+        "p95": 35.9,
+        "pior": 35.9
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 2.1,
+          "p95": 3.9,
+          "pior": 3.9
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0.8,
+          "p95": 1,
+          "pior": 1
+        },
+        "total": {
+          "n": 12,
+          "mediana": 2.8,
+          "p95": 4.8,
+          "pior": 4.8
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 22.2,
+        "p95": 23.5,
+        "pior": 23.5
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 15.6,
+        "p95": 30.8,
+        "pior": 30.8
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 8.7,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5374",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=400 SEM memo da projeção",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 400,
+        "p": 8,
+        "m": 25,
+        "memo": false,
+        "virt": false
+      },
+      "dom": {
+        "nos": 400,
+        "arestas": 526,
+        "handles": 800,
+        "elementos": 4373,
+        "linhasDeCodigo": 927
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 64.9,
+        "p95": 75.1,
+        "pior": 75.1
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 9.5,
+          "p95": 16.9,
+          "pior": 16.9
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 3.2,
+          "p95": 3.9,
+          "pior": 3.9
+        },
+        "total": {
+          "n": 12,
+          "mediana": 13.4,
+          "p95": 20.2,
+          "pior": 20.2
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 62.7,
+        "p95": 73.6,
+        "pior": 73.6
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 62,
+        "p95": 82.7,
+        "pior": 82.7
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.1,
+        "p95": 0.2,
+        "pior": 0.2
+      },
+      "fpsArrasto": {
+        "frames": 146,
+        "fps": 46.8,
+        "frameMediano": 16.7,
+        "piorFrame": 66.7
+      },
+      "fpsZoom": {
+        "frames": 91,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 22.2,
+      "tarefasLongasMs": [
+        62,
+        53,
+        58,
+        57,
+        51,
+        57,
+        167,
+        52,
+        53,
+        54,
+        63
+      ],
+      "sanidade": {
+        "marca": "sonda-9354",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": false,
+      "motivos": [
+        "tecla mediana 62ms > 50ms",
+        "arrasto 46.8fps < 50fps"
+      ]
+    },
+    {
+      "rotulo": "flowchart n=800 SEM memo da projeção",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 800,
+        "p": 8,
+        "m": 25,
+        "memo": false,
+        "virt": false
+      },
+      "dom": {
+        "nos": 800,
+        "arestas": 1056,
+        "handles": 1600,
+        "elementos": 8733,
+        "linhasDeCodigo": 1857
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 126.2,
+        "p95": 142.4,
+        "pior": 142.4
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 20.1,
+          "p95": 35.6,
+          "pior": 35.6
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 6.1,
+          "p95": 8.2,
+          "pior": 8.2
+        },
+        "total": {
+          "n": 12,
+          "mediana": 26.2,
+          "p95": 42.2,
+          "pior": 42.2
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 125.7,
+        "p95": 141,
+        "pior": 141
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 119.9,
+        "p95": 159.4,
+        "pior": 159.4
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.2,
+        "p95": 0.3,
+        "pior": 0.3
+      },
+      "fpsArrasto": {
+        "frames": 167,
+        "fps": 29.6,
+        "frameMediano": 16.7,
+        "piorFrame": 100.1
+      },
+      "fpsZoom": {
+        "frames": 91,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 42.5,
+      "tarefasLongasMs": [
+        108,
+        95,
+        93,
+        101,
+        89,
+        90,
+        91,
+        82,
+        85,
+        94,
+        101,
+        111,
+        84,
+        83,
+        96,
+        89,
+        341,
+        91,
+        89,
+        83,
+        83,
+        84,
+        107,
+        83,
+        83,
+        89,
+        87,
+        82,
+        102,
+        87,
+        91,
+        84,
+        76,
+        99,
+        93,
+        90,
+        69,
+        89,
+        83,
+        83,
+        84,
+        89,
+        92,
+        85,
+        128,
+        76,
+        75,
+        77,
+        84,
+        90,
+        87,
+        78,
+        74,
+        75,
+        88,
+        82,
+        81,
+        80,
+        74,
+        76,
+        73,
+        84,
+        83,
+        81,
+        79,
+        75,
+        73,
+        75,
+        82,
+        83,
+        78,
+        76,
+        81,
+        76,
+        74,
+        75,
+        81,
+        83,
+        75,
+        80,
+        73,
+        73,
+        76,
+        83,
+        80,
+        100
+      ],
+      "sanidade": {
+        "marca": "sonda-14640",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": false,
+      "motivos": [
+        "edição mediana 126.2ms > 100ms",
+        "tecla mediana 119.9ms > 50ms",
+        "arrasto 29.6fps < 50fps"
+      ]
+    },
+    {
+      "rotulo": "flowchart n=800 + virtualização",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 800,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": true
+      },
+      "dom": {
+        "nos": 30,
+        "arestas": 46,
+        "handles": 60,
+        "elementos": 384,
+        "linhasDeCodigo": 1857
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 17.1,
+        "p95": 22.7,
+        "pior": 22.7
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 3.2,
+          "p95": 4.1,
+          "pior": 4.1
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 5.3,
+          "p95": 5.7,
+          "pior": 5.7
+        },
+        "total": {
+          "n": 12,
+          "mediana": 8.7,
+          "p95": 9.4,
+          "pior": 9.4
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 15.6,
+        "p95": 18.1,
+        "pior": 18.1
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.6,
+        "p95": 18.3,
+        "pior": 18.3
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.2,
+        "p95": 0.3,
+        "pior": 0.3
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 227.8,
+      "tarefasLongasMs": [
+        104,
+        226
+      ],
+      "sanidade": {
+        "marca": "sonda-5557",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "flowchart n=3200 + virtualização",
+      "cfg": {
+        "tipo": "flowchart",
+        "n": 3200,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": true
+      },
+      "dom": {
+        "nos": 30,
+        "arestas": 48,
+        "handles": 60,
+        "elementos": 392,
+        "linhasDeCodigo": 7448
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 39.8,
+        "p95": 57.3,
+        "pior": 57.3
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 10.6,
+          "p95": 20.2,
+          "pior": 20.2
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 21.7,
+          "p95": 37.2,
+          "pior": 37.2
+        },
+        "total": {
+          "n": 12,
+          "mediana": 32.5,
+          "p95": 46.7,
+          "pior": 46.7
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 39.3,
+        "p95": 47.8,
+        "pior": 47.8
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 39.8,
+        "p95": 55.4,
+        "pior": 55.4
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0.9,
+        "p95": 3,
+        "pior": 3
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 991.4,
+      "tarefasLongasMs": [
+        125,
+        157,
+        78,
+        114,
+        418,
+        989,
+        89,
+        104
+      ],
+      "sanidade": {
+        "marca": "sonda-7755",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "sequence 4x8 (36 handles)",
+      "cfg": {
+        "tipo": "sequence",
+        "n": 100,
+        "p": 4,
+        "m": 8,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 4,
+        "arestas": 8,
+        "handles": 36,
+        "elementos": 137,
+        "linhasDeCodigo": 13
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.7,
+        "p95": 17.4,
+        "pior": 17.4
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 0.6,
+          "p95": 1.2,
+          "pior": 1.2
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0,
+          "p95": 0,
+          "pior": 0
+        },
+        "total": {
+          "n": 12,
+          "mediana": 0.6,
+          "p95": 1.2,
+          "pior": 1.2
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.7,
+        "p95": 17.3,
+        "pior": 17.3
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.7,
+        "p95": 17.3,
+        "pior": 17.3
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 2.1,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5128",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "sequence 8x25 (208 handles)",
+      "cfg": {
+        "tipo": "sequence",
+        "n": 100,
+        "p": 8,
+        "m": 25,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 8,
+        "arestas": 25,
+        "handles": 208,
+        "elementos": 444,
+        "linhasDeCodigo": 34
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.8,
+        "p95": 18.3,
+        "pior": 18.3
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 0.8,
+          "p95": 1.7,
+          "pior": 1.7
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0,
+          "p95": 0.1,
+          "pior": 0.1
+        },
+        "total": {
+          "n": 12,
+          "mediana": 0.8,
+          "p95": 1.8,
+          "pior": 1.8
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 14.7,
+        "p95": 26.3,
+        "pior": 26.3
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.6,
+        "p95": 17.2,
+        "pior": 17.2
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 4.2,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5114",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "sequence 12x50 (612 handles)",
+      "cfg": {
+        "tipo": "sequence",
+        "n": 100,
+        "p": 12,
+        "m": 50,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 12,
+        "arestas": 50,
+        "handles": 612,
+        "elementos": 1039,
+        "linhasDeCodigo": 63
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.7,
+        "p95": 17.6,
+        "pior": 17.6
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 1,
+          "p95": 1.8,
+          "pior": 1.8
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0,
+          "p95": 0,
+          "pior": 0
+        },
+        "total": {
+          "n": 12,
+          "mediana": 1,
+          "p95": 1.8,
+          "pior": 1.8
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 16.8,
+        "p95": 24.1,
+        "pior": 24.1
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.7,
+        "p95": 17.8,
+        "pior": 17.8
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 90,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 7,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5144",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    },
+    {
+      "rotulo": "sequence 20x100 (2020 handles)",
+      "cfg": {
+        "tipo": "sequence",
+        "n": 100,
+        "p": 20,
+        "m": 100,
+        "memo": true,
+        "virt": false
+      },
+      "dom": {
+        "nos": 20,
+        "arestas": 100,
+        "handles": 2020,
+        "elementos": 2829,
+        "linhasDeCodigo": 121
+      },
+      "edicao": {
+        "n": 12,
+        "mediana": 16.7,
+        "p95": 18.7,
+        "pior": 18.7
+      },
+      "edicaoSincronaMs": {
+        "js": {
+          "n": 12,
+          "mediana": 1.9,
+          "p95": 3.3,
+          "pior": 3.3
+        },
+        "layout": {
+          "n": 12,
+          "mediana": 0,
+          "p95": 0,
+          "pior": 0
+        },
+        "total": {
+          "n": 12,
+          "mediana": 1.9,
+          "p95": 3.3,
+          "pior": 3.3
+        }
+      },
+      "criarElemento": {
+        "n": 8,
+        "mediana": 38.3,
+        "p95": 45.3,
+        "pior": 45.3
+      },
+      "tecla": {
+        "n": 20,
+        "mediana": 16.6,
+        "p95": 18.2,
+        "pior": 18.2
+      },
+      "serializacaoMs": {
+        "n": 20,
+        "mediana": 0,
+        "p95": 0.1,
+        "pior": 0.1
+      },
+      "fpsArrasto": {
+        "frames": 80,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "fpsZoom": {
+        "frames": 91,
+        "fps": 60,
+        "frameMediano": 16.7,
+        "piorFrame": 16.8
+      },
+      "ajustarATelaMs": 15.1,
+      "tarefasLongasMs": [],
+      "sanidade": {
+        "marca": "sonda-5344",
+        "chegouNoCanvas": true,
+        "chegouNoCodigo": true,
+        "posicaoVazou": false
+      },
+      "passa": true,
+      "motivos": []
+    }
+  ]
+}
