@@ -1,0 +1,219 @@
+{
+  "data": "2026-07-20T03:37:43.699Z",
+  "maquina": "Linux 6.6.87.2-microsoft-standard-WSL2 · AMD Ryzen 7 5800H with Radeon Graphics · 8 vCPU",
+  "limiarTeclaMs": 50,
+  "checagens": [
+    {
+      "nome": "criar-no-por-teclado",
+      "passou": true,
+      "detalhe": "nós=1 rótulo=\"Início\""
+    },
+    {
+      "nome": "tecla-perigosa-nao-destroi-elemento",
+      "passou": true,
+      "detalhe": "nós=1 rótulo=\"Inícioab\""
+    },
+    {
+      "nome": "conectar-por-teclado",
+      "passou": true,
+      "detalhe": "conexões=1 · callbacks da engine no gesto: onNodesChange, onSelectionChange"
+    },
+    {
+      "nome": "rotular-conexao-por-teclado",
+      "passou": true,
+      "detalhe": "foco no passo = no-n1 · código: \"  n1 -->|sim| n2\""
+    },
+    {
+      "nome": "ciclo-completo-sem-mouse",
+      "passou": true,
+      "detalhe": "nós=9 conexões=8 rótulos preenchidos=true · eventos de ponteiro=0"
+    },
+    {
+      "nome": "foco-encadeia-para-o-proximo-ciclo",
+      "passou": true,
+      "detalhe": "foco=n9 último nó=n9"
+    },
+    {
+      "nome": "no-novo-nasce-dentro-da-viewport",
+      "passou": false,
+      "detalhe": "7/8 nasceram visíveis · primeiro cego: n5"
+    },
+    {
+      "nome": "modelo-segue-sem-coordenada",
+      "passou": true,
+      "detalhe": "a verdade não ganhou x/y depois de 9 elementos criados por teclado"
+    },
+    {
+      "nome": "camera-acompanhando-resolve-o-nascimento-cego",
+      "passou": true,
+      "detalhe": "8/8 nasceram visíveis com setCenter a cada troca de foco"
+    },
+    {
+      "nome": "foco-sobrevive-a-projecao-sem-reuso",
+      "passou": false,
+      "detalhe": "quebrou: page.waitForFunction: Timeout 4000ms exceeded."
+    },
+    {
+      "nome": "seta-dentro-do-rotulo-nao-move-o-no",
+      "passou": true,
+      "detalhe": "nó parado em (60,60)"
+    },
+    {
+      "nome": "backspace-no-rotulo-nao-apaga-o-no-com-a11y-ligado",
+      "passou": true,
+      "detalhe": "nós=1 rótulo=\"Alv\""
+    },
+    {
+      "nome": "latencia-de-tecla-dentro-do-envelope",
+      "passou": false,
+      "detalhe": "texto: mediana 77.6ms p95 95ms · controle: mediana 92.2ms p95 93.1ms · barra 50ms"
+    },
+    {
+      "nome": "ciclo-funciona-em-diagrama-denso",
+      "passou": true,
+      "detalhe": "nós=401 último rótulo=\"Elemento no envelope\""
+    },
+    {
+      "nome": "aresta-hibrida-devolve-a-tecla-para-dentro-da-barra",
+      "passou": true,
+      "detalhe": "própria em todas 83.5ms · embutida 28.2ms · híbrida 28.8ms · barra 50ms"
+    },
+    {
+      "nome": "hibrida-preserva-edicao-do-rotulo-por-teclado",
+      "passou": true,
+      "detalhe": "rótulo da conexão = \"via híbrida\""
+    }
+  ],
+  "passaram": 13,
+  "total": 16,
+  "resultados": {
+    "callbacksNoConectar": [
+      "onNodesChange",
+      "onSelectionChange"
+    ],
+    "teclasDeControlePorElemento": 4,
+    "encadeamento": {
+      "modo": "navegando",
+      "noFocado": "n9",
+      "noEditando": null,
+      "conexaoEditando": null,
+      "alvo": null
+    },
+    "nascimentos": [
+      {
+        "id": "n2",
+        "visivel": true
+      },
+      {
+        "id": "n3",
+        "visivel": true
+      },
+      {
+        "id": "n4",
+        "visivel": true
+      },
+      {
+        "id": "n5",
+        "visivel": false
+      },
+      {
+        "id": "n6",
+        "visivel": true
+      },
+      {
+        "id": "n7",
+        "visivel": true
+      },
+      {
+        "id": "n8",
+        "visivel": true
+      },
+      {
+        "id": "n9",
+        "visivel": true
+      }
+    ],
+    "framesDeEsperaDoFoco": 2,
+    "latenciaVazio": {
+      "controle": {
+        "n": 33,
+        "mediana": 11.4,
+        "p95": 32.3,
+        "pior": 32.8
+      },
+      "texto": {
+        "n": 102,
+        "mediana": 14.7,
+        "p95": 17.3,
+        "pior": 33.5
+      }
+    },
+    "nascimentosComCamera": [
+      {
+        "id": "n2",
+        "visivel": true
+      },
+      {
+        "id": "n3",
+        "visivel": true
+      },
+      {
+        "id": "n4",
+        "visivel": true
+      },
+      {
+        "id": "n5",
+        "visivel": true
+      },
+      {
+        "id": "n6",
+        "visivel": true
+      },
+      {
+        "id": "n7",
+        "visivel": true
+      },
+      {
+        "id": "n8",
+        "visivel": true
+      },
+      {
+        "id": "n9",
+        "visivel": true
+      }
+    ],
+    "focoComA11y": "input-no-n1",
+    "latenciaEnvelope": {
+      "controle": {
+        "n": 4,
+        "mediana": 92.2,
+        "p95": 93.1,
+        "pior": 93.1
+      },
+      "texto": {
+        "n": 38,
+        "mediana": 77.6,
+        "p95": 95,
+        "pior": 96.7
+      }
+    },
+    "n=400&arestas=500&rot=1": {
+      "n": 12,
+      "mediana": 83.5,
+      "p95": 88.9,
+      "pior": 88.9
+    },
+    "n=400&arestas=500&rot=0": {
+      "n": 12,
+      "mediana": 28.2,
+      "p95": 35.3,
+      "pior": 35.3
+    },
+    "n=400&arestas=500&rot=2": {
+      "n": 12,
+      "mediana": 28.8,
+      "p95": 36.4,
+      "pior": 36.4
+    }
+  }
+}
