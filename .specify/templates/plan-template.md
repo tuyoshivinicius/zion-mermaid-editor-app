@@ -40,7 +40,28 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Source: `.specify/memory/constitution.md`. List every principle this feature touches and, for each,
+the executable evidence the PR will present (test, benchmark, validator or boundary check). Prose is
+not evidence. Principles not touched are marked N/A with one line of justification.
+
+| Principle | Touched? | Evidence this PR will present |
+|-----------|----------|-------------------------------|
+| I — Keyboard cycle, ≤4 control keys / 0 pointer events (NFR-01, R-05) | [yes/N/A] | |
+| II — Reconfigure in ≤3 steps (NFR-02, declared target, unmeasured) | [yes/N/A] | |
+| III — Density envelope as budget: 400/500, 100ms/50ms/50fps + projection reuse (NFR-03, R-04) | [yes/N/A] | per-element cost added: [ ] |
+| IV — Transaction is the unit of undo, p95 ≤110ms at 400 (NFR-04, R-09, RN-04) | [yes/N/A] | |
+| V — Code is a faithful projection of durable state only (NFR-05, R-03, RN-01) | [yes/N/A] | |
+| VI — Reading-order fidelity outside groups; divergence declared inside (NFR-06) | [yes/N/A] | |
+| VII — Layout is an explicit gesture; no edit rearranges (R-07, RN-03) | [yes/N/A] | |
+| VIII — Label text returns byte-for-byte or returns marked (NFR-07, RN-02) | [yes/N/A] | |
+| IX — Code analysis always returns a diagram, never nothing (NFR-08, R-06) | [yes/N/A] | |
+| X — REFUSAL: mermaid stays out of the editing path (R-06) | [yes/N/A] | |
+| XI — Long session does not degrade; draft fails toward not existing (NFR-09, R-10, RN-05, RN-07) | [yes/N/A] | |
+| XII — Five types, common core, per-family vocabulary (R-02, R-08) | [yes/N/A] | |
+| XIII — REFUSAL: browser-only; the deliverable is the code, not an image (R-01, PRD §4) | [yes/N/A] | |
+| XIV — REFUSAL: nothing presumed, no style control without code backing (RN-06, RN-08) | [yes/N/A] | |
+
+Any accepted violation goes to Complexity Tracking below — never left implicit.
 
 ## Project Structure
 
