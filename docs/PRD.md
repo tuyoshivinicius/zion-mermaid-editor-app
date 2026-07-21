@@ -114,40 +114,41 @@ Invariáveis: nenhuma spec pode contrariá-las, seja qual for a feature.
 
 ## 6. Requisitos funcionais por épico (RF-xx)
 
-- **Épico E1 — Criar e editar elementos:** `RF-01` criar nós, conexões e agrupamentos diretamente na
-  área do diagrama; `RF-02` editar o rótulo de um nó e o texto contido numa conexão, inclusive
-  colando texto vindo de fora, que entra como texto puro sem a formatação da origem; `RF-03`
-  escolher, entre os shapes que o tipo de diagrama corrente expressa, o shape de um nó; `RF-04`
-  trocar o tipo, o shape ou o estilo de um elemento já criado, ou de uma seleção inteira de uma vez,
-  sem recriá-lo; `RF-05` repetir a última alteração em outro elemento, sem refazer o caminho até o
-  controle; `RF-06` selecionar — individual e múltipla —, mover, duplicar e excluir nós, conexões e
-  agrupamentos; `RF-07` reconectar uma conexão para outro nó de origem ou de destino; `RF-08` copiar
-  e colar elementos preservando os seus estilos; `RF-09` desfazer e refazer as ações da sessão.
-- **Épico E2 — Fluxo por teclado:** `RF-10` executar o ciclo principal — criar caixa, rotular,
-  conectar, rotular a conexão — de ponta a ponta sem alternar para o mouse; `RF-11` ver o elemento
-  recém-criado pelo teclado trazido para dentro da área visível, para que o rótulo nunca seja
-  digitado às cegas.
-- **Épico E3 — Estilo do diagrama:** `RF-12` customizar o tipo de seta, o tipo de linha e a cor de
-  uma conexão; `RF-13` alterar a cor de fundo, o estilo e a cor de borda e o estilo de texto de um
-  nó, dentro do que o tipo de diagrama corrente expressa em código.
-- **Épico E4 — Layout e arranjo:** `RF-14` organizar o diagrama inteiro por um gesto explícito;
-  `RF-15` reorganizar à mão a posição de qualquer elemento e ver essa posição preservada quando o
-  layout é acionado; `RF-16` alterar a configuração de layout — hierárquico ou adaptativo — e a
-  orientação do diagrama; `RF-17` ver declarada a divergência de arranjo dentro de agrupamentos,
-  onde o arranjo visível e o do código não coincidem.
-- **Épico E5 — Diagrama e código:** `RF-18` escolher e trocar o tipo de diagrama entre os cinco;
-  `RF-19` escrever mermaid no editor de código e ver a prévia acompanhar conforme digita, sem perder
-  o que já foi construído; `RF-20` colar um código mermaid já pronto e obter o diagrama
-  correspondente; `RF-21` ver o erro de sintaxe sinalizado enquanto edita o código, distinguindo o
-  que derruba um trecho do que apenas avisa; `RF-22` ver marcado o rótulo cujo texto o tipo de
-  diagrama corrente não expressa fielmente em código; `RF-23` copiar o código mermaid gerado com um
-  gesto — é o produto final.
-- **Épico E6 — Área de trabalho e sessão:** `RF-24` redimensionar o editor de código e a área do
-  diagrama; `RF-25` navegar na área do diagrama com zoom e movimentação por cursor hand; `RF-26`
-  ajustar o diagrama à tela e resetar o zoom; `RF-27` recuperar o rascunho em curso — estrutura,
-  estilo e o arranjo feito à mão — ao reabrir a aba; `RF-28` ser avisada quando o rascunho não pôde
-  ser recuperado, começando uma sessão nova; `RF-29` ser avisada ao ultrapassar o envelope de
-  densidade suportado, em vez de o produto seguir como se nada fosse.
+- **Épico E1 — Criar e editar elementos:**
+  - **RF-01:** criar nós, conexões e agrupamentos diretamente na área do diagrama
+  - **RF-02:** editar o rótulo de um nó e o texto contido numa conexão, inclusive colando texto vindo de fora, que entra como texto puro sem a formatação da origem
+  - **RF-03:** escolher, entre os shapes que o tipo de diagrama corrente expressa, o shape de um nó
+  - **RF-04:** trocar o tipo, o shape ou o estilo de um elemento já criado, ou de uma seleção inteira de uma vez, sem recriá-lo
+  - **RF-05:** repetir a última alteração em outro elemento, sem refazer o caminho até o controle
+  - **RF-06:** selecionar — individual e múltipla —, mover, duplicar e excluir nós, conexões e agrupamentos
+  - **RF-07:** reconectar uma conexão para outro nó de origem ou de destino
+  - **RF-08:** copiar e colar elementos preservando os seus estilos
+  - **RF-09:** desfazer e refazer as ações da sessão
+- **Épico E2 — Fluxo por teclado:**
+  - **RF-10:** executar o ciclo principal — criar caixa, rotular, conectar, rotular a conexão — de ponta a ponta sem alternar para o mouse
+  - **RF-11:** ver o elemento recém-criado pelo teclado trazido para dentro da área visível, para que o rótulo nunca seja digitado às cegas
+- **Épico E3 — Estilo do diagrama:**
+  - **RF-12:** customizar o tipo de seta, o tipo de linha e a cor de uma conexão
+  - **RF-13:** alterar a cor de fundo, o estilo e a cor de borda e o estilo de texto de um nó, dentro do que o tipo de diagrama corrente expressa em código
+- **Épico E4 — Layout e arranjo:**
+  - **RF-14:** organizar o diagrama inteiro por um gesto explícito
+  - **RF-15:** reorganizar à mão a posição de qualquer elemento e ver essa posição preservada quando o layout é acionado
+  - **RF-16:** alterar a configuração de layout — hierárquico ou adaptativo — e a orientação do diagrama
+  - **RF-17:** ver declarada a divergência de arranjo dentro de agrupamentos, onde o arranjo visível e o do código não coincidem
+- **Épico E5 — Diagrama e código:**
+  - **RF-18:** escolher e trocar o tipo de diagrama entre os cinco
+  - **RF-19:** escrever mermaid no editor de código e ver a prévia acompanhar conforme digita, sem perder o que já foi construído
+  - **RF-20:** colar um código mermaid já pronto e obter o diagrama correspondente
+  - **RF-21:** ver o erro de sintaxe sinalizado enquanto edita o código, distinguindo o que derruba um trecho do que apenas avisa
+  - **RF-22:** ver marcado o rótulo cujo texto o tipo de diagrama corrente não expressa fielmente em código
+  - **RF-23:** copiar o código mermaid gerado com um gesto — é o produto final
+- **Épico E6 — Área de trabalho e sessão:**
+  - **RF-24:** redimensionar o editor de código e a área do diagrama
+  - **RF-25:** navegar na área do diagrama com zoom e movimentação por cursor hand
+  - **RF-26:** ajustar o diagrama à tela e resetar o zoom
+  - **RF-27:** recuperar o rascunho em curso — estrutura, estilo e o arranjo feito à mão — ao reabrir a aba
+  - **RF-28:** ser avisada quando o rascunho não pôde ser recuperado, começando uma sessão nova
+  - **RF-29:** ser avisada ao ultrapassar o envelope de densidade suportado, em vez de o produto seguir como se nada fosse
 
 ## 7. NFRs (com números)
 Superfície de uso: sim
@@ -288,7 +289,42 @@ que vive no `plan.md` da feature. A regra invariável correspondente, quando exi
   deve avisar, não está decidido. Não bloqueante (ADR-010).
 
 ## 12. Rastreabilidade
-Tabela de rastreabilidade RF → épico → spec, injetada por `/zion-prd-decompose` e mantida dentro desta PRD.
+
+> Tabela derivada — regenerada por `/zion-prd-trace`. Não edite Status/Feature/Spec à mão.
+
+| RF | Descrição | Épico | Feature / Spec | Release | Status |
+|----|-----------|-------|----------------|---------|--------|
+| RF-01 | criar nós, conexões e agrupamentos diretamente na área do diagrama | E1 |  | R1–R3 | ☐ pendente |
+| RF-02 | editar o rótulo de um nó e o texto contido numa conexão, inclusive colando texto vindo de fora, que entra como texto puro sem a formatação da origem | E1 |  | R1–R3 | ☐ pendente |
+| RF-03 | escolher, entre os shapes que o tipo de diagrama corrente expressa, o shape de um nó | E1 |  | R4 | ☐ pendente |
+| RF-04 | trocar o tipo, o shape ou o estilo de um elemento já criado, ou de uma seleção inteira de uma vez, sem recriá-lo | E1 |  | R4 | ☐ pendente |
+| RF-05 | repetir a última alteração em outro elemento, sem refazer o caminho até o controle | E1 |  | R4 | ☐ pendente |
+| RF-06 | selecionar — individual e múltipla —, mover, duplicar e excluir nós, conexões e agrupamentos | E1 |  | R1–R3 | ☐ pendente |
+| RF-07 | reconectar uma conexão para outro nó de origem ou de destino | E1 |  | R4 | ☐ pendente |
+| RF-08 | copiar e colar elementos preservando os seus estilos | E1 |  | R4 | ☐ pendente |
+| RF-09 | desfazer e refazer as ações da sessão | E1 |  | R1 | ☐ pendente |
+| RF-10 | executar o ciclo principal — criar caixa, rotular, conectar, rotular a conexão — de ponta a ponta sem alternar para o mouse | E2 |  | R1, R3 | ☐ pendente |
+| RF-11 | ver o elemento recém-criado pelo teclado trazido para dentro da área visível, para que o rótulo nunca seja digitado às cegas | E2 |  | R1, R3 | ☐ pendente |
+| RF-12 | customizar o tipo de seta, o tipo de linha e a cor de uma conexão | E3 |  | R4 | ☐ pendente |
+| RF-13 | alterar a cor de fundo, o estilo e a cor de borda e o estilo de texto de um nó, dentro do que o tipo de diagrama corrente expressa em código | E3 |  | R4 | ☐ pendente |
+| RF-14 | organizar o diagrama inteiro por um gesto explícito | E4 |  | R4 | ☐ pendente |
+| RF-15 | reorganizar à mão a posição de qualquer elemento e ver essa posição preservada quando o layout é acionado | E4 |  | R4 | ☐ pendente |
+| RF-16 | alterar a configuração de layout — hierárquico ou adaptativo — e a orientação do diagrama | E4 |  | R4 | ☐ pendente |
+| RF-17 | ver declarada a divergência de arranjo dentro de agrupamentos, onde o arranjo visível e o do código não coincidem | E4 |  | R4 | ☐ pendente |
+| RF-18 | escolher e trocar o tipo de diagrama entre os cinco | E5 |  | R1–R3 | ☐ pendente |
+| RF-19 | escrever mermaid no editor de código e ver a prévia acompanhar conforme digita, sem perder o que já foi construído | E5 |  | R0 | ☐ pendente |
+| RF-20 | colar um código mermaid já pronto e obter o diagrama correspondente | E5 |  | R1 | ☐ pendente |
+| RF-21 | ver o erro de sintaxe sinalizado enquanto edita o código, distinguindo o que derruba um trecho do que apenas avisa | E5 |  | R1 | ☐ pendente |
+| RF-22 | ver marcado o rótulo cujo texto o tipo de diagrama corrente não expressa fielmente em código | E5 |  | R1 | ☐ pendente |
+| RF-23 | copiar o código mermaid gerado com um gesto — é o produto final | E5 |  | R0 | ☐ pendente |
+| RF-24 | redimensionar o editor de código e a área do diagrama | E6 |  | R1 | ☐ pendente |
+| RF-25 | navegar na área do diagrama com zoom e movimentação por cursor hand | E6 |  | R1 | ☐ pendente |
+| RF-26 | ajustar o diagrama à tela e resetar o zoom | E6 |  | R1 | ☐ pendente |
+| RF-27 | recuperar o rascunho em curso — estrutura, estilo e o arranjo feito à mão — ao reabrir a aba | E6 |  | R1 | ☐ pendente |
+| RF-28 | ser avisada quando o rascunho não pôde ser recuperado, começando uma sessão nova | E6 |  | R1 | ☐ pendente |
+| RF-29 | ser avisada ao ultrapassar o envelope de densidade suportado, em vez de o produto seguir como se nada fosse | E6 |  | R1 | ☐ pendente |
+
+Legenda de status: ☐ pendente · ◐ em spec · ● implementada.
 
 ## 13. Histórico de mudanças
 > Vazia no dia 1. Preenchida por `/zion-prd-evolve` a partir da primeira mudança pós-release — uma linha
