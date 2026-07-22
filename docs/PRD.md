@@ -312,11 +312,11 @@ que vive no `plan.md` da feature. A regra invariável correspondente, quando exi
 | RF-16 | alterar a configuração de layout — hierárquico ou adaptativo — e a orientação do diagrama | E4 |  | R4 | ☐ pendente |
 | RF-17 | ver declarada a divergência de arranjo dentro de agrupamentos, onde o arranjo visível e o do código não coincidem | E4 |  | R4 | ☐ pendente |
 | RF-18 | escolher e trocar o tipo de diagrama entre os cinco | E5 |  | R1–R3 | ☐ pendente |
-| RF-19 | escrever mermaid no editor de código e ver a prévia acompanhar conforme digita, sem perder o que já foi construído | E5 |  | R0 | ☐ pendente |
+| RF-19 | escrever mermaid no editor de código e ver a prévia acompanhar conforme digita, sem perder o que já foi construído | E5 | `specs/001-cano-modelo-codigo` | R0 | ● implementada |
 | RF-20 | colar um código mermaid já pronto e obter o diagrama correspondente | E5 |  | R1 | ☐ pendente |
 | RF-21 | ver o erro de sintaxe sinalizado enquanto edita o código, distinguindo o que derruba um trecho do que apenas avisa | E5 |  | R1 | ☐ pendente |
 | RF-22 | ver marcado o rótulo cujo texto o tipo de diagrama corrente não expressa fielmente em código | E5 |  | R1 | ☐ pendente |
-| RF-23 | copiar o código mermaid gerado com um gesto — é o produto final | E5 |  | R0 | ☐ pendente |
+| RF-23 | copiar o código mermaid gerado com um gesto — é o produto final | E5 | `specs/001-cano-modelo-codigo` | R0 | ● implementada |
 | RF-24 | redimensionar o editor de código e a área do diagrama | E6 |  | R1 | ☐ pendente |
 | RF-25 | navegar na área do diagrama com zoom e movimentação por cursor hand | E6 |  | R1 | ☐ pendente |
 | RF-26 | ajustar o diagrama à tela e resetar o zoom | E6 |  | R1 | ☐ pendente |

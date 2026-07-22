@@ -122,7 +122,7 @@ gerado sai.
 ## 4. Visão do backlog
 
 <!-- zion:backlog-view:start -->
-- `cano-modelo-codigo` — ☐ pendente
+- `cano-modelo-codigo` — ● implementada
 - `elementos-grafo-dirigido` — ☐ pendente
 - `area-de-trabalho` — ☐ pendente
 - `ciclo-por-teclado` — ☐ pendente
