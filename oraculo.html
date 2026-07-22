@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oráculo mermaid (só teste)</title>
+  </head>
+  <body>
+    <!-- Página EXCLUSIVA de teste: importa o mermaid como ORÁCULO (Princípio X:
+         o app nunca o importa; esta página não está no caminho de edição). -->
+    <script type="module">
+      import mermaid from 'mermaid'
+      mermaid.initialize({ startOnLoad: false })
+      window.validarMermaid = async (texto) => {
+        try {
+          await mermaid.parse(texto)
+          return { ok: true }
+        } catch (e) {
+          return { ok: false, erro: String(e && e.message ? e.message : e) }
+        }
+      }
+      window.__oraculoPronto = true
+    </script>
+  </body>
+</html>
