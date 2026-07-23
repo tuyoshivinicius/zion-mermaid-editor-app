@@ -294,12 +294,12 @@ que vive no `plan.md` da feature. A regra invariável correspondente, quando exi
 
 | RF | Descrição | Épico | Feature / Spec | Release | Status |
 |----|-----------|-------|----------------|---------|--------|
-| RF-01 | criar nós, conexões e agrupamentos diretamente na área do diagrama | E1 |  | R1–R3 | ☐ pendente |
-| RF-02 | editar o rótulo de um nó e o texto contido numa conexão, inclusive colando texto vindo de fora, que entra como texto puro sem a formatação da origem | E1 |  | R1–R3 | ☐ pendente |
+| RF-01 | criar nós, conexões e agrupamentos diretamente na área do diagrama | E1 | `specs/002-elementos-grafo-dirigido` | R1–R3 | ● implementada |
+| RF-02 | editar o rótulo de um nó e o texto contido numa conexão, inclusive colando texto vindo de fora, que entra como texto puro sem a formatação da origem | E1 | `specs/002-elementos-grafo-dirigido` | R1–R3 | ● implementada |
 | RF-03 | escolher, entre os shapes que o tipo de diagrama corrente expressa, o shape de um nó | E1 |  | R4 | ☐ pendente |
 | RF-04 | trocar o tipo, o shape ou o estilo de um elemento já criado, ou de uma seleção inteira de uma vez, sem recriá-lo | E1 |  | R4 | ☐ pendente |
 | RF-05 | repetir a última alteração em outro elemento, sem refazer o caminho até o controle | E1 |  | R4 | ☐ pendente |
-| RF-06 | selecionar — individual e múltipla —, mover, duplicar e excluir nós, conexões e agrupamentos | E1 |  | R1–R3 | ☐ pendente |
+| RF-06 | selecionar — individual e múltipla —, mover, duplicar e excluir nós, conexões e agrupamentos | E1 | `specs/002-elementos-grafo-dirigido` | R1–R3 | ● implementada |
 | RF-07 | reconectar uma conexão para outro nó de origem ou de destino | E1 |  | R4 | ☐ pendente |
 | RF-08 | copiar e colar elementos preservando os seus estilos | E1 |  | R4 | ☐ pendente |
 | RF-09 | desfazer e refazer as ações da sessão | E1 |  | R1 | ☐ pendente |
