@@ -11,7 +11,8 @@ describe('analisar (T013 / contracts/codec.md)', () => {
   })
 
   it('duas listas: statement fora do vocabulário vira erro, sem derrubar o resto', () => {
-    const r = analisar('flowchart TD\nn1[ok]\na --> b\nn2[ok2]')
+    // R1: `a --> b` já é conexão legível; o fan-out `a --> b & c` continua ilegível.
+    const r = analisar('flowchart TD\nn1[ok]\na --> b & c\nn2[ok2]')
     expect(r.modelo.nos.map((n) => n.id)).toEqual(['n1', 'n2'])
     expect(r.erros.length).toBeGreaterThan(0)
   })

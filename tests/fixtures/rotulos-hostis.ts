@@ -37,9 +37,19 @@ export const ROTULOS_HOSTIS: RotuloHostil[] = [
   { texto: 'símbolos: ± × ÷ ≠ ≤ ≥ ∞', esperaMarcado: false },
   { texto: 'quebra\nde linha', esperaMarcado: false },
   { texto: 'travessão — e reticências …', esperaMarcado: false },
+  // R1: texto multi-linha (parágrafo) — cada `\n` vira `<br/>`, lossless (SC-002).
+  { texto: 'passo 1\npasso 2\npasso 3', esperaMarcado: false },
+  // R1: texto típico de conexão (rótulo de aresta) — pipe e seta literais.
+  { texto: 'condição: a | b', esperaMarcado: false },
   // Marcados: o codec preserva byte-a-byte, mas o mermaid não renderiza fiel.
   { texto: '  borda com espaços  ', esperaMarcado: true },
   { texto: 'espaço    colapsado', esperaMarcado: true },
   { texto: 'tabulação\taqui', esperaMarcado: true },
   { texto: 'controleaqui', esperaMarcado: true },
 ]
+
+/** Rótulo/texto multi-linha (SC-002: 0 quebras colapsadas, 0 truncamento na 1ª linha). */
+export const MULTILINHA = 'linha 1\nlinha 2\nlinha 3'
+
+/** Rótulo vazio (FR-018): 0 repovoados com o neutro, 0 identificadores exibidos como rótulo. */
+export const ROTULO_VAZIO = ''

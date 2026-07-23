@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { analisar } from '../../src/codec'
 import { Arranjo, materializarPosicoes } from '../../src/modelo/arranjo'
-import { projetar, limparCacheProjecao } from '../../src/projecao/projetar'
+import { projetar, limparCacheProjecao, type DadosCaixa } from '../../src/projecao/projetar'
 import type { Modelo } from '../../src/modelo/modelo'
 
 function prep(texto: string): { modelo: Modelo; arranjo: Arranjo } {
@@ -45,6 +45,7 @@ describe('projetar — invariante de reuso (T022 / Princípio III, portão)', ()
 
   it('rótulo exibido de um nó sem rótulo é o próprio id', () => {
     const { modelo, arranjo } = prep('flowchart TD\nn1')
-    expect(projetar(modelo, arranjo).nodes[0].data.rotulo).toBe('n1')
+    const dados = projetar(modelo, arranjo).nodes[0].data as DadosCaixa
+    expect(dados.rotulo).toBe('n1')
   })
 })

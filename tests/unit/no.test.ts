@@ -18,9 +18,9 @@ describe('reconhecedor de nó retangular (T011 / FR-005)', () => {
   })
 
   describe('guarda de ilegibilidade — sem materialização parcial (research §2a)', () => {
-    it('linha com token de link → 0 nós', () => {
-      expect(soIds('flowchart TD\na --> b')).toEqual([])
-      expect(soIds('flowchart TD\nn1[Nó A] --> n2')).toEqual([]) // US2-12
+    it('linha com token de link ilegível → 0 nós (R1: fan-out e ponta com rótulo seguem ilegíveis)', () => {
+      expect(soIds('flowchart TD\na --> b & c')).toEqual([]) // fan-out fora do vocabulário lido
+      expect(soIds('flowchart TD\nn1[Nó A] --> n2')).toEqual([]) // US2-12: ponta com rótulo
     })
     it('outro delimitador de shape → 0 nós', () => {
       expect(soIds('flowchart TD\nn1(Nó A)')).toEqual([]) // US2-14
