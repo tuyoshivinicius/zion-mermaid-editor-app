@@ -1,16 +1,21 @@
 // texto → modelo. NUNCA devolve "nada" (ADR-006 / Princípio IX): sempre um modelo
 // + duas listas de severidade. Divide linhas e statements, preserva o preâmbulo,
 // e consulta o registro de reconhecedores — sem nomear família nenhuma (Princípio XII).
+//
+// R1: o núcleo ganha a mecânica AGNÓSTICA de pilha de container (research §2). Não
+// sabe de que família é o container; sabe que há uma pilha e que membros pegam o
+// topo, com vínculo exclusivo (primeiro-vence, M4). Um container aberto sem fecho
+// mantém-se aberto até o fim do documento (tolerância): os membros já lidos não somem.
 
 import type { Modelo } from '../../modelo/modelo'
-import { vazio } from '../../modelo/modelo'
+import { vazio, paiDe, acharAgrupamento } from '../../modelo/modelo'
 import type { Achado, Ctx } from './reconhecedores'
 import { todosReconhecedores } from './reconhecedores'
 
 export interface Analise {
   modelo: Modelo
   erros: Achado[] // derruba o statement ofensor
-  avisos: Achado[] // sinaliza sem derrubar (ex.: rótulo ainda sem fecho)
+  avisos: Achado[] // sinaliza sem derrubar (ex.: rótulo ainda sem fecho, bloco sem fim)
 }
 
 const RE_FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---[ \t]*(\r?\n|$)/
@@ -26,7 +31,33 @@ export function analisar(texto: string, opcoes: { tolerante?: boolean } = {}): A
   const modelo = vazio()
   const erros: Achado[] = []
   const avisos: Achado[] = []
-  const ctx: Ctx = { modelo, tolerante, erros, avisos, linha: 0 }
+
+  const containerStack: string[] = []
+  const ctx: Ctx = {
+    modelo,
+    tolerante,
+    erros,
+    avisos,
+    linha: 0,
+    containerStack,
+    abrirContainer(id: string) {
+      containerStack.push(id)
+    },
+    fecharContainer() {
+      containerStack.pop() // `end` sem par → no-op (tolerância)
+    },
+    // Materializar com a pilha não-vazia → membro do topo. Vínculo EXCLUSIVO,
+    // primeiro-vence (M4): se `id` já tem dono, ignora — o 2º bloco não rouba.
+    registrarMembro(id: string) {
+      if (containerStack.length === 0) return
+      const topo = containerStack[containerStack.length - 1]
+      if (id === topo) return // um bloco não é membro de si mesmo
+      if (paiDe(modelo, id) != null) return // já tem dono (primeiro vence)
+      const g = acharAgrupamento(modelo, topo)
+      if (g && !g.membros.includes(id)) g.membros.push(id)
+    },
+  }
+
   const reconhecedores = todosReconhecedores()
 
   let corpo = texto
@@ -73,9 +104,21 @@ export function analisar(texto: string, opcoes: { tolerante?: boolean } = {}): A
       if (!consumido) {
         // Statement fora do vocabulário: ilegível por inteiro. Não vira nó; o texto
         // permanece no editor (é da pessoa — FR-017). Registrado como erro localizado.
-        erros.push({ linha: nLinha, trecho: statement, mensagem: 'statement fora do vocabulário do R0' })
+        erros.push({ linha: nLinha, trecho: statement, mensagem: 'statement fora do vocabulário' })
       }
     }
+  }
+
+  // Aninhar por menção (M3): mencionar o id de um agrupamento dentro de outro bloco
+  // materializa um nó-fantasma pelo reconhecedor de nó, mas o id é, na verdade, um
+  // bloco. O bloco vence — descarta o fantasma; o pertencimento (por id) permanece.
+  if (modelo.agrupamentos.length > 0) {
+    modelo.nos = modelo.nos.filter((n) => acharAgrupamento(modelo, n.id) == null)
+  }
+
+  // Container aberto sem fecho: os membros já lidos ficam; avisa sem derrubar (Princípio IX).
+  if (containerStack.length > 0) {
+    avisos.push({ linha: null, trecho: containerStack[containerStack.length - 1], mensagem: 'bloco aberto sem fechamento' })
   }
 
   return { modelo, erros, avisos }

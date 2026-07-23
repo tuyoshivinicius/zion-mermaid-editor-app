@@ -11,5 +11,18 @@ export type { Analise } from './nucleo/analisar'
 export { serializar, normalizar } from './nucleo/serializar'
 export type { ModeloNormalizado } from './nucleo/serializar'
 export { emitirNo } from './flowchart/no'
-export { appendLinhaNoFim, normalizarCabecalhoParaCopia } from './cirurgica'
+export { emitirConexao } from './flowchart/conexao'
+export { emitirAgrupamentoAbre, emitirAgrupamentoFecha } from './flowchart/agrupamento'
+export {
+  appendLinhaNoFim,
+  normalizarCabecalhoParaCopia,
+  appendConexao,
+  appendAgrupamento,
+  inserirMencao,
+  removerMencao,
+  reescreverLinhaNo,
+  reescreverLinhaConexao,
+  removerElementos,
+} from './cirurgica'
+export type { ConexaoAlvo } from './cirurgica'
 export type { Achado } from './nucleo/reconhecedores'

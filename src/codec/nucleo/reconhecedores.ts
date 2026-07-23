@@ -4,7 +4,7 @@
 //
 // Este arquivo é do NÚCLEO. Não pode conter nome de família nenhum.
 
-import type { Modelo, No } from '../../modelo/modelo'
+import type { Modelo, No, Conexao, Agrupamento } from '../../modelo/modelo'
 
 export interface Achado {
   linha: number | null
@@ -12,13 +12,25 @@ export interface Achado {
   mensagem: string
 }
 
-/** Contexto que o núcleo passa a cada reconhecedor durante a análise. */
+/**
+ * Contexto que o núcleo passa a cada reconhecedor durante a análise. R1 acrescenta
+ * a **pilha de container** — agnóstica: o núcleo não sabe que o container é um bloco
+ * de agrupamento; sabe que há uma pilha e que membros pegam o topo (research §2).
+ */
 export interface Ctx {
   modelo: Modelo
   tolerante: boolean
   erros: Achado[]
   avisos: Achado[]
   linha: number
+  /** ids dos containers abertos (topo = mais interno). Vazio no nível do documento. */
+  containerStack: string[]
+  /** Um reconhecedor de família chama ao abrir um bloco. */
+  abrirContainer(id: string): void
+  /** …e ao fechar. `end` sem par é no-op (tolerância, Princípio IX). */
+  fecharContainer(): void
+  /** Materializar um elemento com a pilha não-vazia → membro do topo (exclusivo, 1º vence — M4). */
+  registrarMembro(id: string): void
 }
 
 export interface Reconhecedor {
@@ -30,10 +42,17 @@ export interface Reconhecedor {
   tentar(statement: string, ctx: Ctx): boolean
 }
 
-/** O que uma família ensina ao núcleo: como ler statements e como emitir um nó. */
+/**
+ * O que uma família ensina ao núcleo: como ler statements e como emitir cada espécie.
+ * `emitir` (nó) é do R0; as três emissões novas são do R1 (opcionais para uma família
+ * que ainda não as tenha).
+ */
 export interface FamiliaCodec {
   reconhecedores: Reconhecedor[]
   emitir: (no: No) => string
+  emitirConexao?: (c: Conexao, m: Modelo) => string
+  emitirAgrupamentoAbre?: (g: Agrupamento) => string
+  emitirAgrupamentoFecha?: () => string
 }
 
 const registro = new Map<string, FamiliaCodec>()
@@ -48,7 +67,7 @@ export function limparRegistro(): void {
 
 /**
  * Todos os reconhecedores registrados, na ordem de registro (dentro de cada
- * família, na ordem do array). No R0 só uma família está registrada.
+ * família, na ordem do array). No R1 só uma família está registrada.
  */
 export function todosReconhecedores(): Reconhecedor[] {
   const todos: Reconhecedor[] = []
@@ -56,11 +75,34 @@ export function todosReconhecedores(): Reconhecedor[] {
   return todos
 }
 
-/** O emissor de statement ativo (o serializador o usa por nó — research §3). */
-export function emissor(): (no: No) => string {
+function familiaAtiva(): FamiliaCodec {
   const primeira = registro.values().next()
   if (primeira.done) {
     throw new Error('nenhuma família de codec registrada — chame registrar() antes de serializar')
   }
-  return primeira.value.emitir
+  return primeira.value
+}
+
+/** O emissor de statement de NÓ ativo (o serializador o usa por nó — research §3). */
+export function emissor(): (no: No) => string {
+  return familiaAtiva().emitir
+}
+
+/** O emissor de CONEXÃO ativo (R1). */
+export function emissorConexao(): (c: Conexao, m: Modelo) => string {
+  const f = familiaAtiva()
+  if (!f.emitirConexao) throw new Error('a família ativa não emite conexão')
+  return f.emitirConexao
+}
+
+/** Os emissores de ABRE/FECHA de bloco de agrupamento ativos (R1). */
+export function emissorAgrupamento(): {
+  abre: (g: Agrupamento) => string
+  fecha: () => string
+} {
+  const f = familiaAtiva()
+  if (!f.emitirAgrupamentoAbre || !f.emitirAgrupamentoFecha) {
+    throw new Error('a família ativa não emite agrupamento')
+  }
+  return { abre: f.emitirAgrupamentoAbre, fecha: f.emitirAgrupamentoFecha }
 }

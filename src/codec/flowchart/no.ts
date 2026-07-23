@@ -25,6 +25,8 @@ export const reconhecedorNoRetangular: Reconhecedor = {
     if (!lido) return false
 
     const no = garantirNo(ctx.modelo, lido.id)
+    // Menção isolada dentro de um bloco → membro do topo (M1/FR-019). Fora de bloco é no-op.
+    ctx.registrarMembro(no.id)
     if (lido.temRotulo) {
       const d = decodificar(lido.rotuloBruto)
       // Identificador repetido → um nó só; a ÚLTIMA declaração de rótulo prevalece (FR-016).
