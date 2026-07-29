@@ -317,9 +317,9 @@ que vive no `plan.md` da feature. A regra invariável correspondente, quando exi
 | RF-21 | ver o erro de sintaxe sinalizado enquanto edita o código, distinguindo o que derruba um trecho do que apenas avisa | E5 |  | R1 | ☐ pendente |
 | RF-22 | ver marcado o rótulo cujo texto o tipo de diagrama corrente não expressa fielmente em código | E5 |  | R1 | ☐ pendente |
 | RF-23 | copiar o código mermaid gerado com um gesto — é o produto final | E5 | `specs/001-cano-modelo-codigo` | R0 | ● implementada |
-| RF-24 | redimensionar o editor de código e a área do diagrama | E6 |  | R1 | ☐ pendente |
-| RF-25 | navegar na área do diagrama com zoom e movimentação por cursor hand | E6 |  | R1 | ☐ pendente |
-| RF-26 | ajustar o diagrama à tela e resetar o zoom | E6 |  | R1 | ☐ pendente |
+| RF-24 | redimensionar o editor de código e a área do diagrama | E6 | `specs/003-area-de-trabalho` | R1 | ● implementada |
+| RF-25 | navegar na área do diagrama com zoom e movimentação por cursor hand | E6 | `specs/003-area-de-trabalho` | R1 | ● implementada |
+| RF-26 | ajustar o diagrama à tela e resetar o zoom | E6 | `specs/003-area-de-trabalho` | R1 | ● implementada |
 | RF-27 | recuperar o rascunho em curso — estrutura, estilo e o arranjo feito à mão — ao reabrir a aba | E6 |  | R1 | ☐ pendente |
 | RF-28 | ser avisada quando o rascunho não pôde ser recuperado, começando uma sessão nova | E6 |  | R1 | ☐ pendente |
 | RF-29 | ser avisada ao ultrapassar o envelope de densidade suportado, em vez de o produto seguir como se nada fosse | E6 |  | R1 | ☐ pendente |

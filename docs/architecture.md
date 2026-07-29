@@ -124,7 +124,7 @@ gerado sai.
 <!-- zion:backlog-view:start -->
 - `cano-modelo-codigo` — ● implementada
 - `elementos-grafo-dirigido` — ● implementada
-- `area-de-trabalho` — ☐ pendente
+- `area-de-trabalho` — ● implementada
 - `ciclo-por-teclado` — ☐ pendente
 - `desfazer-e-refazer` — ☐ pendente
 - `codigo-de-entrada` — ☐ pendente
