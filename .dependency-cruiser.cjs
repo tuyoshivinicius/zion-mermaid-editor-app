@@ -2,8 +2,9 @@
  * Checagem de fronteira de importação — os portões de arquitetura do R0.
  *
  * - Princípio X: nenhum módulo do caminho de edição importa `mermaid` (só teste/oráculo).
- * - Princípio IV: ninguém escreve no modelo fora da transação (esboço; a fronteira
- *   forte é a de importação de `mermaid` + o teste de transação).
+ * - Princípio IV: ninguém escreve no modelo fora da transação. Para a área de trabalho
+ *   (spec 003) isso é EXECUTÁVEL, não disciplinar: nenhum gesto dela abre transação,
+ *   e a regra abaixo proíbe até o caminho até `commit()` (FR-014 / SC-009).
  * - Princípio XII: o núcleo do codec (`src/codec/nucleo`) não referencia nomes de família
  *   (verificado também por grep no teste `nucleo-sem-familia`).
  *
@@ -17,10 +18,24 @@ module.exports = {
         'Princípio X — mermaid entra só como oráculo de teste; nenhum módulo de runtime o importa.',
       severity: 'error',
       from: {
-        path: '^src/(modelo|projecao|canvas|editor|codec)',
+        path: '^src/(modelo|projecao|canvas|editor|codec|areatrabalho)',
       },
       to: {
         path: 'node_modules/mermaid',
+      },
+    },
+    {
+      name: 'sem-transacao-na-area-de-trabalho',
+      comment:
+        'Princípio IV / FR-014 — nenhum gesto da área de trabalho abre transação. As ações do ' +
+        'slot escrevem por set() direto, FORA de commit(), irmãs de `revelar`: não é filtragem ' +
+        'do histórico, é ausência de entrada para filtrar.',
+      severity: 'error',
+      from: {
+        path: '^src/areatrabalho',
+      },
+      to: {
+        path: '^src/modelo/transacao',
       },
     },
     {

@@ -1,43 +1,25 @@
 import { test, expect, type Page } from '@playwright/test'
+import { documentoEnvelope, N_NOS, N_CONEX } from '../fixtures/envelope'
 
 // Portão de latência no envelope do R1 (T045 / SC-005 / SC-010 / Princípio III):
 // 400 elementos-nó (nós + agrupamentos) e 500 conexões — tecla ≤50ms mediana, edição
 // refletida ≤100ms mediana, gesto contínuo ≥50fps. Sustentado pela invariante de reuso.
+// R2 (T055): o documento saiu para `tests/fixtures/envelope.ts` — a spec 003 mede
+// contra o MESMO documento, e a não-regressão é conferida com a casca nova montada.
 
 const editor = (page: Page) => page.locator('[data-testid=editor-codigo]')
 const caixas = (page: Page) => page.locator('.react-flow__node-caixa')
 const arestas = (page: Page) => page.locator('.react-flow__edge')
-
-const N_NOS = 390
-const N_GRUPOS = 10
-const N_CONEX = 500
 
 const mediana = (xs: number[]) => {
   const s = [...xs].sort((a, b) => a - b)
   return s[Math.floor(s.length / 2)]
 }
 
-function envelope(): string {
-  const linhas = ['flowchart TD']
-  for (let i = 1; i <= N_NOS; i++) linhas.push(`n${i}[Passo ${i}]`)
-  for (let k = 0; k < N_CONEX; k++) {
-    const a = (k % N_NOS) + 1
-    const b = ((k + 1) % N_NOS) + 1
-    linhas.push(`n${a} --> n${b}`)
-  }
-  for (let g = 1; g <= N_GRUPOS; g++) {
-    const base = (g - 1) * 4 + 1
-    linhas.push(`subgraph g${g}[Grupo ${g}]`)
-    for (let j = 0; j < 4; j++) linhas.push(`  n${base + j}`)
-    linhas.push('end')
-  }
-  return linhas.join('\n')
-}
-
 test('envelope 400/500: tecla ≤50ms, edição ≤100ms (medianas) e gesto ≥50fps', async ({ page }) => {
   test.setTimeout(180_000)
   await page.goto('/')
-  await editor(page).fill(envelope())
+  await editor(page).fill(documentoEnvelope())
   await expect(caixas(page)).toHaveCount(N_NOS, { timeout: 90_000 })
   await expect(arestas(page)).toHaveCount(N_CONEX, { timeout: 90_000 })
 
