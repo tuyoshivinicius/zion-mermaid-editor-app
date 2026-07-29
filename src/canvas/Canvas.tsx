@@ -4,8 +4,15 @@
 // retangular por CONTENÇÃO (SelectionMode.Full), mover-seleção, duplicar/excluir/
 // adicionar/retirar/desagrupar. `onNodesChange` é filtrado: só o gesto concluído vira
 // comando; seleção/hover não sujam o modelo (ADR-003).
+//
+// R2 (spec 003): a navegação. O modo hand na engine é UMA propriedade —
+// `panOnDrag = hand ? [0,1] : [1]` — com `selectionOnDrag` no complemento; o botão do
+// meio (índice 1) é o gesto auxiliar explícito do `FR-004`, que move o enquadramento
+// sem entrar no modo. `zoomOnScroll` fica DESLIGADO para a rolagem herdada do R0
+// continuar (`FR-005`), e `zoomOnPinch` liga o `Ctrl/⌘ + roda` e a pinça, ancorados no
+// ponteiro (`FR-002`). O enquadramento é reconciliado no FIM do gesto, nunca por quadro.
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   ReactFlow,
   Background,
@@ -18,9 +25,14 @@ import {
   type Edge,
   type Connection,
   type OnNodeDrag,
+  type Viewport,
 } from '@xyflow/react'
 import { useSessao } from '../modelo/store'
 import { selecaoVazia, type Selecao } from '../modelo/selecao'
+import { useNavegacao } from '../areatrabalho/useNavegacao'
+import { ControlesEnquadramento } from '../areatrabalho/ControlesEnquadramento'
+import { pontoDoPlano } from '../areatrabalho/enquadramento'
+import type { Piloto } from '../areatrabalho/tipos'
 import { CaixaNo } from './CaixaNo'
 import { Conexao } from './Conexao'
 import { Agrupamento } from './Agrupamento'
@@ -36,7 +48,11 @@ export function Canvas() {
   const adicionarMembros = useSessao((s) => s.adicionarMembros)
   const retirarMembros = useSessao((s) => s.retirarMembros)
   const desagrupar = useSessao((s) => s.desagrupar)
-  const { screenToFlowPosition, getInternalNode } = useReactFlow()
+  const registrarPiloto = useSessao((s) => s.registrarPiloto)
+  const { screenToFlowPosition, getInternalNode, getViewport } = useReactFlow()
+
+  const refArea = useRef<HTMLDivElement>(null)
+  const nav = useNavegacao(refArea)
 
   const nodeTypes = useMemo(() => ({ caixa: CaixaNo, agrupamento: Agrupamento }), [])
   const edgeTypes = useMemo(() => ({ conexao: Conexao }), [])
@@ -48,6 +64,25 @@ export function Canvas() {
     setNodes(projecao.nodes as unknown as Node[])
     setEdges(projecao.edges as unknown as Edge[])
   }, [projecao, setNodes, setEdges])
+
+  // O PILOTO (FR-012): a ponte mínima entre o store e a engine. `ciclo-por-teclado`
+  // chama `trazerParaAreaVisivel(id)` sem saber que existe React Flow — tudo o que o
+  // produto decide é aritmética, e o piloto só APLICA.
+  //
+  // Registrado UMA vez, e por isso lê a navegação por `ref`: um piloto que mudasse de
+  // identidade a cada passo de zoom escreveria no store no meio do gesto contínuo, e
+  // reacenderia o gatilho de abertura a cada escrita.
+  const navRef = useRef(nav)
+  navRef.current = nav
+  useEffect(() => {
+    const piloto: Piloto = {
+      enquadramentoCorrente: () => getViewport(),
+      aplicar: (e, comTransito) => navRef.current.aplicar(e, comTransito),
+      quadro: () => navRef.current.quadro(),
+    }
+    registrarPiloto(piloto)
+    return () => registrarPiloto(null)
+  }, [registrarPiloto, getViewport])
 
   const aoDuploClique = useCallback(
     (e: React.MouseEvent) => {
@@ -78,7 +113,49 @@ export function Canvas() {
     if (Object.keys(pos).length > 0) moverSelecao(pos)
   }, [nodes, getInternalNode, moverSelecao])
 
-  const aoSoltarNo: OnNodeDrag<Node> = useCallback(() => sincronizarPosicoes(), [sincronizarPosicoes])
+  // ── FR-015: o arrasto não se interrompe, e o elemento não salta ──────────
+  // O arrasto está preso ao ponto do PLANO que pegou, não ao ponto da tela. Quando
+  // o enquadramento muda por baixo dele (roda, tecla, controle, trânsito), a
+  // re-ancoragem O(1) mantém a posição no plano invariante; o que se aplica aqui é
+  // a correção acumulada por ela. Ancorado no ponteiro (`FR-002`) ela dá ZERO, e
+  // este caminho não faz nada.
+  const aoIniciarArrasto: OnNodeDrag<Node> = useCallback(
+    (ev, node) => {
+      const r = refArea.current?.getBoundingClientRect()
+      const t = 'touches' in ev ? ev.touches[0] : ev
+      if (!r || !t) return
+      const naArea = { x: t.clientX - r.x, y: t.clientY - r.y }
+      nav.anotarPonteiro(naArea)
+      const abs = getInternalNode(node.id)?.internals.positionAbsolute ?? node.position
+      const capturado = pontoDoPlano(naArea, getViewport())
+      nav.arrastoIniciado({ x: capturado.x - abs.x, y: capturado.y - abs.y })
+    },
+    [nav, getInternalNode, getViewport],
+  )
+
+  const aoArrastar: OnNodeDrag<Node> = useCallback(() => {
+    const c = nav.correcaoDoArrasto()
+    if (c.x === 0 && c.y === 0) return
+    setNodes((ns) =>
+      ns.map((n) =>
+        n.dragging ? { ...n, position: { x: n.position.x - c.x, y: n.position.y - c.y } } : n,
+      ),
+    )
+  }, [nav, setNodes])
+
+  const aoSoltarNo: OnNodeDrag<Node> = useCallback(() => {
+    nav.arrastoTerminado()
+    sincronizarPosicoes()
+  }, [nav, sincronizarPosicoes])
+
+  const aoSoltarSelecao = useCallback(() => {
+    nav.arrastoTerminado()
+    sincronizarPosicoes()
+  }, [nav, sincronizarPosicoes])
+
+  // Reconciliação do enquadramento no FIM do gesto contínuo — nunca por quadro
+  // (research §8.1). É aqui que o `minZoom` dinâmico é recalculado.
+  const aoFimDoMovimento = useCallback((_e: unknown, _v: Viewport) => nav.aoFimDoGesto(), [nav])
 
   const aoMudarSelecao = useCallback(({ nodes: ns, edges: es }: { nodes: Node[]; edges: Edge[] }) => {
     setSelecao({
@@ -123,8 +200,10 @@ export function Canvas() {
 
   return (
     <div
+      ref={refArea}
       className="relative h-full w-full"
       data-testid="area-diagrama"
+      data-modo-hand={nav.handAtivo ? 'on' : 'off'}
       onDoubleClick={aoDuploClique}
       onMouseDown={preservarFoco}
     >
@@ -141,8 +220,11 @@ export function Canvas() {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
+        onNodeDragStart={aoIniciarArrasto}
+        onNodeDrag={aoArrastar}
         onNodeDragStop={aoSoltarNo}
-        onSelectionDragStop={sincronizarPosicoes}
+        onSelectionDragStop={aoSoltarSelecao}
+        onMoveEnd={aoFimDoMovimento}
         onConnect={aoConectar}
         onSelectionChange={aoMudarSelecao}
         nodeTypes={nodeTypes}
@@ -153,17 +235,29 @@ export function Canvas() {
         elementsSelectable
         multiSelectionKeyCode="Shift"
         deleteKeyCode={null}
-        selectionOnDrag
+        // O `Espaço` é NOSSO (useNavegacao), sob a guarda de foco: o estado do modo
+        // hand e o cursor que o declara têm que concordar (`SC-014`).
+        panActivationKeyCode={null}
+        selectionOnDrag={!nav.handAtivo}
         selectionMode={SelectionMode.Full}
-        panOnDrag={false}
+        panOnDrag={nav.handAtivo ? [0, 1] : [1]}
+        // FR-003 — no modo hand o arrasto pega o PLANO, esteja o ponteiro sobre
+        // espaço vazio ou SOBRE UM ELEMENTO. Sem isto o arrasto que começasse em
+        // cima de um nó moveria o nó: o mesmo gesto teria dois destinos, que é
+        // exatamente o que o `FR-004` proíbe. Desligar o arrasto de nó desprende o
+        // manipulador do elemento e o ponteiro cai no painel, que pan.
+        nodesDraggable={!nav.handAtivo}
         panOnScroll
         fitView={false}
         zoomOnScroll={false}
-        zoomOnPinch={false}
+        zoomOnPinch
         zoomOnDoubleClick={false}
+        minZoom={nav.minZoom}
+        maxZoom={nav.maxZoom}
       >
         <Background />
       </ReactFlow>
+      <ControlesEnquadramento nav={nav} handAtivo={nav.handAtivo} />
     </div>
   )
 }

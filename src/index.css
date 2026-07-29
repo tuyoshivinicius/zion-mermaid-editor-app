@@ -18,3 +18,50 @@ body,
   height: 100%;
   margin: 0;
 }
+
+/*
+ * A PROPORÇÃO DA ÁREA DE TRABALHO (FR-006 / contracts/proporcao.md §2).
+ *
+ * Quatro exigências caem daqui, SEM uma linha de JavaScript no `resize`:
+ *   1. a razão é preservada quando a janela muda — `flex-basis` em porcentagem faz
+ *      as duas vistas crescerem e encolherem JUNTAS, na mesma fração;
+ *   2. os mínimos recortam a razão por baixo — o `max-width` do editor é o mínimo do
+ *      diagrama espelhado, e a 800px dá exatamente 480 + 320, sem rolagem prematura;
+ *   3. abaixo da soma dos mínimos quem cede é a PÁGINA — o `min-width` do contêiner
+ *      segura a área de trabalho e a raiz rola horizontalmente;
+ *   4. nenhuma das duas vistas some — não há prioridade declarada entre elas.
+ *
+ * O recorte é da RENDERIZAÇÃO, não da gravação: uma janela estreita não reescreve a
+ * escolha dela, e a razão original volta a valer quando a janela alarga.
+ */
+.area-de-trabalho {
+  display: flex;
+  min-width: 800px;
+}
+
+.vista-diagrama {
+  flex: 1 1 auto;
+  min-width: 480px;
+}
+
+.vista-editor {
+  flex: 0 0 var(--razao-editor, 42%);
+  min-width: 320px;
+  max-width: calc(100% - 480px);
+}
+
+/* quem cede quando a janela fica menor que a soma dos mínimos */
+#root {
+  overflow-x: auto;
+}
+
+/*
+ * O CURSOR DECLARA O DESTINO DO ARRASTO ANTES DELE (FR-004 / SC-014).
+ * Sobre o espaço vazio: `crosshair` fora do modo hand (vai nascer a seleção
+ * retangular de 002) e `grab`/`grabbing` dentro dele (a engine já os dá pelas
+ * classes `.draggable`/`.dragging`). O produto NUNCA adivinha qual dos dois vem;
+ * qual vai acontecer é estado explícito e legível antes do primeiro pixel.
+ */
+.react-flow__pane.selection {
+  cursor: crosshair;
+}

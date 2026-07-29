@@ -4,13 +4,9 @@
 // A identidade da aresta é de sessão (`eN`), nunca escrita no código.
 
 import { memo, useEffect, useRef, useState } from 'react'
-import {
-  BaseEdge,
-  EdgeLabelRenderer,
-  getBezierPath,
-  type EdgeProps,
-} from '@xyflow/react'
+import { BaseEdge, EdgeLabelRenderer, type EdgeProps } from '@xyflow/react'
 import { useSessao } from '../modelo/store'
+import { caminhoDaConexao } from './caminho'
 
 interface DadosAresta {
   texto: string | null
@@ -38,7 +34,8 @@ function ConexaoBase({
     if (editando) ref.current?.focus()
   }, [editando])
 
-  const [path, labelX, labelY] = getBezierPath({
+  // A MESMA função que mede (`areatrabalho/extensao.ts`) — nunca duas geometrias.
+  const { path, labelX, labelY } = caminhoDaConexao({
     sourceX,
     sourceY,
     targetX,
